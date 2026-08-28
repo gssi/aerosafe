@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Static companion website for the Aerosafe software quality assurance framework, including the IMVV example, Table 7, and Tables A.13-A.17.">
+  <meta name="description" content="Static companion website for the Aerosafe software quality assurance framework, including a guided project workflow, a final conformity record, the IMVV example, Table 7, and online Tables A.13-A.17.">
   <title>Aerosafe | Framework Companion</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,9 +19,10 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
         <a href="#workflow">Workflow</a>
+        <a href="#guided-use">Guided use</a>
         <a href="#imvv">IMVV example</a>
         <a href="#table-7">Table 7</a>
-        <a href="#appendix">Appendix tables</a>
+        <a href="#appendix">Control library</a>
         <a href="#use">How to use</a>
       </nav>
     </div>
@@ -33,9 +34,10 @@
         <div class="hero-copy">
           <p class="eyebrow">Research-paper companion</p>
           <h1>From AI-assurance intent to an auditable qualification record</h1>
-          <p class="lede">Aerosafe connects AMLAS reasoning to ECSS-oriented roles, review gates, configuration controls, findings, and closure decisions. This site shows how to construct the checklist, execute it during qualification, and trace every Table&nbsp;7 area to its definitive Appendix&nbsp;A controls.</p>
+          <p class="lede">Aerosafe connects AMLAS reasoning to ECSS-oriented roles, review gates, configuration controls, findings, and closure decisions. This site shows how to construct and execute the checklist, guides a project user through all six framework phases, produces a final conformity record, and traces every Table&nbsp;7 area to its definitive online controls.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#workflow">Follow the workflow</a>
+            <a class="button primary" href="#guided-use">Use the framework</a>
+            <a class="button secondary" href="#workflow">Understand the workflow</a>
             <a class="button secondary" href="#table-7">Explore the mapping</a>
           </div>
           <p id="framework-disclaimer" class="disclaimer"></p>
@@ -47,7 +49,7 @@
           <div class="stat-grid" aria-label="Companion content statistics">
             <div><strong id="control-count">-</strong><span>checklist controls</span></div>
             <div><strong id="mapping-count">-</strong><span>Table 7 areas</span></div>
-            <div><strong id="appendix-count">-</strong><span>appendix tables</span></div>
+            <div><strong id="appendix-count">-</strong><span>online control tables</span></div>
           </div>
         </aside>
       </div>
@@ -74,6 +76,66 @@
           <p>Apply the configured controls to a controlled baseline. Record evidence, decisions, findings, gate status, closure, traceability links, and residual limitations without converting missing evidence into a positive claim.</p>
           <a href="#imvv-execution">See the IMVV execution record</a>
         </article>
+      </div>
+    </section>
+
+    <section id="guided-use" class="section guided-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Guided project mode</p>
+          <h2>Use Aerosafe and build the qualification record as you progress</h2>
+          <p>Complete the same six records shown in the paper's user checklist. The guided mode connects project context, Table 7 scope decisions, item-level construction, execution, gate closure, and the final checklist-conformity page.</p>
+        </div>
+
+        <aside class="privacy-note">
+          <strong>Fully static and local.</strong>
+          <span>Your entries are stored only in this browser using local storage. Nothing is sent to a server. Export the record as JSON or print the final page for controlled project storage.</span>
+        </aside>
+
+        <div id="guided-app" class="guided-app">
+          <div class="guided-app-header">
+            <div>
+              <p class="mini-label">Active project record</p>
+              <strong id="guided-record-name">Untitled record</strong>
+              <span id="guided-save-status" class="save-status" aria-live="polite">Not yet saved</span>
+            </div>
+            <div class="guided-header-actions">
+              <button id="guided-export-draft" class="button small secondary" type="button">Export draft</button>
+              <button id="guided-reset" class="button small danger-outline" type="button">Reset record</button>
+            </div>
+          </div>
+
+          <div class="guided-progress-wrap" aria-label="Guided workflow progress">
+            <div class="guided-progress-meta"><span id="guided-progress-label">Step 1 of 6</span><strong id="guided-progress-percent">0%</strong></div>
+            <div class="guided-progress"><span id="guided-progress-bar"></span></div>
+          </div>
+
+          <ol id="guided-stepper" class="guided-stepper" aria-label="Aerosafe guided steps"></ol>
+          <form id="guided-form" novalidate>
+            <div id="guided-panel" class="guided-panel"></div>
+            <div class="guided-navigation">
+              <button id="guided-back" class="button secondary" type="button">Back</button>
+              <div class="guided-nav-right">
+                <button id="guided-save" class="button secondary" type="button">Save record</button>
+                <button id="guided-next" class="button primary" type="button">Next step</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="conformity-report" class="section report-section" hidden>
+      <div class="shell">
+        <div class="report-toolbar no-print">
+          <div><p class="eyebrow">Generated output</p><h2>Aerosafe checklist-conformity record</h2></div>
+          <div class="report-actions">
+            <button id="report-back" class="button secondary" type="button">Return to guided mode</button>
+            <button id="report-export" class="button secondary" type="button">Export JSON</button>
+            <button id="report-print" class="button primary" type="button">Print / save PDF</button>
+          </div>
+        </div>
+        <div id="conformity-report-content" class="conformity-report-content"></div>
       </div>
     </section>
 
@@ -124,7 +186,7 @@
       <div class="section-heading">
         <p class="eyebrow">Table 7</p>
         <h2>The index from assurance areas to definitive checklist items</h2>
-        <p>Each assurance area reports explicit appendix table and item references. Select a mapping to open and highlight its controls below.</p>
+        <p>Each assurance area reports explicit online table and item references. Select a mapping to open and highlight its controls below.</p>
       </div>
       <div class="mapping-toolbar" aria-label="Table 7 mapping controls">
         <label class="search-field"><span>Search Table 7</span><input id="mapping-search" type="search" placeholder="Try “traceability”, “IMVV”, or “deployment”"></label>
@@ -132,21 +194,21 @@
       </div>
       <div id="mapping-status" class="mapping-status" aria-live="polite"></div>
       <div id="table7-container" class="table-shell mapping-table"></div>
-      <p class="table-caption"><strong>Table 7.</strong> Aerosafe checklist index mapping each assurance area to the definitive appendix table and checklist item IDs. Tables A.13-A.17 provide the complete ten-field item definitions.</p>
+      <p class="table-caption"><strong>Table 7.</strong> Aerosafe checklist index mapping each assurance area to the definitive online control table and checklist item IDs. Companion Tables A.13-A.17 provide the complete ten-field item definitions.</p>
     </section>
 
     <section id="appendix" class="section section-dark">
       <div class="shell">
         <div class="section-heading light">
-          <p class="eyebrow">Tables A.13-A.17</p>
-          <h2>Explore the standardized operational checklist</h2>
+          <p class="eyebrow">Online Tables A.13-A.17</p>
+          <h2>Explore the standardized operational control library</h2>
           <p>Every table uses the same ordered tuple. The item identifier is carried inside <em>source/status</em>, preserving the exact ten-column schema.</p>
         </div>
 
         <div class="notation-bar" id="notation-bar"></div>
 
         <div class="appendix-controls">
-          <div id="appendix-tabs" class="appendix-tabs" role="tablist" aria-label="Appendix tables"></div>
+          <div id="appendix-tabs" class="appendix-tabs" role="tablist" aria-label="Online control tables"></div>
           <div class="filter-row">
             <label class="search-field dark-field"><span>Search controls</span><input id="appendix-search" type="search" placeholder="ID, objective, evidence, owner, gate…"></label>
             <label class="select-field"><span>Status</span><select id="status-filter"><option value="all">All statuses</option><option value="M all">M all</option><option value="M">M</option><option value="C">C</option><option value="N.A.">N.A.</option></select></label>
@@ -168,7 +230,7 @@
       </div>
       <div class="use-grid">
         <article><span>01</span><h3>Start from the contract and system context</h3><p>Identify the applicable ECSS baseline, review plan, AI/ML boundary, ODD, hazards, criticality rationale, action authority, interfaces, and compensating provisions.</p></article>
-        <article><span>02</span><h3>Use Table 7 as an index—not as a substitute</h3><p>Select the assurance areas, then open the cited Appendix A items. Tailor each item explicitly; do not infer applicability from category labels alone.</p></article>
+        <article><span>02</span><h3>Use Table 7 as the index to the online controls</h3><p>Record an include/exclude decision for every assurance area, then open the cited online controls. Tailor each item explicitly; do not infer applicability from category labels alone.</p></article>
         <article><span>03</span><h3>Freeze the construction record</h3><p>Complete all ten fields and assign owners, gates, closure authority, links, and residual treatment before reviewing execution evidence.</p></article>
         <article><span>04</span><h3>Execute against controlled baselines</h3><p>Use configuration-controlled data, models, software, tools, target artefacts, tests, and claims. Record results and findings with bidirectional traceability.</p></article>
         <article><span>05</span><h3>Keep evidence ownership separate from closure</h3><p>The team producing evidence does not self-close independent findings. The designated project or customer authority closes, waives, rejects, or conditionally accepts.</p></article>
@@ -184,12 +246,13 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div><strong>Aerosafe companion</strong><p id="footer-version"></p></div>
-      <p>Static HTML, CSS, and JavaScript. The table content is generated from the same canonical data used to produce the manuscript's Table 7 and Tables A.13-A.17.</p>
+      <p>Static HTML, CSS, and JavaScript. The paper's Table 7, the online Tables A.13-A.17, the six guided phases, and the conformity record are generated from one canonical dataset.</p>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="guided.js"></script>
 </body>
 </html>

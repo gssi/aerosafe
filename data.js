@@ -2,8 +2,9 @@ window.AEROSAFE_DATA = {
   "metadata": {
     "framework": "Aerosafe",
     "paper_title": "Aerosafe: A Software Quality Assurance Framework for AI-Based Aerospace Systems in ECSS Lifecycles",
-    "version": "restructured companion edition",
-    "disclaimer": "Aerosafe is an operational assurance aid. It is not an ECSS standard, certification method, or approval authority."
+    "version": "guided-use companion edition",
+    "disclaimer": "Aerosafe is an operational assurance aid. Its conformity page records completion against the project-selected Aerosafe checklist; it is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
+    "companion_url": "https://example.org/aerosafe-framework"
   },
   "schema": [
     "source/status",
@@ -66,7 +67,8 @@ window.AEROSAFE_DATA = {
           "items": "SC-01; FR-01 to FR-06"
         }
       ],
-      "tailoring": "Review names and phasing follow the contractual plan; VVR and ORR are used only when project-defined."
+      "tailoring": "Review names and phasing follow the contractual plan; VVR and ORR are used only when project-defined.",
+      "id": "governance"
     },
     {
       "area": "Configuration management and traceability",
@@ -78,7 +80,8 @@ window.AEROSAFE_DATA = {
           "items": "CM-01 to CM-03; TR-01 to TR-02"
         }
       ],
-      "tailoring": "Baseline and lifecycle traceability are minimum controls; runtime logging is conditional on architecture, resources, and purpose."
+      "tailoring": "Baseline and lifecycle traceability are minimum controls; runtime logging is conditional on architecture, resources, and purpose.",
+      "id": "configuration-traceability"
     },
     {
       "area": "Data assurance",
@@ -90,7 +93,8 @@ window.AEROSAFE_DATA = {
           "items": "DM-01 to DM-09"
         }
       ],
-      "tailoring": "Integrity, provenance, and evidence fitness form the baseline; privacy and fairness depend on data, affected strata, and obligations."
+      "tailoring": "Integrity, provenance, and evidence fitness form the baseline; privacy and fairness depend on data, affected strata, and obligations.",
+      "id": "data-assurance"
     },
     {
       "area": "Model learning",
@@ -102,7 +106,8 @@ window.AEROSAFE_DATA = {
           "items": "ML-01 to ML-04"
         }
       ],
-      "tailoring": "Core reproducibility and selection records are minimum; explainability is conditional on the claim, user, model, and method validity."
+      "tailoring": "Core reproducibility and selection records are minimum; explainability is conditional on the claim, user, model, and method validity.",
+      "id": "model-learning"
     },
     {
       "area": "Model verification and validation",
@@ -114,7 +119,8 @@ window.AEROSAFE_DATA = {
           "items": "MV-01 to MV-07"
         }
       ],
-      "tailoring": "Requirements-linked V&V is minimum for claimed properties; formal and adversarial techniques are conditional on a property or threat model."
+      "tailoring": "Requirements-linked V&V is minimum for claimed properties; formal and adversarial techniques are conditional on a property or threat model.",
+      "id": "model-vv"
     },
     {
       "area": "Software and system V&V",
@@ -126,7 +132,8 @@ window.AEROSAFE_DATA = {
           "items": "SV-01; SY-01"
         }
       ],
-      "tailoring": "Software evidence is required for deployed implementations; integrated system evidence is required before operational acceptance."
+      "tailoring": "Software evidence is required for deployed implementations; integrated system evidence is required before operational acceptance.",
+      "id": "software-system-vv"
     },
     {
       "area": "Deployment, operation, fallback, and change",
@@ -138,7 +145,8 @@ window.AEROSAFE_DATA = {
           "items": "DP-01 to DP-08"
         }
       ],
-      "tailoring": "Target/release controls apply when deployed; monitoring, fallback, and safety cages depend on observability, architecture, mission, and hazards."
+      "tailoring": "Target/release controls apply when deployed; monitoring, fallback, and safety cages depend on observability, architecture, mission, and hazards.",
+      "id": "deployment-change"
     },
     {
       "area": "Safety argument and normative status",
@@ -150,7 +158,8 @@ window.AEROSAFE_DATA = {
           "items": "SA-01 to SA-04"
         }
       ],
-      "tailoring": "Argument depth follows safety reliance and project risk; source/status must never imply ECSS normativity without an applicable contractual clause."
+      "tailoring": "Argument depth follows safety reliance and project risk; source/status must never imply ECSS normativity without an applicable contractual clause.",
+      "id": "safety-normative"
     },
     {
       "area": "Independent Model Verification and Validation (IMVV)",
@@ -162,14 +171,14 @@ window.AEROSAFE_DATA = {
           "items": "IV-01 to IV-06"
         }
       ],
-      "tailoring": "IMVV is risk-triggered; the independent team raises and verifies findings, while the designated project/customer authority closes them."
+      "tailoring": "IMVV is risk-triggered; the independent team raises and verifies findings, while the designated project/customer authority closes them.",
+      "id": "imvv"
     }
   ],
   "appendix_tables": [
     {
       "key": "A13",
       "number": "A.13",
-      "label": "tab:item_mapping_governance",
       "title": "Operational checklist: scope, review gates, configuration management, and traceability.",
       "items": [
         {
@@ -333,7 +342,6 @@ window.AEROSAFE_DATA = {
     {
       "key": "A14",
       "number": "A.14",
-      "label": "tab:item_mapping_data_learning",
       "title": "Operational checklist: data assurance and model learning.",
       "items": [
         {
@@ -510,7 +518,6 @@ window.AEROSAFE_DATA = {
     {
       "key": "A15",
       "number": "A.15",
-      "label": "tab:item_mapping_vv",
       "title": "Operational checklist: model, software, and system verification and validation.",
       "items": [
         {
@@ -635,7 +642,6 @@ window.AEROSAFE_DATA = {
     {
       "key": "A16",
       "number": "A.16",
-      "label": "tab:item_mapping_deployment",
       "title": "Operational checklist: deployment, operation, fallback, and controlled change.",
       "items": [
         {
@@ -747,7 +753,6 @@ window.AEROSAFE_DATA = {
     {
       "key": "A17",
       "number": "A.17",
-      "label": "tab:item_mapping_safety_imvv",
       "title": "Operational checklist: safety argument, normative status, and IMVV.",
       "items": [
         {
@@ -1041,6 +1046,310 @@ window.AEROSAFE_DATA = {
         "case_observation": "The configured IV-01 to IV-06 rows define what must be reviewed; the execution rows record what was actually available, what failed, and who could close it.",
         "transferable_rule": "Predeclare the tuple before review, then preserve evidence, decisions, findings, links, residuals, and closure status as an auditable execution record.",
         "project_specific": "Evidence owners, independent team, finding severity, corrective action, waiver, and closure date/signature."
+      }
+    ]
+  },
+  "guided_use": {
+    "storage_key": "aerosafe-guided-record-v1",
+    "title": "Aerosafe user-completed qualification checklist",
+    "intro": "Complete the six records in order. Construction defines what must be reviewed; execution records what was actually reviewed; the conformity page preserves scope, evidence, findings, closure, links, and residuals without turning open items into a positive claim.",
+    "project_fields": [
+      {
+        "id": "record_id",
+        "label": "Record identifier",
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g., ASF-PROJ-001"
+      },
+      {
+        "id": "project_name",
+        "label": "Project / programme",
+        "type": "text",
+        "required": true,
+        "placeholder": "Project name"
+      },
+      {
+        "id": "system_item",
+        "label": "System or software item",
+        "type": "text",
+        "required": true,
+        "placeholder": "Item under assurance"
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "type": "text",
+        "required": false,
+        "placeholder": "Organisation or consortium"
+      },
+      {
+        "id": "baseline",
+        "label": "Applicable ECSS / contractual baseline",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Standards, contractual clauses, tailoring and compliance-matrix references"
+      },
+      {
+        "id": "review_plan",
+        "label": "Review plan and gates",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "SRR, PDR, CDR, TRR, QR, AR and project-defined reviews"
+      },
+      {
+        "id": "criticality",
+        "label": "Criticality rationale / SCAR reference",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Authoritative category input, failure propagation and compensating provisions"
+      },
+      {
+        "id": "ai_boundary",
+        "label": "AI/ML boundary and decision authority",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Inputs, outputs, interfaces, advisory/direct action authority"
+      },
+      {
+        "id": "odd",
+        "label": "Operational Design Domain (ODD)",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Modes, environments, assumptions, limits and exclusions"
+      },
+      {
+        "id": "hazard_refs",
+        "label": "Hazard and safety references",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Hazard log, SFMEA, safety requirements and claim identifiers"
+      },
+      {
+        "id": "prepared_by",
+        "label": "Prepared by",
+        "type": "text",
+        "required": true,
+        "placeholder": "Name / role"
+      },
+      {
+        "id": "record_date",
+        "label": "Record date",
+        "type": "date",
+        "required": true,
+        "placeholder": ""
+      }
+    ],
+    "steps": [
+      {
+        "id": "context",
+        "number": "1",
+        "title": "Establish project context and qualification boundary",
+        "user_action": "Record the applicable ECSS/contractual baseline, review plan, AI/ML boundary, ODD, hazards, criticality rationale, action authority, interfaces, and compensating provisions.",
+        "record": "Project and item identifiers; standards/tailoring references; review gates; SCAR/SFMEA or equivalent references; ODD; authority and interface description.",
+        "completion": "All mandatory context fields are completed and their configuration-controlled sources are identified before controls are tailored.",
+        "checks": [
+          {
+            "id": "context_sources",
+            "label": "The contractual and ECSS sources are identified and their normative status is clear."
+          },
+          {
+            "id": "context_boundary",
+            "label": "The AI/ML boundary, interfaces, ODD, hazards, and action authority are explicit."
+          },
+          {
+            "id": "context_control",
+            "label": "The context record has an owner, identifier, date, and controlled source references."
+          }
+        ]
+      },
+      {
+        "id": "scope",
+        "number": "2",
+        "title": "Select assurance areas and tailor controls",
+        "user_action": "Use Table 7 as the index. For every assurance area, record whether it is included or excluded; then decide the applicability of each mapped control in online Tables A.13–A.17.",
+        "record": "Area decision and rationale; selected control IDs; M/C/N.A. decision; substitution or non-applicability rationale; responsible owner.",
+        "completion": "Every Table 7 area has an explicit decision, every selected control has an applicability status, and exclusions/N.A. decisions have a recorded rationale.",
+        "checks": [
+          {
+            "id": "scope_table7",
+            "label": "All nine Table 7 assurance areas have been reviewed."
+          },
+          {
+            "id": "scope_rationale",
+            "label": "Excluded areas and N.A. controls have a justification and intended approval route."
+          },
+          {
+            "id": "scope_mapping",
+            "label": "The selected control IDs preserve the Table 7 to A.13–A.17 mapping."
+          }
+        ]
+      },
+      {
+        "id": "configure",
+        "number": "3",
+        "title": "Configure the checklist before judging evidence",
+        "user_action": "Instantiate the ordered ten-field tuple for every applicable control and baseline the construction record.",
+        "record": "Source/status, objective, inputs, owner, planned evidence, acceptance criterion, gate, closure authority, links, and residual-treatment rule.",
+        "completion": "Every applicable control has a confirmed owner, gate, closure authority, planned evidence reference, and tailoring rationale where needed; the construction record is frozen before execution.",
+        "checks": [
+          {
+            "id": "configure_tuple",
+            "label": "All ten operational fields are available for each applicable control."
+          },
+          {
+            "id": "configure_authority",
+            "label": "Evidence ownership and formal closure authority are separate where independence applies."
+          },
+          {
+            "id": "configure_baseline",
+            "label": "The configured checklist has been baselined before results are assessed."
+          }
+        ]
+      },
+      {
+        "id": "execute",
+        "number": "4",
+        "title": "Execute the checklist against controlled evidence",
+        "user_action": "Review or test the controlled baseline and record the actual result for each applicable control.",
+        "record": "Evidence references and configuration IDs; result; decision/finding/NCR/waiver; gate status; links; residuals; execution-complete confirmation.",
+        "completion": "Every applicable control has a result and traceable evidence or an explicit finding/blocker; missing evidence is not recorded as a pass.",
+        "checks": [
+          {
+            "id": "execute_baseline",
+            "label": "Evidence, tools, data, models, software, and target artefacts are configuration identified."
+          },
+          {
+            "id": "execute_findings",
+            "label": "Failures, blockers, deviations, and missing evidence are recorded as findings or decisions."
+          },
+          {
+            "id": "execute_traceability",
+            "label": "Results are linked to requirements, hazards, claims, configurations, and affected gates."
+          }
+        ]
+      },
+      {
+        "id": "closure",
+        "number": "5",
+        "title": "Record gate disposition and closure authority",
+        "user_action": "Consolidate results at the applicable review gate and record who accepts, rejects, waives, conditionally closes, or keeps each item open.",
+        "record": "Gate and decision; named authority; date; accepted configuration/ODD; open actions; waiver or conditional-acceptance references; closure notes.",
+        "completion": "The named authority has recorded the decision; evidence owners do not self-close independent findings; open items, conditions, and due gates remain visible.",
+        "checks": [
+          {
+            "id": "closure_authority",
+            "label": "The decision is attributed to the designated project/customer authority."
+          },
+          {
+            "id": "closure_open",
+            "label": "Open findings, waivers, conditions, owners, and due gates are retained."
+          },
+          {
+            "id": "closure_scope",
+            "label": "Acceptance is limited to an identified configuration, ODD, assumptions, and limitations."
+          }
+        ]
+      },
+      {
+        "id": "conformity",
+        "number": "6",
+        "title": "Issue the conformity record and maintain it after change",
+        "user_action": "Generate the final checklist-conformity page, review the complete record, and define the changes or anomalies that reopen affected controls.",
+        "record": "Project context; area decisions; item-level configuration and execution; summary counts; gate decision; open findings; residuals; change triggers.",
+        "completion": "The conformity page is generated without hiding incomplete or failed items, and the project records when the checklist must be reopened.",
+        "checks": [
+          {
+            "id": "conformity_review",
+            "label": "The generated page has been reviewed for completeness and internal consistency."
+          },
+          {
+            "id": "conformity_disclaimer",
+            "label": "The record is not presented as an ECSS certificate or automatic qualification approval."
+          },
+          {
+            "id": "conformity_change",
+            "label": "Material data, model, software, target, ODD, hazard, or operational changes trigger impact analysis."
+          }
+        ]
+      }
+    ],
+    "gate_fields": [
+      {
+        "id": "review_gate",
+        "label": "Review gate / decision point",
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g., QR / AR"
+      },
+      {
+        "id": "gate_decision",
+        "label": "Gate decision",
+        "type": "select",
+        "required": true,
+        "options": [
+          {
+            "value": "pending",
+            "label": "Pending"
+          },
+          {
+            "value": "accepted",
+            "label": "Accepted"
+          },
+          {
+            "value": "conditional",
+            "label": "Conditionally accepted"
+          },
+          {
+            "value": "rejected",
+            "label": "Rejected"
+          },
+          {
+            "value": "blocked",
+            "label": "Blocked"
+          }
+        ]
+      },
+      {
+        "id": "decision_authority",
+        "label": "Decision / closure authority",
+        "type": "text",
+        "required": true,
+        "placeholder": "Named role or body"
+      },
+      {
+        "id": "decision_date",
+        "label": "Decision date",
+        "type": "date",
+        "required": true,
+        "placeholder": ""
+      },
+      {
+        "id": "accepted_configuration",
+        "label": "Configuration / release baseline",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Release, model, data, software, tool and target identifiers"
+      },
+      {
+        "id": "accepted_odd",
+        "label": "Accepted ODD and operating limitations",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Authorised domain, modes, restrictions and exclusions"
+      },
+      {
+        "id": "decision_conditions",
+        "label": "Conditions, waivers and open actions",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Finding IDs, owners, due gates, waiver references and restrictions"
+      },
+      {
+        "id": "change_triggers",
+        "label": "Change / reopening triggers",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Changes or anomalies that require impact analysis and re-execution"
       }
     ]
   }

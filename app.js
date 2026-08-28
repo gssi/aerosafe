@@ -137,7 +137,7 @@
       container.innerHTML = '<div class="empty-state">No Table 7 areas match this search.</div>';
       return;
     }
-    container.innerHTML = `<table><thead><tr><th>Assurance area</th><th>Representative scope</th><th>Appendix table and item IDs</th><th>Activation / tailoring logic</th></tr></thead><tbody>${rows.map((row) => {
+    container.innerHTML = `<table><thead><tr><th>Assurance area</th><th>Representative scope</th><th>Companion table and item IDs</th><th>Activation / tailoring logic</th></tr></thead><tbody>${rows.map((row) => {
       const rowIndex = data.table7.indexOf(row);
       const selected = row.refs.some(ref => state.mappingKey === ref.key && expandItemSpec(ref.items).some(id => state.mappingItems.has(id)));
       const chips = row.refs.map(ref => `<button class="ref-chip" type="button" data-open-map="${escapeHtml(ref.key)}" data-item-spec="${escapeHtml(ref.items)}" title="Open ${escapeHtml(ref.table)} and highlight ${escapeHtml(ref.items)}">${escapeHtml(ref.table)} · ${escapeHtml(ref.items)}</button>`).join('');
@@ -156,7 +156,7 @@
   }
 
   function renderAppendixTabs() {
-    $('#appendix-tabs').innerHTML = data.appendix_tables.map(table => `<button class="appendix-tab${state.appendixKey === table.key ? ' active' : ''}" type="button" role="tab" aria-selected="${state.appendixKey === table.key}" data-appendix-key="${escapeHtml(table.key)}">${escapeHtml(table.number)} <span>(${table.items.length})</span></button>`).join('');
+    $('#appendix-tabs').innerHTML = data.appendix_tables.map(table => `<button id="table-${escapeHtml(table.key.toLowerCase())}" class="appendix-tab${state.appendixKey === table.key ? ' active' : ''}" type="button" role="tab" aria-selected="${state.appendixKey === table.key}" data-appendix-key="${escapeHtml(table.key)}">${escapeHtml(table.number)} <span>(${table.items.length})</span></button>`).join('');
   }
 
   function itemMatches(item) {
@@ -324,6 +324,7 @@
         state.highlightItem = null;
         renderTable7();
         renderAppendix();
+        history.replaceState(null, '', `#table-${state.appendixKey.toLowerCase()}`);
         return;
       }
       if (event.target.id === 'clear-appendix-selection') {
@@ -340,9 +341,23 @@
     });
   }
 
-  function openHashItem() {
-    const match = location.hash.match(/^#item-([A-Z]+-\d+)$/);
-    if (match) setTimeout(() => openItem(match[1]), 120);
+  function openHashTarget() {
+    const itemMatch = location.hash.match(/^#item-([A-Z]+-\d+)$/);
+    if (itemMatch) {
+      setTimeout(() => openItem(itemMatch[1]), 120);
+      return;
+    }
+    const tableMatch = location.hash.match(/^#table-(a1[3-7])$/i);
+    if (tableMatch) {
+      const key = tableMatch[1].toUpperCase();
+      if (getTable(key)) {
+        state.appendixKey = key;
+        clearMappingSelection({ rerender: false });
+        renderTable7();
+        renderAppendix();
+        setTimeout(() => $('#appendix').scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      }
+    }
   }
 
   renderHeader();
@@ -353,5 +368,5 @@
   renderTable7();
   renderAppendix();
   bindEvents();
-  openHashItem();
+  openHashTarget();
 })();
