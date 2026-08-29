@@ -2,7 +2,7 @@ window.AEROSAFE_DATA = {
   "metadata": {
     "framework": "Aerosafe",
     "paper_title": "Aerosafe: A Software Quality Assurance Framework for AI-Based Aerospace Systems in ECSS Lifecycles",
-    "version": "guided-use companion edition",
+    "version": "guided-use companion edition with first formative evaluation",
     "disclaimer": "Aerosafe is an operational assurance aid. Its conformity page records completion against the project-selected Aerosafe checklist; it is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
     "companion_url": "https://example.org/aerosafe-framework"
   },

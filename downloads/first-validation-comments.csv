@@ -1,0 +1,53 @@
+﻿Comment ID,Participant ID,Section,Linked items,Prompt,Comment
+C01,E1,Formal reviews,Q7,Missing elements in the proposed review phases,QR not present
+C02,E2,Formal reviews,Q7,Missing elements in the proposed review phases,"It is not clear which level is concerned for these reviews : system, subsystem, AI/ML constituent?"
+C03,E3,Formal reviews,Q7,Missing elements in the proposed review phases,"I would prefer to distinguish software reviews from HW or system reviews especially when we talk about CDR I would prefer to go deep. NOTE        The term SW­CDR can be used for clarity to denote CDRs that solely involve software products.
+The results relevant to the validation against the TS are checked at the CDR
+Reference ECSS-E-ST-40C Rev.1 (30 April 2025) 
+Section 5.3.4.3        Critical design review
+a.        After completion of the design of software items, coding and testing, integration and validation with respect to the technical specification, a critical design review (CDR) shall take place.
+But it is also true that you introduced the VVR (Verification and Validation Review) with the objective to ensure the validation, maybe better clarification of the objective of both reviews could help.
+
+Furthermore, I recommend maximum attention when talking about category A. 
+e.g. the ECSS ML Handbook (ECSS-E-HB-40-02A 15 November 2024 ) can be used for AI software development in  except Cat A criticality. 
+Today ML application in Cat A space application is discouraged but, for sure field can be explored.
+
+
+Cat A severity is assigned to sw if its fail to catastrophic consequences :  loss of life, permanent injury , loss of system , loss of a interfacing manned flight system, loss of lunch site facilities, sever detrimental environmental effects ( ECSS-Q-ST-40C Rev.1 - SAFETY)
+
+Maybe, for CAT A, Safety cage Architecture can be introduced as suggested by ECSS-E-HB-40-02A 15 November 2024."
+C04,E4,Formal reviews,Q7,Missing elements in the proposed review phases,It would be preferable to have a review or a key point session upfront where the foundation of the baseline requirements and specifications is established before directly entering the critical phase where the requirements need to be frozen.This would align well with the objectives of the System Requirements Review  and the Software Preliminary Design Review
+C05,E5,Formal reviews,Q7,Missing elements in the proposed review phases,Acceptance Review
+C06,E2,Configuration management,Q8,Missing elements in configuration management and traceability,"It is not clear which traceability is concerned, between which type of items: requirements, models, components, functions, data source, data operations, tests, … ?"
+C07,E3,Configuration management,Q8,Missing elements in configuration management and traceability,It could be useful to be more clear on mining of full traceability: from where to where being traceability
+C08,E1,Data management,Q9,"Additional considerations for bias, security, and privacy",I think data security is also applicable to the Category C
+C09,E2,Data management,Q9,"Additional considerations for bias, security, and privacy","I do not understand why assurance of data quality, security & privacy should not be mandatory for the system with criticality C? It is not an option!"
+C10,E3,Data management,Q9,"Additional considerations for bias, security, and privacy","Data security is linked to sensitivity aspects and in general it is not linked to SW criticality assignment.
+I would recommend to check the new issues SW ECSS (ECSS-Q-ST-80C Rev.2 30 April 2025 and ECSS-E-ST-40C Rev.1 30 April 2025) that introduce specifics activities and verification to ensure security. 
+e.g. of impact on dependability analisys introduced in new ECSS
+6.2.10	Handling of security sensitive software
+b.	The consequences for security of the malfunction of higher criticality components, and the consequences for safety and dependability of the malfunction of higher sensitivity components shall be analysed and any conflict resolved."
+C11,E2,Model learning,Q10-Q12,Missing elements in the learning-phase controls,Model explainability and bias/fairness audits should be required for criticality B as well.
+C12,E3,Model learning,Q10-Q12,Missing elements in the learning-phase controls,I would be more on extending verifications in Cat B (bias/fairness audits)
+C13,E4,Model learning,Q10-Q12,Missing elements in the learning-phase controls,Data Drift Monitoring: How will you detect and handle changes in data distribution over time?
+C14,E2,Model verification,Q13-Q15,Missing elements in the verification-phase controls,Adversarial robustness testing and stress testing should be mandatory for B-critical systems as well.
+C15,E3,Model verification,Q13-Q15,Missing elements in the verification-phase controls,"Again, to be noted that today ML application in Cat A space application is discouraged but, for sure field can be explored.
+ 
+I would be more conservative when we talk on cat B ensuring robustness and stress test"
+C16,E1,Model deployment,Q16-Q22,Missing elements in deployment and operation,Redundacy applicable to other criticalities is missing
+C17,E2,Model deployment,Q16-Q22,Missing elements in deployment and operation,"Model obsolescence is a risk for all systems, so an update plan is important whatever its criticality."
+C18,E3,Model deployment,Q16-Q22,Missing elements in deployment and operation,"Safety shall be ensured also in Cat B.
+
+It is crucial to distinguish Cat B with safety implication from Cat B having only dependability effect without safety implication. 
+
+In case of Sw cat B with safety implication ( major safety impacts) ,  all mitigation mechanisms shall be put in place. I suggest to extend redundancy and fallback mechanisms implemented for safety for Cat B  if analysis demonstrate safety implications."
+C19,E4,Model deployment,Q16-Q22,Missing elements in deployment and operation,"Differences between GPU-based development environments and real-target hardware (e.g., embedded systems) can introduce risks?"
+C20,E2,Safety / integration and traceability,Q23,Missing elements in lifecycle integration and traceability,"Model verification and system verification activities (tests, analyses, simulations, inspections, ...) are necessary to ensure that integration is correct and that all components of a system, including models, data, software, and hardware, work together consistently."
+C21,E3,Safety / integration and traceability,Q23,Missing elements in lifecycle integration and traceability,traceability should be better detailed
+C22,E4,Safety / integration and traceability,Q23,Missing elements in lifecycle integration and traceability,"traceability must extend to runtime decisions and model updates, not just static design-time artifacts"
+C23,E2,IMVV,Q24-Q28,Missing elements or scope concerns for IMVV,"The 3 last activities should not be mentioned in the IMVV section because it is not directly linked to formal independent checks: Pre-deployment verification (including testing for adversarial and unintended behavior), Post-deployment monitoring to detect drift and failures, Regulatory conformance checks.
+
+Regulatory conformance checks should be mandatory for all systems, whatever its criticality, where the regulatory requirements are applicable.
+
+General: in this questionnaire, the term “is sufficient to” should be avoided and replaced by “is necessary to“ or “contributes to”."
+C24,E3,IMVV,Q24-Q28,Missing elements or scope concerns for IMVV,Safety shall be ensured also in Cat B having safety implication ( major safety implication)

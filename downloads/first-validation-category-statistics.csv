@@ -1,0 +1,9 @@
+﻿Section,Items,Item count,Rating count,Mean,Sample SD,Median,IQR,Agreement 4-5 rate,Single-item category
+Formal reviews,Q7,1,6,4.0,0.8944,4.0,1.5,0.6667,True
+Configuration management,Q8,1,6,4.5,0.8367,5.0,0.75,0.8333,True
+Data management,Q9,1,6,4.3333,0.5164,4.0,0.75,1.0,True
+Model learning,Q10-Q12,3,18,4.2222,0.7321,4.0,1.0,0.8333,False
+Model verification,Q13-Q15,3,18,4.7778,0.4278,5.0,0.0,1.0,False
+Model deployment,Q16-Q22,7,42,4.4762,0.7404,5.0,1.0,0.8571,False
+Safety / integration and traceability,Q23,1,6,4.0,0.8944,4.0,1.5,0.6667,True
+IMVV,Q24-Q28,5,30,4.5333,0.7303,5.0,1.0,0.9333,False

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Static companion website for the Aerosafe software quality assurance framework, including a guided project workflow, a final conformity record, the IMVV example, Table 7, and online Tables A.13-A.17.">
+  <meta name="description" content="Static companion website for the Aerosafe software quality assurance framework, including guided project use, a conformity record, the IMVV example, Table 7, online Tables A.13-A.17, and descriptive results from the first formative practitioner evaluation.">
   <title>Aerosafe | Framework Companion</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,6 +21,7 @@
         <a href="#workflow">Workflow</a>
         <a href="#guided-use">Guided use</a>
         <a href="#imvv">IMVV example</a>
+        <a href="#validation">First evaluation</a>
         <a href="#table-7">Table 7</a>
         <a href="#appendix">Control library</a>
         <a href="#use">How to use</a>
@@ -38,6 +39,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#guided-use">Use the framework</a>
             <a class="button secondary" href="#workflow">Understand the workflow</a>
+            <a class="button secondary" href="#validation">See the first evaluation</a>
             <a class="button secondary" href="#table-7">Explore the mapping</a>
           </div>
           <p id="framework-disclaimer" class="disclaimer"></p>
@@ -182,6 +184,97 @@
       </div>
     </section>
 
+    <section id="validation" class="section validation-section">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">First formative evaluation</p>
+          <h2>What six aerospace practitioners reported about the earlier Aerosafe artefact</h2>
+          <p>The questionnaire data are presented here as descriptive, traceable evidence. Explore the participant profile, all 132 technical-item ratings, pooled lifecycle-area summaries, individual questions, and the explicit written comments that informed subsequent refinements.</p>
+        </div>
+
+        <aside id="validation-caveat" class="validation-caveat"></aside>
+        <div id="validation-kpis" class="validation-kpis" aria-label="First evaluation summary statistics"></div>
+
+        <div class="validation-overview-grid">
+          <article class="validation-panel">
+            <div class="validation-panel-heading">
+              <div><p class="mini-label">Sample composition</p><h3>Who participated</h3></div>
+              <span id="validation-period" class="validation-period"></span>
+            </div>
+            <div id="validation-profile"></div>
+          </article>
+
+          <article class="validation-panel">
+            <div class="validation-panel-heading">
+              <div><p class="mini-label">Five-point scale</p><h3>Distribution of all technical-item ratings</h3></div>
+              <span class="validation-panel-note">n = 132</span>
+            </div>
+            <div id="validation-distribution"></div>
+          </article>
+        </div>
+
+        <article class="validation-panel validation-panel-wide">
+          <div class="validation-panel-heading">
+            <div><p class="mini-label">Lifecycle areas</p><h3>Category-level descriptive results</h3></div>
+            <span class="validation-panel-note">Pooled item-participant responses</span>
+          </div>
+          <p class="validation-inline-note">Single-item categories are marked explicitly. Category means summarize the questionnaire structure; they are not validated latent scales.</p>
+          <div id="validation-category-chart" class="validation-category-chart"></div>
+        </article>
+
+        <div id="validation-insights" class="validation-insights" aria-label="Notable descriptive results"></div>
+
+        <article class="validation-panel validation-panel-wide">
+          <div class="validation-panel-heading validation-explorer-heading">
+            <div><p class="mini-label">Item-level explorer</p><h3>Inspect Q7-Q28 and every reviewer score</h3></div>
+            <div class="validation-download-inline"><a href="downloads/first-validation-item-statistics.csv" download>Download item statistics CSV</a></div>
+          </div>
+          <div class="validation-filter-row" aria-label="Item-level result filters">
+            <label class="search-field"><span>Search questions</span><input id="validation-item-search" type="search" placeholder="ID, topic, wording, or lifecycle area"></label>
+            <label class="select-field validation-light-select"><span>Area</span><select id="validation-item-section"><option value="all">All areas</option></select></label>
+            <label class="select-field validation-light-select"><span>Sort</span><select id="validation-item-sort"><option value="id">Question ID</option><option value="mean-desc">Mean: high to low</option><option value="mean-asc">Mean: low to high</option><option value="sd-desc">Variability: high to low</option><option value="agreement-desc">Agreement 4-5: high to low</option></select></label>
+          </div>
+          <div id="validation-item-summary" class="validation-result-summary" aria-live="polite"></div>
+          <p class="validation-table-hint">Scroll horizontally to inspect all six reviewer scores and the complete statistical columns.</p>
+          <div id="validation-item-table" class="table-shell validation-item-table-shell"></div>
+        </article>
+
+        <article class="validation-panel validation-panel-wide validation-feedback-panel">
+          <div class="validation-panel-heading">
+            <div><p class="mini-label">Qualitative evidence</p><h3>Explicit comments and resulting design refinements</h3></div>
+            <span class="validation-panel-note">24 written comments across eight prompts</span>
+          </div>
+          <p class="validation-inline-note">The refinement themes below are an author synthesis of explicit comments, not a formal thematic analysis. All anonymised comments remain available in the explorer.</p>
+          <div id="validation-themes" class="validation-theme-grid"></div>
+
+          <details class="validation-comments-explorer">
+            <summary>Explore all 24 anonymised comments</summary>
+            <div class="validation-comments-body">
+              <div class="validation-filter-row" aria-label="Comment filters">
+                <label class="search-field"><span>Search comments</span><input id="validation-comment-search" type="search" placeholder="Search comment text, participant, or linked question"></label>
+                <label class="select-field validation-light-select"><span>Area</span><select id="validation-comment-section"><option value="all">All areas</option></select></label>
+              </div>
+              <div id="validation-comment-summary" class="validation-result-summary" aria-live="polite"></div>
+              <div id="validation-comments" class="validation-comment-list"></div>
+            </div>
+          </details>
+        </article>
+
+        <div id="validation-method" class="validation-method-grid"></div>
+
+        <div class="validation-downloads">
+          <div><p class="mini-label">Reproducibility files</p><h3>Download the source and derived tables</h3><p>The website statistics are generated directly from the attached workbooks and cross-checked before publication.</p></div>
+          <div class="validation-download-links">
+            <a class="button secondary" href="downloads/AeroSafe_Questionnaire_Answers_Full.xlsx" download>Full answers workbook</a>
+            <a class="button secondary" href="downloads/AeroSafe_Questionnaire_Summary_Table.xlsx" download>Summary workbook</a>
+            <a class="button secondary" href="downloads/first-validation-category-statistics.csv" download>Category statistics CSV</a>
+            <a class="button secondary" href="downloads/first-validation-participant-profile.csv" download>Participant profile CSV</a>
+            <a class="button secondary" href="downloads/first-validation-comments.csv" download>Comments CSV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="table-7" class="section shell">
       <div class="section-heading">
         <p class="eyebrow">Table 7</p>
@@ -246,13 +339,15 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div><strong>Aerosafe companion</strong><p id="footer-version"></p></div>
-      <p>Static HTML, CSS, and JavaScript. The paper's Table 7, the online Tables A.13-A.17, the six guided phases, and the conformity record are generated from one canonical dataset.</p>
+      <p>Static HTML, CSS, and JavaScript. The framework artefacts are generated from the canonical framework dataset; the first-evaluation section is generated directly from the two questionnaire workbooks.</p>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
   <script src="data.js"></script>
+  <script src="validation-data.js"></script>
   <script src="app.js"></script>
+  <script src="validation.js"></script>
   <script src="guided.js"></script>
 </body>
 </html>
