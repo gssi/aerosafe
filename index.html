@@ -1,353 +1,311 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Static companion website for the Aerosafe software quality assurance framework, including guided project use, a conformity record, the IMVV example, Table 7, online Tables A.13-A.17, and descriptive results from the first formative practitioner evaluation.">
-  <title>Aerosafe | Framework Companion</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Static companion for Aerosafe: an interactive framework map, nine named checklist groups, 52 controls, separate construction and execution views, a transparent project recommender, an IMVV example, and evaluation evidence." name="description"/>
+<title>Aerosafe | Interactive Framework Map and Guided Use</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a aria-label="Aerosafe companion home" class="brand" href="#top">
+<span aria-hidden="true" class="brand-mark">A</span>
+<span><strong>Aerosafe</strong><small>Framework companion</small></span>
+</a>
+<button aria-controls="primary-nav" aria-expanded="false" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="primary-nav" id="primary-nav">
+<a href="#framework-map">Interactive map</a>
+<a href="#guided-use">Guided recommender</a>
+<a href="#catalogue">Checklist catalogue</a>
+<a href="#imvv-vertical">IMVV example</a>
+<a href="#analytical-evaluation">VQ1 application</a>
+<a href="#validation">First evaluation</a>
+<a href="#use">How to use</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="hero" id="top">
+<div class="hero-grid shell">
+<div class="hero-copy">
+<p class="eyebrow">Research-paper companion</p>
+<h1>Choose, configure, execute, and close the right assurance checks</h1>
+<p class="lede">Aerosafe organises 52 controls into nine clearly named checklist groups. Assurance planners configure traceability and acceptance before review; project users then record evidence, findings, decisions, closure, and residual limitations.</p>
+<div class="hero-actions">
+<a class="button primary" href="#framework-map">Explore the interactive map</a>
+<a class="button secondary" href="#guided-use">Start the guided recommender</a>
+<a class="button secondary" href="#catalogue">Browse checklist groups</a>
+</div>
+<p class="disclaimer" id="framework-disclaimer"></p>
+</div>
+<aside aria-label="Framework summary" class="hero-panel">
+<p class="panel-kicker">Two records, one controlled flow</p>
+<h2>The construction tuple</h2>
+<ol class="tuple-list" id="tuple-list"></ol>
+<div aria-label="Companion content statistics" class="stat-grid">
+<div><strong id="control-count">-</strong><span>item-level controls</span></div>
+<div><strong id="group-count">-</strong><span>named checklist groups</span></div>
+<div><strong>2</strong><span>audience-specific views</span></div>
+</div>
+</aside>
+</div>
+</section>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="Aerosafe companion home">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span><strong>Aerosafe</strong><small>Framework companion</small></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="#workflow">Workflow</a>
-        <a href="#guided-use">Guided use</a>
-        <a href="#imvv">IMVV example</a>
-        <a href="#validation">First evaluation</a>
-        <a href="#table-7">Table 7</a>
-        <a href="#appendix">Control library</a>
-        <a href="#use">How to use</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section id="top" class="hero">
-      <div class="hero-grid shell">
-        <div class="hero-copy">
-          <p class="eyebrow">Research-paper companion</p>
-          <h1>From AI-assurance intent to an auditable qualification record</h1>
-          <p class="lede">Aerosafe connects AMLAS reasoning to ECSS-oriented roles, review gates, configuration controls, findings, and closure decisions. This site shows how to construct and execute the checklist, guides a project user through all six framework phases, produces a final conformity record, and traces every Table&nbsp;7 area to its definitive online controls.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#guided-use">Use the framework</a>
-            <a class="button secondary" href="#workflow">Understand the workflow</a>
-            <a class="button secondary" href="#validation">See the first evaluation</a>
-            <a class="button secondary" href="#table-7">Explore the mapping</a>
-          </div>
-          <p id="framework-disclaimer" class="disclaimer"></p>
-        </div>
-        <aside class="hero-panel" aria-label="Framework summary">
-          <p class="panel-kicker">Synchronized with the manuscript</p>
-          <h2>The operational record</h2>
-          <ol id="tuple-list" class="tuple-list"></ol>
-          <div class="stat-grid" aria-label="Companion content statistics">
-            <div><strong id="control-count">-</strong><span>checklist controls</span></div>
-            <div><strong id="mapping-count">-</strong><span>Table 7 areas</span></div>
-            <div><strong id="appendix-count">-</strong><span>online control tables</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="workflow" class="section shell">
-      <div class="section-heading">
-        <p class="eyebrow">Framework workflow</p>
-        <h2>One controlled path from context to maintained assurance</h2>
-        <p>Checklist construction happens before evidence is judged. Checklist execution then records what was reviewed, what decision was made, who can close it, and what remains unresolved.</p>
-      </div>
-      <div id="workflow-steps" class="workflow" aria-label="Aerosafe workflow"></div>
-      <div class="split-records">
-        <article class="record-card construction">
-          <p class="card-index">Record 1</p>
-          <h3>Checklist construction / configuration</h3>
-          <p>Instantiate the applicable controls for the project. Predeclare objective, inputs, owner, acceptance criterion, gate, closure authority, links, and residual handling before looking at results.</p>
-          <a href="#imvv-construction">See the IMVV construction record</a>
-        </article>
-        <div class="record-arrow" aria-hidden="true">→</div>
-        <article class="record-card execution">
-          <p class="card-index">Record 2</p>
-          <h3>Checklist execution / use</h3>
-          <p>Apply the configured controls to a controlled baseline. Record evidence, decisions, findings, gate status, closure, traceability links, and residual limitations without converting missing evidence into a positive claim.</p>
-          <a href="#imvv-execution">See the IMVV execution record</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="guided-use" class="section guided-section">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Guided project mode</p>
-          <h2>Use Aerosafe and build the qualification record as you progress</h2>
-          <p>Complete the same six records shown in the paper's user checklist. The guided mode connects project context, Table 7 scope decisions, item-level construction, execution, gate closure, and the final checklist-conformity page.</p>
-        </div>
-
-        <aside class="privacy-note">
-          <strong>Fully static and local.</strong>
-          <span>Your entries are stored only in this browser using local storage. Nothing is sent to a server. Export the record as JSON or print the final page for controlled project storage.</span>
-        </aside>
-
-        <div id="guided-app" class="guided-app">
-          <div class="guided-app-header">
-            <div>
-              <p class="mini-label">Active project record</p>
-              <strong id="guided-record-name">Untitled record</strong>
-              <span id="guided-save-status" class="save-status" aria-live="polite">Not yet saved</span>
-            </div>
-            <div class="guided-header-actions">
-              <button id="guided-export-draft" class="button small secondary" type="button">Export draft</button>
-              <button id="guided-reset" class="button small danger-outline" type="button">Reset record</button>
-            </div>
-          </div>
-
-          <div class="guided-progress-wrap" aria-label="Guided workflow progress">
-            <div class="guided-progress-meta"><span id="guided-progress-label">Step 1 of 6</span><strong id="guided-progress-percent">0%</strong></div>
-            <div class="guided-progress"><span id="guided-progress-bar"></span></div>
-          </div>
-
-          <ol id="guided-stepper" class="guided-stepper" aria-label="Aerosafe guided steps"></ol>
-          <form id="guided-form" novalidate>
-            <div id="guided-panel" class="guided-panel"></div>
-            <div class="guided-navigation">
-              <button id="guided-back" class="button secondary" type="button">Back</button>
-              <div class="guided-nav-right">
-                <button id="guided-save" class="button secondary" type="button">Save record</button>
-                <button id="guided-next" class="button primary" type="button">Next step</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="conformity-report" class="section report-section" hidden>
-      <div class="shell">
-        <div class="report-toolbar no-print">
-          <div><p class="eyebrow">Generated output</p><h2>Aerosafe checklist-conformity record</h2></div>
-          <div class="report-actions">
-            <button id="report-back" class="button secondary" type="button">Return to guided mode</button>
-            <button id="report-export" class="button secondary" type="button">Export JSON</button>
-            <button id="report-print" class="button primary" type="button">Print / save PDF</button>
-          </div>
-        </div>
-        <div id="conformity-report-content" class="conformity-report-content"></div>
-      </div>
-    </section>
-
-    <section id="imvv" class="section section-tinted">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Single end-to-end example</p>
-          <h2>IMVV for AI-augmented spacecraft FDIR</h2>
-          <p>This is the paper's only complete qualification flow. It uses published detector evidence as a model-level baseline and an explicitly author-defined extension from detection to autonomous reconfiguration. The distinction prevents publication metrics from being relabelled as controlled qualification evidence.</p>
-        </div>
-
-        <div id="case-boundary" class="boundary-grid"></div>
-
-        <div class="flow-switcher" role="tablist" aria-label="IMVV flow records">
-          <button id="tab-construction" class="flow-tab active" type="button" role="tab" aria-selected="true" aria-controls="imvv-construction">1. Construction / configuration</button>
-          <button id="tab-execution" class="flow-tab" type="button" role="tab" aria-selected="false" aria-controls="imvv-execution">2. Execution / use</button>
-        </div>
-
-        <section id="imvv-construction" class="flow-panel active" role="tabpanel" aria-labelledby="tab-construction">
-          <div class="panel-heading">
-            <div><p class="eyebrow">Table 4 in the paper</p><h3>Configure IV-01 through IV-06 before judging evidence</h3></div>
-            <p>The checklist defines the independent scope and decision structure in advance.</p>
-          </div>
-          <div id="construction-table" class="table-shell"></div>
-        </section>
-
-        <section id="imvv-execution" class="flow-panel" role="tabpanel" aria-labelledby="tab-execution" hidden>
-          <div class="panel-heading">
-            <div><p class="eyebrow">Table 5 in the paper</p><h3>Apply the configured controls and retain open findings</h3></div>
-            <p>The analytical execution distinguishes available evidence from missing project records and formal closure.</p>
-          </div>
-          <div id="execution-table" class="table-shell"></div>
-        </section>
-
-        <div class="imvv-link-row">
-          <p><strong>Trace the source controls:</strong> all six IMVV items are defined in Table A.17.</p>
-          <button class="text-button" type="button" data-open-map="A17" data-item-spec="IV-01 to IV-06">Open IV-01-IV-06 in Table A.17 →</button>
-        </div>
-
-        <details class="generalization">
-          <summary>What this example generalizes—and what remains project-specific</summary>
-          <div id="generalization-table" class="table-shell compact"></div>
-        </details>
-      </div>
-    </section>
-
-    <section id="validation" class="section validation-section">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">First formative evaluation</p>
-          <h2>What six aerospace practitioners reported about the earlier Aerosafe artefact</h2>
-          <p>The questionnaire data are presented here as descriptive, traceable evidence. Explore the participant profile, all 132 technical-item ratings, pooled lifecycle-area summaries, individual questions, and the explicit written comments that informed subsequent refinements.</p>
-        </div>
-
-        <aside id="validation-caveat" class="validation-caveat"></aside>
-        <div id="validation-kpis" class="validation-kpis" aria-label="First evaluation summary statistics"></div>
-
-        <div class="validation-overview-grid">
-          <article class="validation-panel">
-            <div class="validation-panel-heading">
-              <div><p class="mini-label">Sample composition</p><h3>Who participated</h3></div>
-              <span id="validation-period" class="validation-period"></span>
-            </div>
-            <div id="validation-profile"></div>
-          </article>
-
-          <article class="validation-panel">
-            <div class="validation-panel-heading">
-              <div><p class="mini-label">Five-point scale</p><h3>Distribution of all technical-item ratings</h3></div>
-              <span class="validation-panel-note">n = 132</span>
-            </div>
-            <div id="validation-distribution"></div>
-          </article>
-        </div>
-
-        <article class="validation-panel validation-panel-wide">
-          <div class="validation-panel-heading">
-            <div><p class="mini-label">Lifecycle areas</p><h3>Category-level descriptive results</h3></div>
-            <span class="validation-panel-note">Pooled item-participant responses</span>
-          </div>
-          <p class="validation-inline-note">Single-item categories are marked explicitly. Category means summarize the questionnaire structure; they are not validated latent scales.</p>
-          <div id="validation-category-chart" class="validation-category-chart"></div>
-        </article>
-
-        <div id="validation-insights" class="validation-insights" aria-label="Notable descriptive results"></div>
-
-        <article class="validation-panel validation-panel-wide">
-          <div class="validation-panel-heading validation-explorer-heading">
-            <div><p class="mini-label">Item-level explorer</p><h3>Inspect Q7-Q28 and every reviewer score</h3></div>
-            <div class="validation-download-inline"><a href="downloads/first-validation-item-statistics.csv" download>Download item statistics CSV</a></div>
-          </div>
-          <div class="validation-filter-row" aria-label="Item-level result filters">
-            <label class="search-field"><span>Search questions</span><input id="validation-item-search" type="search" placeholder="ID, topic, wording, or lifecycle area"></label>
-            <label class="select-field validation-light-select"><span>Area</span><select id="validation-item-section"><option value="all">All areas</option></select></label>
-            <label class="select-field validation-light-select"><span>Sort</span><select id="validation-item-sort"><option value="id">Question ID</option><option value="mean-desc">Mean: high to low</option><option value="mean-asc">Mean: low to high</option><option value="sd-desc">Variability: high to low</option><option value="agreement-desc">Agreement 4-5: high to low</option></select></label>
-          </div>
-          <div id="validation-item-summary" class="validation-result-summary" aria-live="polite"></div>
-          <p class="validation-table-hint">Scroll horizontally to inspect all six reviewer scores and the complete statistical columns.</p>
-          <div id="validation-item-table" class="table-shell validation-item-table-shell"></div>
-        </article>
-
-        <article class="validation-panel validation-panel-wide validation-feedback-panel">
-          <div class="validation-panel-heading">
-            <div><p class="mini-label">Qualitative evidence</p><h3>Explicit comments and resulting design refinements</h3></div>
-            <span class="validation-panel-note">24 written comments across eight prompts</span>
-          </div>
-          <p class="validation-inline-note">The refinement themes below are an author synthesis of explicit comments, not a formal thematic analysis. All anonymised comments remain available in the explorer.</p>
-          <div id="validation-themes" class="validation-theme-grid"></div>
-
-          <details class="validation-comments-explorer">
-            <summary>Explore all 24 anonymised comments</summary>
-            <div class="validation-comments-body">
-              <div class="validation-filter-row" aria-label="Comment filters">
-                <label class="search-field"><span>Search comments</span><input id="validation-comment-search" type="search" placeholder="Search comment text, participant, or linked question"></label>
-                <label class="select-field validation-light-select"><span>Area</span><select id="validation-comment-section"><option value="all">All areas</option></select></label>
-              </div>
-              <div id="validation-comment-summary" class="validation-result-summary" aria-live="polite"></div>
-              <div id="validation-comments" class="validation-comment-list"></div>
-            </div>
-          </details>
-        </article>
-
-        <div id="validation-method" class="validation-method-grid"></div>
-
-        <div class="validation-downloads">
-          <div><p class="mini-label">Reproducibility files</p><h3>Download the source and derived tables</h3><p>The website statistics are generated directly from the attached workbooks and cross-checked before publication.</p></div>
-          <div class="validation-download-links">
-            <a class="button secondary" href="downloads/AeroSafe_Questionnaire_Answers_Full.xlsx" download>Full answers workbook</a>
-            <a class="button secondary" href="downloads/AeroSafe_Questionnaire_Summary_Table.xlsx" download>Summary workbook</a>
-            <a class="button secondary" href="downloads/first-validation-category-statistics.csv" download>Category statistics CSV</a>
-            <a class="button secondary" href="downloads/first-validation-participant-profile.csv" download>Participant profile CSV</a>
-            <a class="button secondary" href="downloads/first-validation-comments.csv" download>Comments CSV</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="table-7" class="section shell">
-      <div class="section-heading">
-        <p class="eyebrow">Table 7</p>
-        <h2>The index from assurance areas to definitive checklist items</h2>
-        <p>Each assurance area reports explicit online table and item references. Select a mapping to open and highlight its controls below.</p>
-      </div>
-      <div class="mapping-toolbar" aria-label="Table 7 mapping controls">
-        <label class="search-field"><span>Search Table 7</span><input id="mapping-search" type="search" placeholder="Try “traceability”, “IMVV”, or “deployment”"></label>
-        <button id="clear-mapping" class="button small secondary" type="button">Clear selection</button>
-      </div>
-      <div id="mapping-status" class="mapping-status" aria-live="polite"></div>
-      <div id="table7-container" class="table-shell mapping-table"></div>
-      <p class="table-caption"><strong>Table 7.</strong> Aerosafe checklist index mapping each assurance area to the definitive online control table and checklist item IDs. Companion Tables A.13-A.17 provide the complete ten-field item definitions.</p>
-    </section>
-
-    <section id="appendix" class="section section-dark">
-      <div class="shell">
-        <div class="section-heading light">
-          <p class="eyebrow">Online Tables A.13-A.17</p>
-          <h2>Explore the standardized operational control library</h2>
-          <p>Every table uses the same ordered tuple. The item identifier is carried inside <em>source/status</em>, preserving the exact ten-column schema.</p>
-        </div>
-
-        <div class="notation-bar" id="notation-bar"></div>
-
-        <div class="appendix-controls">
-          <div id="appendix-tabs" class="appendix-tabs" role="tablist" aria-label="Online control tables"></div>
-          <div class="filter-row">
-            <label class="search-field dark-field"><span>Search controls</span><input id="appendix-search" type="search" placeholder="ID, objective, evidence, owner, gate…"></label>
-            <label class="select-field"><span>Status</span><select id="status-filter"><option value="all">All statuses</option><option value="M all">M all</option><option value="M">M</option><option value="C">C</option><option value="N.A.">N.A.</option></select></label>
-            <button id="reset-appendix" class="button small ghost" type="button">Reset filters</button>
-          </div>
-        </div>
-
-        <div id="appendix-selection" class="selection-banner" hidden></div>
-        <div id="appendix-summary" class="appendix-summary" aria-live="polite"></div>
-        <div id="appendix-table" class="table-shell appendix-table-shell"></div>
-        <p class="scroll-hint">The table scrolls horizontally. Select an item ID to expand a readable ten-field record.</p>
-      </div>
-    </section>
-
-    <section id="use" class="section shell">
-      <div class="section-heading">
-        <p class="eyebrow">Practical use</p>
-        <h2>How to apply Aerosafe on a project</h2>
-      </div>
-      <div class="use-grid">
-        <article><span>01</span><h3>Start from the contract and system context</h3><p>Identify the applicable ECSS baseline, review plan, AI/ML boundary, ODD, hazards, criticality rationale, action authority, interfaces, and compensating provisions.</p></article>
-        <article><span>02</span><h3>Use Table 7 as the index to the online controls</h3><p>Record an include/exclude decision for every assurance area, then open the cited online controls. Tailor each item explicitly; do not infer applicability from category labels alone.</p></article>
-        <article><span>03</span><h3>Freeze the construction record</h3><p>Complete all ten fields and assign owners, gates, closure authority, links, and residual treatment before reviewing execution evidence.</p></article>
-        <article><span>04</span><h3>Execute against controlled baselines</h3><p>Use configuration-controlled data, models, software, tools, target artefacts, tests, and claims. Record results and findings with bidirectional traceability.</p></article>
-        <article><span>05</span><h3>Keep evidence ownership separate from closure</h3><p>The team producing evidence does not self-close independent findings. The designated project or customer authority closes, waives, rejects, or conditionally accepts.</p></article>
-        <article><span>06</span><h3>Maintain the record after change</h3><p>Reopen affected controls when the ODD, data, model, target, software, hazard assumptions, or operating context changes.</p></article>
-      </div>
-      <aside class="adoption-note">
-        <div><p class="eyebrow">Industrial integration</p><h3>Why ECSS-ready matters</h3></div>
-        <p>Expressing AI-specific assurance through familiar ECSS-oriented roles, gates, configuration controls, and decision records may reduce the translation burden for organisations that already use ECSS processes. This is a design-level adoption advantage, not evidence of automatic compliance, reduced cost, or qualification success.</p>
-      </aside>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div><strong>Aerosafe companion</strong><p id="footer-version"></p></div>
-      <p>Static HTML, CSS, and JavaScript. The framework artefacts are generated from the canonical framework dataset; the first-evaluation section is generated directly from the two questionnaire workbooks.</p>
-      <a href="#top">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="validation-data.js"></script>
-  <script src="app.js"></script>
-  <script src="validation.js"></script>
-  <script src="guided.js"></script>
+<section class="section framework-map-section" id="framework-map">
+<div class="shell">
+<div class="section-heading map-heading">
+<p class="eyebrow">Interactive framework map</p>
+<h2>Navigate from the process overview to the exact checklist and project record</h2>
+<p>The map combines the assurance decision flow of Figure 2 with the lifecycle phases and review gates of Figure 3. Select a node, follow its branches, open the relevant named checklist groups, or continue directly at the corresponding stage of the guided recommender.</p>
+</div>
+<aside class="map-scope-note">
+<strong>Navigation aid, not an automated assurance decision.</strong>
+<span>The visual explains the framework and preserves the source branch labels. Project criticality, applicability, review names, evidence sufficiency, and closure remain subject to documented tailoring and the designated authority.</span>
+</aside>
+<div class="interactive-map-shell">
+<div class="map-shell-header">
+<div aria-label="Interactive map view" class="map-mode-tabs" id="framework-map-modes" role="tablist"></div>
+<div aria-label="Diagram sources" class="map-source-links">
+<a download="" href="downloads/Checklist_amlas_ecss-Pagina-8.json">Figure 2 JSON</a>
+<a download="" href="downloads/figure3-lifecycle.tikz.tex">Figure 3 TikZ</a>
+</div>
+</div>
+<div aria-live="polite" class="map-mode-intro" id="framework-map-mode-intro"></div>
+<div class="map-workbench">
+<div class="map-canvas-card">
+<div aria-label="Map controls" class="map-toolbar">
+<div class="map-tour-controls">
+<button id="framework-map-prev" title="Previous step" type="button">← Previous</button>
+<button aria-pressed="false" id="framework-map-play" type="button">Play guided tour</button>
+<button id="framework-map-next" title="Next step" type="button">Next →</button>
+</div>
+<p aria-live="polite" class="map-status" id="framework-map-status"></p>
+<div class="map-zoom-controls">
+<button aria-label="Zoom out" id="framework-map-zoom-out" title="Zoom out" type="button">−</button>
+<button id="framework-map-fit" title="Fit complete map" type="button">Fit</button>
+<button aria-label="Zoom in" id="framework-map-zoom-in" title="Zoom in" type="button">+</button>
+</div>
+</div>
+<div aria-label="Interactive Aerosafe process map. Use left and right arrows to move through the guided path; plus and minus to zoom; zero to fit." class="map-viewport" id="framework-map-viewport" tabindex="0">
+<svg id="framework-map-svg" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"></svg>
+<div class="map-gesture-hint"><span>Click a node</span><span>Drag to pan</span><span>Ctrl/⌘ + wheel to zoom</span><span>Double-click background to fit</span></div>
+</div>
+<ul aria-label="Map legend" class="map-legend" id="framework-map-legend"></ul>
+</div>
+<aside aria-label="Selected framework step details" aria-live="polite" class="map-detail-panel" id="framework-map-detail" tabindex="-1"></aside>
+</div>
+<div class="map-tour-wrapper">
+<div class="map-tour-label"><span>Guided path</span><small>Select a step or use Previous / Next</small></div>
+<div aria-label="Guided map path" class="map-tour-rail" id="framework-map-tour"></div>
+</div>
+<details class="map-text-alternative">
+<summary>Read the current map as an ordered text sequence</summary>
+<div id="framework-map-text-alternative"></div>
+</details>
+</div>
+</div>
+</section>
+<section class="section shell" id="workflow">
+<div class="section-heading">
+<p class="eyebrow">Framework workflow</p>
+<h2>Six project stages, not six checklist items</h2>
+<p>The stages explain how a project moves through the 52 controls. They do not replace the item-level checklists.</p>
+</div>
+<div aria-label="Aerosafe project workflow" class="workflow" id="workflow-steps"></div>
+<div class="audience-grid">
+<article class="audience-card audience-planner">
+<p class="card-index">Audience 1</p>
+<h3>Assurance planner / configurator</h3>
+<p>Chooses groups, tailors controls, fixes evidence and criteria, assigns owners and gates, and defines traceability and closure before results are judged.</p>
+<a href="#catalogue">Open the construction view</a>
+</article>
+<article class="audience-card audience-user">
+<p class="card-index">Audience 2</p>
+<h3>Reviewer / checklist user</h3>
+<p>Records the evidence actually reviewed, result, finding or waiver, formal disposition, traceability links, and residual limitations.</p>
+<a href="#catalogue">Open the execution view</a>
+</article>
+</div>
+</section>
+<section class="section guided-section" id="guided-use">
+<div class="shell">
+<div class="section-heading">
+<p class="eyebrow">Guided project mode</p>
+<h2>Turn “How to apply Aerosafe” into a transparent recommendation and project record</h2>
+<p>Answer seven project-context questions. The deterministic recommender explains which checklist groups are baseline or context-triggered. Review or override every suggestion, then configure and execute the selected controls.</p>
+</div>
+<aside class="privacy-note"><strong>Fully static and local.</strong><span>Your entries remain in this browser. Export JSON or print the final conformity page for controlled storage.</span></aside>
+<div class="guided-app" id="guided-app">
+<div class="guided-app-header">
+<div><p class="mini-label">Active project record</p><strong id="guided-record-name">Untitled record</strong><span aria-live="polite" class="save-status" id="guided-save-status">Not yet saved</span></div>
+<div class="guided-header-actions"><button class="button small secondary" id="guided-export-draft" type="button">Export draft</button><button class="button small danger-outline" id="guided-reset" type="button">Reset record</button></div>
+</div>
+<div aria-label="Guided workflow progress" class="guided-progress-wrap">
+<div class="guided-progress-meta"><span id="guided-progress-label">Stage 1 of 6</span><strong id="guided-progress-percent">0%</strong></div>
+<div class="guided-progress"><span id="guided-progress-bar"></span></div>
+</div>
+<ol aria-label="Aerosafe guided stages" class="guided-stepper" id="guided-stepper"></ol>
+<form id="guided-form" novalidate="">
+<div class="guided-panel" id="guided-panel"></div>
+<div class="guided-navigation"><button class="button secondary" id="guided-back" type="button">Back</button><div class="guided-nav-right"><button class="button secondary" id="guided-save" type="button">Save record</button><button class="button primary" id="guided-next" type="button">Next stage</button></div></div>
+</form>
+</div>
+</div>
+</section>
+<section class="section report-section" hidden="" id="conformity-report">
+<div class="shell">
+<div class="report-toolbar no-print"><div><p class="eyebrow">Generated output</p><h2>Aerosafe checklist-conformity record</h2></div><div class="report-actions"><button class="button secondary" id="report-back" type="button">Return to guided mode</button><button class="button secondary" id="report-export" type="button">Export JSON</button><button class="button primary" id="report-print" type="button">Print / save PDF</button></div></div>
+<div class="conformity-report-content" id="conformity-report-content"></div>
+</div>
+</section>
+<section class="section section-dark catalogue-section" id="catalogue">
+<div class="shell">
+<div class="section-heading light">
+<p class="eyebrow">Checklist catalogue</p>
+<h2>Nine named groups covering all 52 controls</h2>
+<p>The overview is for scoping and navigation. Select a group, then switch between the planner-oriented construction view and the reviewer-oriented execution view. Internal storage table numbers are intentionally hidden.</p>
+</div>
+<div aria-label="Named checklist groups" class="group-catalogue" id="group-catalogue"></div>
+<div class="catalogue-workbench">
+<div class="catalogue-toolbar">
+<div><p class="mini-label">Selected group</p><h3 id="selected-group-title">Checklist group</h3><p id="selected-group-summary"></p></div>
+<label class="search-field dark-field"><span>Search within group</span><input id="control-search" placeholder="Control ID, objective, evidence, traceability..." type="search"/></label>
+</div>
+<div aria-label="Checklist representation" class="view-switcher" role="tablist">
+<button aria-selected="true" class="view-tab active" id="view-construction" role="tab" type="button">Construction &amp; traceability</button>
+<button aria-selected="false" class="view-tab" id="view-execution" role="tab" type="button">Execution checklist</button>
+</div>
+<aside class="traceability-note"><strong>What “traceability links” means.</strong><span>Relations among hazards, requirements, ODD assumptions, configurations, datasets, models, tests, claims, findings, waivers, and gate decisions—not web hyperlinks.</span></aside>
+<div class="control-view" id="control-view"></div>
+</div>
+</div>
+</section>
+<section class="section section-tinted" id="imvv-vertical">
+<div class="shell">
+<div class="section-heading">
+<p class="eyebrow">Detailed reusable example</p>
+<h2>Independent Model Verification and Validation (IV-01–IV-06)</h2>
+<p>This is the paper's detailed generic excerpt: six of the 52 controls. It is not tied to the later spacecraft-FDIR evaluation case.</p>
+</div>
+<div aria-label="Generic IMVV records" class="flow-switcher" role="tablist">
+<button aria-selected="true" class="flow-tab active" id="tab-imvv-construction" role="tab" type="button">1. Construction &amp; traceability</button>
+<button aria-selected="false" class="flow-tab" id="tab-imvv-execution" role="tab" type="button">2. User-completed execution</button>
+</div>
+<section class="flow-panel active" id="imvv-generic-construction" role="tabpanel"><div class="panel-heading"><div><p class="eyebrow">Generic form</p><h3>Configure the independent challenge before evidence review</h3></div><p>Scope, evidence, criteria, responsibility, gates, authority, traceability, and residual handling are predeclared.</p></div><div id="imvv-construction-view"></div></section>
+<section class="flow-panel" hidden="" id="imvv-generic-execution" role="tabpanel"><div class="panel-heading"><div><p class="eyebrow">Fillable form</p><h3>Record evidence, findings, disposition, closure, and residuals</h3></div><p>Use the guided mode for a persistent project record across all selected groups.</p></div><div id="imvv-execution-view"></div></section>
+</div>
+</section>
+<section class="section shell" id="analytical-evaluation">
+<div class="section-heading">
+<p class="eyebrow">Evaluation question VQ1</p>
+<h2>Can the generic IMVV example be instantiated without hiding evidence or authority gaps?</h2>
+<p>The bounded spacecraft-FDIR application keeps published detector evidence separate from an author-defined autonomous-reconfiguration extension. It tests structural instantiability and transparency, not qualification success.</p>
+</div>
+<div class="boundary-grid evaluation-boundary" id="case-boundary"></div>
+<article class="vq-answer"><p class="mini-label">What the case evaluates</p><h3>One consolidated construction-and-execution record</h3><p>Because the generic forms are already shown above, the case records each IV item once: instantiated focus, evidence reviewed, outcome or finding, and closure/residual status.</p></article>
+<div class="table-shell case-application" id="case-application"></div>
+<aside class="case-answer"><strong>VQ1 answer.</strong><span>The structure can be instantiated while preserving provenance, findings, and closure authority. The public evidence is insufficient for a positive qualification conclusion, so open gaps remain visible.</span></aside>
+</section>
+<section class="section validation-section" id="validation">
+<div class="shell">
+<div class="section-heading">
+<p class="eyebrow">First formative evaluation</p>
+<h2>What six aerospace practitioners reported about the earlier Aerosafe artefact</h2>
+<p>The questionnaire data are presented here as descriptive, traceable evidence. Explore the participant profile, all 132 technical-item ratings, pooled lifecycle-area summaries, individual questions, and the explicit written comments that informed subsequent refinements.</p>
+</div>
+<aside class="validation-caveat" id="validation-caveat"></aside>
+<div aria-label="First evaluation summary statistics" class="validation-kpis" id="validation-kpis"></div>
+<div class="validation-overview-grid">
+<article class="validation-panel">
+<div class="validation-panel-heading">
+<div><p class="mini-label">Sample composition</p><h3>Who participated</h3></div>
+<span class="validation-period" id="validation-period"></span>
+</div>
+<div id="validation-profile"></div>
+</article>
+<article class="validation-panel">
+<div class="validation-panel-heading">
+<div><p class="mini-label">Five-point scale</p><h3>Distribution of all technical-item ratings</h3></div>
+<span class="validation-panel-note">n = 132</span>
+</div>
+<div id="validation-distribution"></div>
+</article>
+</div>
+<article class="validation-panel validation-panel-wide">
+<div class="validation-panel-heading">
+<div><p class="mini-label">Lifecycle areas</p><h3>Category-level descriptive results</h3></div>
+<span class="validation-panel-note">Pooled item-participant responses</span>
+</div>
+<p class="validation-inline-note">Single-item categories are marked explicitly. Category means summarize the questionnaire structure; they are not validated latent scales.</p>
+<div class="validation-category-chart" id="validation-category-chart"></div>
+</article>
+<div aria-label="Notable descriptive results" class="validation-insights" id="validation-insights"></div>
+<article class="validation-panel validation-panel-wide">
+<div class="validation-panel-heading validation-explorer-heading">
+<div><p class="mini-label">Item-level explorer</p><h3>Inspect Q7-Q28 and every reviewer score</h3></div>
+<div class="validation-download-inline"><a download="" href="downloads/first-validation-item-statistics.csv">Download item statistics CSV</a></div>
+</div>
+<div aria-label="Item-level result filters" class="validation-filter-row">
+<label class="search-field"><span>Search questions</span><input id="validation-item-search" placeholder="ID, topic, wording, or lifecycle area" type="search"/></label>
+<label class="select-field validation-light-select"><span>Area</span><select id="validation-item-section"><option value="all">All areas</option></select></label>
+<label class="select-field validation-light-select"><span>Sort</span><select id="validation-item-sort"><option value="id">Question ID</option><option value="mean-desc">Mean: high to low</option><option value="mean-asc">Mean: low to high</option><option value="sd-desc">Variability: high to low</option><option value="agreement-desc">Agreement 4-5: high to low</option></select></label>
+</div>
+<div aria-live="polite" class="validation-result-summary" id="validation-item-summary"></div>
+<p class="validation-table-hint">Scroll horizontally to inspect all six reviewer scores and the complete statistical columns.</p>
+<div class="table-shell validation-item-table-shell" id="validation-item-table"></div>
+</article>
+<article class="validation-panel validation-panel-wide validation-feedback-panel">
+<div class="validation-panel-heading">
+<div><p class="mini-label">Qualitative evidence</p><h3>Explicit comments and resulting design refinements</h3></div>
+<span class="validation-panel-note">24 written comments across eight prompts</span>
+</div>
+<p class="validation-inline-note">The refinement themes below are an author synthesis of explicit comments, not a formal thematic analysis. All anonymised comments remain available in the explorer.</p>
+<div class="validation-theme-grid" id="validation-themes"></div>
+<details class="validation-comments-explorer">
+<summary>Explore all 24 anonymised comments</summary>
+<div class="validation-comments-body">
+<div aria-label="Comment filters" class="validation-filter-row">
+<label class="search-field"><span>Search comments</span><input id="validation-comment-search" placeholder="Search comment text, participant, or linked question" type="search"/></label>
+<label class="select-field validation-light-select"><span>Area</span><select id="validation-comment-section"><option value="all">All areas</option></select></label>
+</div>
+<div aria-live="polite" class="validation-result-summary" id="validation-comment-summary"></div>
+<div class="validation-comment-list" id="validation-comments"></div>
+</div>
+</details>
+</article>
+<div class="validation-method-grid" id="validation-method"></div>
+<div class="validation-downloads">
+<div><p class="mini-label">Reproducibility files</p><h3>Download the source and derived tables</h3><p>The website statistics are generated directly from the attached workbooks and cross-checked before publication.</p></div>
+<div class="validation-download-links">
+<a class="button secondary" download="" href="downloads/AeroSafe_Questionnaire_Answers_Full.xlsx">Full answers workbook</a>
+<a class="button secondary" download="" href="downloads/AeroSafe_Questionnaire_Summary_Table.xlsx">Summary workbook</a>
+<a class="button secondary" download="" href="downloads/first-validation-category-statistics.csv">Category statistics CSV</a>
+<a class="button secondary" download="" href="downloads/first-validation-participant-profile.csv">Participant profile CSV</a>
+<a class="button secondary" download="" href="downloads/first-validation-comments.csv">Comments CSV</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section shell" id="use">
+<div class="section-heading"><p class="eyebrow">How to use this companion</p><h2>Choose the view that matches your task</h2><p>The catalogue explains coverage; the guided mode creates a project record; the IMVV example shows the reusable paper excerpt; the VQ1 case demonstrates analytical instantiation; the first-evaluation section reports the formative practitioner data.</p></div>
+<div class="use-grid">
+<article><span>01</span><h3>Navigate the framework</h3><p>Follow Figure 2 decisions or Figure 3 lifecycle gates, inspect each step, and jump to the relevant checklist group or guided stage.</p><a href="#framework-map">Open interactive map</a></article>
+<article><span>02</span><h3>Understand a control</h3><p>Browse by clear group name and compare construction information with the execution record expected at a gate.</p><a href="#catalogue">Browse catalogue</a></article>
+<article><span>03</span><h3>Reuse the paper example</h3><p>Apply the generic IV construction and execution forms to another project rather than copying the analytical example.</p><a href="#imvv-vertical">Open IMVV example</a></article>
+<article><span>04</span><h3>Inspect evidence</h3><p>Review the analytical VQ1 boundary and the separate first formative questionnaire without conflating their claims.</p><a href="#analytical-evaluation">Open evaluation</a></article>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="shell footer-grid"><div><strong>Aerosafe companion</strong><p id="footer-version"></p></div><p>Static HTML, CSS, and JavaScript. Paper tables, catalogue views, guided logic, and evaluation data are generated from version-controlled source datasets.</p><a href="#top">Back to top ↑</a></div></footer>
+<script src="data.js"></script>
+<script src="validation-data.js"></script>
+<script src="app.js"></script>
+<script src="validation.js"></script>
+<script src="guided.js"></script>
+<script src="framework-map-data.js"></script>
+<script src="framework-map.js"></script>
 </body>
 </html>

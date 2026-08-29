@@ -2,9 +2,9 @@ window.AEROSAFE_DATA = {
   "metadata": {
     "framework": "Aerosafe",
     "paper_title": "Aerosafe: A Software Quality Assurance Framework for AI-Based Aerospace Systems in ECSS Lifecycles",
-    "version": "guided-use companion edition with first formative evaluation",
-    "disclaimer": "Aerosafe is an operational assurance aid. Its conformity page records completion against the project-selected Aerosafe checklist; it is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
-    "companion_url": "https://example.org/aerosafe-framework"
+    "version": "interactive-map, checklist-catalogue, guided-recommender, and first-evaluation edition",
+    "disclaimer": "Aerosafe is an operational assurance aid. The catalogue contains 52 controls in nine named checklist groups. The guided recommender proposes groups for project review, but every recommendation requires project tailoring and authority confirmation. The final record is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
+    "companion_url": "https://gssi.github.io/aerosafe/"
   },
   "schema": [
     "source/status",
@@ -28,32 +28,32 @@ window.AEROSAFE_DATA = {
     {
       "step": "1",
       "title": "Establish project context",
-      "detail": "Freeze the contractual ECSS baseline, review plan, criticality input, AI/ML boundary, ODD, hazards, authority, and compensating provisions."
+      "detail": "Freeze the contractual baseline, review plan, criticality input, AI/ML boundary, ODD, hazards, authority, and compensating provisions."
     },
     {
       "step": "2",
-      "title": "Construct the checklist",
-      "detail": "Select the relevant items and instantiate the ten-field tuple before evidence is judged."
+      "title": "Recommend and tailor checklist groups",
+      "detail": "Use the guided questions to obtain a transparent recommendation, then include, exclude, or defer each named group with a rationale."
     },
     {
       "step": "3",
-      "title": "Baseline inputs and evidence",
-      "detail": "Configuration-control data, model, software, tools, target artefacts, claims, and acceptance criteria."
+      "title": "Construct the checklist",
+      "detail": "Instantiate the construction and traceability record for every applicable item before evidence is judged."
     },
     {
       "step": "4",
-      "title": "Execute at gates",
-      "detail": "Review or test the controlled baseline; record results, decisions, findings, and traceability links."
+      "title": "Execute the checklist",
+      "detail": "Review the controlled baseline and record evidence, results, findings, traceability links, and residual limitations."
     },
     {
       "step": "5",
       "title": "Close or constrain",
-      "detail": "The named authority closes, waives, rejects, or conditionally accepts; the evidence owner cannot self-close independent findings."
+      "detail": "The named authority closes, waives, rejects, or conditionally accepts; evidence ownership does not confer closure authority."
     },
     {
       "step": "6",
-      "title": "Maintain and reopen",
-      "detail": "Changes, anomalies, invalidated assumptions, or ODD updates trigger impact analysis and reopen affected evidence."
+      "title": "Issue and maintain the record",
+      "detail": "Generate the checklist-conformity record and reopen affected controls after material changes, anomalies, or invalidated assumptions."
     }
   ],
   "table7": [
@@ -68,7 +68,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Review names and phasing follow the contractual plan; VVR and ORR are used only when project-defined.",
-      "id": "governance"
+      "id": "governance",
+      "code": "SC/FR",
+      "group_name": "Scope, Review, and Planning Checklists",
+      "item_spec": "SC-01; FR-01 to FR-06",
+      "item_count": 7,
+      "purpose": "Define the AI/ML assurance boundary and control the entry, evidence, action, and closure conditions of project reviews.",
+      "planner_audience": "System safety, PA/QA, systems engineering, and review planning roles.",
+      "user_audience": "Review chairs, evidence owners, assessors, and project/customer decision authorities.",
+      "lifecycle": "SRR through AR; project-defined reviews only where contractually adopted."
     },
     {
       "area": "Configuration management and traceability",
@@ -81,7 +89,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Baseline and lifecycle traceability are minimum controls; runtime logging is conditional on architecture, resources, and purpose.",
-      "id": "configuration-traceability"
+      "id": "configuration-traceability",
+      "code": "CM/TR",
+      "group_name": "Configuration and Traceability Checklists",
+      "item_spec": "CM-01 to CM-03; TR-01 to TR-02",
+      "item_count": 5,
+      "purpose": "Control datasets, models, code, tools, releases, changes, and bidirectional assurance links.",
+      "planner_audience": "Configuration management, PA/QA, systems/software engineering, and data/ML leads.",
+      "user_audience": "Configuration controllers, reviewers, auditors, and release authorities.",
+      "lifecycle": "Cross-cutting from initial baselines through release and change."
     },
     {
       "area": "Data assurance",
@@ -94,7 +110,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Integrity, provenance, and evidence fitness form the baseline; privacy and fairness depend on data, affected strata, and obligations.",
-      "id": "data-assurance"
+      "id": "data-assurance",
+      "code": "DM",
+      "group_name": "Data Assurance Checklists",
+      "item_spec": "DM-01 to DM-09",
+      "item_count": 9,
+      "purpose": "Establish data requirements, provenance, quality, partition independence, ODD coverage, integrity, and context-dependent privacy or disparity controls.",
+      "planner_audience": "Data owners, domain experts, safety, security/privacy, and V&V planners.",
+      "user_audience": "Data reviewers, ML engineers, independent assessors, and gate authorities.",
+      "lifecycle": "Data specification and acquisition through model acceptance and change."
     },
     {
       "area": "Model learning",
@@ -107,7 +131,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Core reproducibility and selection records are minimum; explainability is conditional on the claim, user, model, and method validity.",
-      "id": "model-learning"
+      "id": "model-learning",
+      "code": "ML",
+      "group_name": "Model Learning Checklists",
+      "item_spec": "ML-01 to ML-04",
+      "item_count": 4,
+      "purpose": "Make training, candidate comparison, selection, mismatch analysis, and assurance-relevant explainability reproducible and reviewable.",
+      "planner_audience": "ML engineering, data engineering, domain experts, safety, and V&V planners.",
+      "user_audience": "ML reviewers, V&V assessors, configuration controllers, and selection authorities.",
+      "lifecycle": "Model development and selection before verification readiness."
     },
     {
       "area": "Model verification and validation",
@@ -120,7 +152,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Requirements-linked V&V is minimum for claimed properties; formal and adversarial techniques are conditional on a property or threat model.",
-      "id": "model-vv"
+      "id": "model-vv",
+      "code": "MV",
+      "group_name": "Model Verification and Validation Checklists",
+      "item_spec": "MV-01 to MV-07",
+      "item_count": 7,
+      "purpose": "Predeclare model-level criteria and assess independent data, scenarios, robustness, uncertainty, OOD behaviour, and intended-use adequacy.",
+      "planner_audience": "Safety, model V&V, statistics, domain, and independent-assurance planners.",
+      "user_audience": "Model V&V teams, independent assessors, review boards, and acceptance authorities.",
+      "lifecycle": "Requirements and test planning through QR/VVR evidence review."
     },
     {
       "area": "Software and system V&V",
@@ -133,7 +173,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Software evidence is required for deployed implementations; integrated system evidence is required before operational acceptance.",
-      "id": "software-system-vv"
+      "id": "software-system-vv",
+      "code": "SV/SY",
+      "group_name": "Software and System V&V Checklists",
+      "item_spec": "SV-01; SY-01",
+      "item_count": 2,
+      "purpose": "Separate model evidence from implementation, target, interface, integrated-system, hazard-control, and fallback evidence.",
+      "planner_audience": "Software V&V, system V&V, safety, integration, and target-platform leads.",
+      "user_audience": "Software/system testers, integration reviewers, safety assessors, and gate authorities.",
+      "lifecycle": "Implementation and integration readiness through system acceptance."
     },
     {
       "area": "Deployment, operation, fallback, and change",
@@ -146,7 +194,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Target/release controls apply when deployed; monitoring, fallback, and safety cages depend on observability, architecture, mission, and hazards.",
-      "id": "deployment-change"
+      "id": "deployment-change",
+      "code": "DP",
+      "group_name": "Deployment, Operations, and Change Checklists",
+      "item_spec": "DP-01 to DP-08",
+      "item_count": 8,
+      "purpose": "Control conversion, target equivalence, release, rollback, monitoring, fallback, anomalies, maintenance, and requalification triggers.",
+      "planner_audience": "Software/ML deployment, operations, CM, safety, PA/QA, and maintenance planners.",
+      "user_audience": "Target V&V teams, operations/readiness reviewers, anomaly boards, and release authorities.",
+      "lifecycle": "Target integration, AR/ORR, operation, maintenance, and change."
     },
     {
       "area": "Safety argument and normative status",
@@ -159,7 +215,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "Argument depth follows safety reliance and project risk; source/status must never imply ECSS normativity without an applicable contractual clause.",
-      "id": "safety-normative"
+      "id": "safety-normative",
+      "code": "SA",
+      "group_name": "Safety Argument and Normative-Status Checklists",
+      "item_spec": "SA-01 to SA-04",
+      "item_count": 4,
+      "purpose": "Connect hazards to evidence and residual-risk decisions while distinguishing contractual requirements, guidance, and Aerosafe recommendations.",
+      "planner_audience": "System safety, PA/QA, assurance-case authors, and contractual/compliance roles.",
+      "user_audience": "Safety reviewers, assurance-case assessors, customers, and risk-acceptance authorities.",
+      "lifecycle": "Cross-cutting claim construction and review through release acceptance."
     },
     {
       "area": "Independent Model Verification and Validation (IMVV)",
@@ -172,7 +236,15 @@ window.AEROSAFE_DATA = {
         }
       ],
       "tailoring": "IMVV is risk-triggered; the independent team raises and verifies findings, while the designated project/customer authority closes them.",
-      "id": "imvv"
+      "id": "imvv",
+      "code": "IV",
+      "group_name": "Independent Model Verification and Validation Checklists",
+      "item_spec": "IV-01 to IV-06",
+      "item_count": 6,
+      "purpose": "Plan and execute risk-triggered independent challenge of AI-specific evidence, independence arrangements, findings, retest, waiver, and closure.",
+      "planner_audience": "PA/QA, customer/project authority, and the independent-assurance lead.",
+      "user_audience": "IMVV assessors, finding controllers, evidence owners, and designated closure authorities.",
+      "lifecycle": "Activation at planning gates; challenge and finding closure through QR/AR."
     }
   ],
   "appendix_tables": [
@@ -1047,12 +1119,56 @@ window.AEROSAFE_DATA = {
         "transferable_rule": "Predeclare the tuple before review, then preserve evidence, decisions, findings, links, residuals, and closure status as an auditable execution record.",
         "project_specific": "Evidence owners, independent team, finding severity, corrective action, waiver, and closure date/signature."
       }
+    ],
+    "application": [
+      {
+        "item": "IV-01",
+        "instantiated_focus": "Activate and plan an independent challenge of the detector-to-reconfiguration evidence chain; predeclare scope, methods, artefacts, escalation, and finding process.",
+        "evidence_reviewed": "The public detector papers, author-defined H-FDIR hazard groups, direct-reconfiguration authority extension, and preliminary G-FDIR-1 claim were reviewed.",
+        "outcome": "Analytical decision: activate IMVV because direct action authority and incomplete system evidence create a material independent-challenge need.",
+        "closure_residual": "Configured at SRR/PDR for the example; no real project/PA approval is available, so this is not an industrial closure. Residuals: Authoritative criticality, contractual scope, staffing, and budget remain unknown project inputs."
+      },
+      {
+        "item": "IV-02",
+        "instantiated_focus": "Establish organisational independence, access, conflict controls, and protected escalation.",
+        "evidence_reviewed": "The publications do not report reporting lines, contractual separation, conflict declarations, or protected escalation for an independent team.",
+        "outcome": "F-IMVV-01: organisational independence is not demonstrated for the reconstructed case.",
+        "closure_residual": "Open at PDR; only a project/customer authority could accept the arrangement. Residuals: Independence cannot be inferred from author affiliation or peer review."
+      },
+      {
+        "item": "IV-03",
+        "instantiated_focus": "Establish technical independence for controlled data, scripts, tools, model, target, reproduction, and sampling.",
+        "evidence_reviewed": "Published data/model descriptions and metrics are available, but no immutable acceptance-data baseline, independent scripts, target binary, or reproducibility package is available in the source evidence used here.",
+        "outcome": "F-IMVV-02: technical independence and independent reproduction are not established.",
+        "closure_residual": "Open at TRR/QR; the independent baseline and readiness criteria are unmet. Residuals: Model-level results remain publication evidence, not controlled acceptance evidence."
+      },
+      {
+        "item": "IV-04",
+        "instantiated_focus": "Separate evidence ownership, independent review, disposition, waiver, and formal closure authority.",
+        "evidence_reviewed": "Aerosafe defines separate evidence-owner, reviewer, disposition, waiver, and closure roles, but no source-project RACI, waiver path, or signed closure record is publicly available.",
+        "outcome": "F-IMVV-03: decisional independence and closure authority are not evidenced for the case.",
+        "closure_residual": "Open across QR/AR; no independent finding may be treated as closed by the evidence owner. Residuals: The analytical role model is a configuration proposal, not evidence that the source projects used it."
+      },
+      {
+        "item": "IV-05",
+        "instantiated_focus": "Challenge requirements, ODD, data, model, target, FDIR integration, monitoring, and claim-evidence links.",
+        "evidence_reviewed": "The independent challenge can examine reported precision/recall and model limitations, but hazard-derived thresholds, partition lineage, target equivalence, FDIR arbitration, recovery sequencing, backup health, timing/non-interference, and post-action verification are not established for autonomous use.",
+        "outcome": "F-IMVV-04: model metrics are insufficient for the system claim. F-IMVV-05: autonomous-reconfiguration evidence is absent because the function is an analytical extension.",
+        "closure_residual": "QR/AR recommendation: do not close G-FDIR-1 for autonomous authority; restrict the claim to the evidence actually available. Residuals: Detection performance, recovery correctness, target behaviour, fallback, and monitoring remain distinct evidence obligations."
+      },
+      {
+        "item": "IV-06",
+        "instantiated_focus": "Control finding provenance, corrective action, independent retest/review, waiver, and authorised closure.",
+        "evidence_reviewed": "No project finding log, corrective-action evidence, independent retest, waiver, or signed QR/AR closure exists in the public record for this reconstructed flow.",
+        "outcome": "F-IMVV-01 to 05 remain open in the analytical record; no waiver or closure is asserted.",
+        "closure_residual": "The representative flow ends with QR/AR blocked for the autonomous claim; only a designated project/customer authority could later close or conditionally accept it. Residuals: The case illustrates evidence structuring and closure discipline; it does not demonstrate qualification success, ECSS compliance, or operational effectiveness."
+      }
     ]
   },
   "guided_use": {
-    "storage_key": "aerosafe-guided-record-v1",
-    "title": "Aerosafe user-completed qualification checklist",
-    "intro": "Complete the six records in order. Construction defines what must be reviewed; execution records what was actually reviewed; the conformity page preserves scope, evidence, findings, closure, links, and residuals without turning open items into a positive claim.",
+    "storage_key": "aerosafe-guided-record-v2",
+    "title": "Aerosafe transparent project recommender and checklist record",
+    "intro": "Answer the project-characteristic questions, review the deterministic group recommendations, record project tailoring decisions, then complete separate construction, execution, closure, and conformity records. Recommendations are advisory and never replace contractual tailoring, safety analysis, or authority approval.",
     "project_fields": [
       {
         "id": "record_id",
@@ -1165,22 +1281,22 @@ window.AEROSAFE_DATA = {
       {
         "id": "scope",
         "number": "2",
-        "title": "Select assurance areas and tailor controls",
-        "user_action": "Use Table 7 as the index. For every assurance area, record whether it is included or excluded; then decide the applicability of each mapped control in online Tables A.13–A.17.",
-        "record": "Area decision and rationale; selected control IDs; M/C/N.A. decision; substitution or non-applicability rationale; responsible owner.",
-        "completion": "Every Table 7 area has an explicit decision, every selected control has an applicability status, and exclusions/N.A. decisions have a recorded rationale.",
+        "title": "Obtain recommendations and tailor checklist groups",
+        "user_action": "Answer the project-characteristic questions, review the transparent group recommendations, and then record an include/exclude decision and rationale for each of the nine named checklist groups.",
+        "record": "Recommendation answers and reasons; group decision and rationale; selected item IDs; M/C/N.A. decisions; substitutions and approval route.",
+        "completion": "Every named checklist group has an explicit project decision. Recommended groups that are excluded, and all N.A. decisions, have a recorded rationale and intended approval route.",
         "checks": [
           {
-            "id": "scope_table7",
-            "label": "All nine Table 7 assurance areas have been reviewed."
+            "id": "scope_recommender",
+            "label": "The recommender questions have been answered and the generated reasons have been reviewed."
+          },
+          {
+            "id": "scope_groups",
+            "label": "All nine named checklist groups have an explicit include or exclude decision."
           },
           {
             "id": "scope_rationale",
-            "label": "Excluded areas and N.A. controls have a justification and intended approval route."
-          },
-          {
-            "id": "scope_mapping",
-            "label": "The selected control IDs preserve the Table 7 to A.13–A.17 mapping."
+            "label": "Departures from recommendations, exclusions, and N.A. controls have a rationale and approval route."
           }
         ]
       },
@@ -1188,13 +1304,13 @@ window.AEROSAFE_DATA = {
         "id": "configure",
         "number": "3",
         "title": "Configure the checklist before judging evidence",
-        "user_action": "Instantiate the ordered ten-field tuple for every applicable control and baseline the construction record.",
-        "record": "Source/status, objective, inputs, owner, planned evidence, acceptance criterion, gate, closure authority, links, and residual-treatment rule.",
+        "user_action": "Complete the construction and traceability view for every applicable control and baseline it before execution.",
+        "record": "Source/status, objective, inputs, owner, planned evidence, acceptance criterion, gate, closure authority, traceability links, and residual-treatment rule.",
         "completion": "Every applicable control has a confirmed owner, gate, closure authority, planned evidence reference, and tailoring rationale where needed; the construction record is frozen before execution.",
         "checks": [
           {
             "id": "configure_tuple",
-            "label": "All ten operational fields are available for each applicable control."
+            "label": "The construction and traceability fields are available for each applicable control."
           },
           {
             "id": "configure_authority",
@@ -1211,7 +1327,7 @@ window.AEROSAFE_DATA = {
         "number": "4",
         "title": "Execute the checklist against controlled evidence",
         "user_action": "Review or test the controlled baseline and record the actual result for each applicable control.",
-        "record": "Evidence references and configuration IDs; result; decision/finding/NCR/waiver; gate status; links; residuals; execution-complete confirmation.",
+        "record": "Evidence references and configuration IDs; result; decision/finding/NCR/waiver; gate status; traceability links; residuals; execution confirmation.",
         "completion": "Every applicable control has a result and traceable evidence or an explicit finding/blocker; missing evidence is not recorded as a pass.",
         "checks": [
           {
@@ -1255,7 +1371,7 @@ window.AEROSAFE_DATA = {
         "number": "6",
         "title": "Issue the conformity record and maintain it after change",
         "user_action": "Generate the final checklist-conformity page, review the complete record, and define the changes or anomalies that reopen affected controls.",
-        "record": "Project context; area decisions; item-level configuration and execution; summary counts; gate decision; open findings; residuals; change triggers.",
+        "record": "Project context; group decisions and recommendation record; item-level construction and execution; summary counts; gate decision; open findings; residuals; change triggers.",
         "completion": "The conformity page is generated without hiding incomplete or failed items, and the project records when the checklist must be reopened.",
         "checks": [
           {
@@ -1351,6 +1467,1298 @@ window.AEROSAFE_DATA = {
         "required": true,
         "placeholder": "Changes or anomalies that require impact analysis and re-execution"
       }
+    ],
+    "recommender": {
+      "title": "Checklist-group recommender",
+      "intro": "The recommender translates project characteristics into a transparent starting point. It does not replace contractual tailoring, safety analysis, or authority approval. Review every reason and override the suggestion when project evidence requires it.",
+      "questions": [
+        {
+          "id": "safety_relevant",
+          "label": "Does the AI/ML item contribute to a safety-relevant or mission-critical function?",
+          "help": "Include direct and indirect failure propagation, reliance on compensating provisions, and mission-level consequences.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "project_model_work",
+          "label": "Will the project train, fine-tune, select, or materially configure a learned model?",
+          "help": "Third-party or pretrained models still require selection and evidence review; answer No only when model development is completely outside project control.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "target_integration",
+          "label": "Will the model be converted, embedded, or integrated into executable software or target hardware?",
+          "help": "Consider preprocessing, converters, libraries, timing, memory, numerical behaviour, interfaces, and target equivalence.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "autonomous_authority",
+          "label": "Can an AI/ML output directly influence control, reconfiguration, recovery, or another consequential action?",
+          "help": "Direct authority, weak observability, or limited operator intervention generally increases system and independent-assurance needs.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "operation_change",
+          "label": "Will the item require operational monitoring, model/data updates, threshold changes, rollback, or maintenance after release?",
+          "help": "Monitoring need depends on observability and the safety argument; updates and anomalies trigger controlled impact analysis.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "security_privacy_disparity",
+          "label": "Are credible cyber, privacy, sensitive-data, or affected-group disparity concerns present?",
+          "help": "This activates context-specific controls; it does not make demographic fairness or adversarial testing universal.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        },
+        {
+          "id": "independence_need",
+          "label": "Do contract, criticality, novelty, uncertainty, customer expectations, or risk indicate a need for independent challenge?",
+          "help": "IMVV is risk-triggered and extends the existing independent-assurance function to AI-specific evidence.",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Select an answer"
+            },
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            },
+            {
+              "value": "unknown",
+              "label": "Not yet known"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "group_id": "governance",
+          "baseline": true,
+          "reason": "A project needs an explicit assurance boundary, review plan, and decision path before item-level tailoring."
+        },
+        {
+          "group_id": "configuration-traceability",
+          "baseline": true,
+          "reason": "Configuration control and bidirectional traceability are cross-cutting foundations for all evidence."
+        },
+        {
+          "group_id": "data-assurance",
+          "baseline": true,
+          "reason": "AI/ML behaviour depends on data provenance, fitness, coverage, quality, and controlled transformations.",
+          "reason_if": [
+            {
+              "question": "security_privacy_disparity",
+              "value": "yes",
+              "text": "The project also reports security, privacy, sensitive-data, or disparity concerns."
+            }
+          ]
+        },
+        {
+          "group_id": "model-learning",
+          "baseline": true,
+          "reason": "Model selection and learning evidence must be reviewable even when a pretrained model is reused.",
+          "reason_if": [
+            {
+              "question": "project_model_work",
+              "value": "yes",
+              "text": "The project will train, fine-tune, select, or materially configure a model."
+            }
+          ]
+        },
+        {
+          "group_id": "model-vv",
+          "baseline": true,
+          "reason": "Claims about learned behaviour require predeclared model-level verification and validation evidence."
+        },
+        {
+          "group_id": "software-system-vv",
+          "baseline": false,
+          "questions": [
+            "target_integration",
+            "autonomous_authority"
+          ],
+          "triggers": [
+            {
+              "question": "target_integration",
+              "value": "yes",
+              "text": "The model will be embedded or integrated into executable software/target hardware."
+            },
+            {
+              "question": "autonomous_authority",
+              "value": "yes",
+              "text": "The AI/ML output can directly influence consequential system action."
+            }
+          ],
+          "fallback": "Consider this group whenever model evidence must be distinguished from implementation or integrated-system evidence."
+        },
+        {
+          "group_id": "deployment-change",
+          "baseline": false,
+          "questions": [
+            "target_integration",
+            "operation_change"
+          ],
+          "triggers": [
+            {
+              "question": "target_integration",
+              "value": "yes",
+              "text": "Target conversion, release, or deployment evidence is required."
+            },
+            {
+              "question": "operation_change",
+              "value": "yes",
+              "text": "Operational monitoring, updates, rollback, anomalies, or maintenance are expected."
+            }
+          ],
+          "fallback": "Consider this group if any release, operational, maintenance, or change-control obligation exists."
+        },
+        {
+          "group_id": "safety-normative",
+          "baseline": false,
+          "questions": [
+            "safety_relevant",
+            "autonomous_authority"
+          ],
+          "triggers": [
+            {
+              "question": "safety_relevant",
+              "value": "yes",
+              "text": "The AI/ML item contributes to a safety-relevant or mission-critical function."
+            },
+            {
+              "question": "autonomous_authority",
+              "value": "yes",
+              "text": "Direct consequential action requires explicit claim, residual-risk, and authority reasoning."
+            }
+          ],
+          "fallback": "Consider this group when assurance claims, contractual status, or residual-risk decisions must be made explicit."
+        },
+        {
+          "group_id": "imvv",
+          "baseline": false,
+          "questions": [
+            "independence_need",
+            "autonomous_authority",
+            "safety_relevant"
+          ],
+          "triggers": [
+            {
+              "question": "independence_need",
+              "value": "yes",
+              "text": "Contract, criticality, novelty, uncertainty, customer expectation, or risk indicates independent challenge."
+            },
+            {
+              "question": "autonomous_authority",
+              "value": "yes",
+              "text": "Direct action authority increases the need for independent challenge of the evidence chain."
+            }
+          ],
+          "fallback": "Consider IMVV when project risk justifies organisational, technical, or decisional independence."
+        }
+      ]
+    }
+  },
+  "imvv_generic": {
+    "construction": [
+      {
+        "item": "IV-01",
+        "configure": "Decide whether AI-specific independent V&V is required and predeclare its scope, methods, artefacts, interfaces, deliverables, escalation, and finding process.",
+        "traceability": "Criticality, hazards, AI authority, novelty, uncertainty, compensating provisions, contract, and assurance plan -> SC-01, FR-01/02, SA-01, IV-02--06.",
+        "planned_acceptance": "Approved activation/non-activation rationale and feasible independent plan traceable to the assurance scope.",
+        "responsibility": "PA/project authority with IMVV lead; decide at SRR/PDR; project/PA authority closes.",
+        "residual_rule": "Record unresolved criticality, access limitations, resource constraints, and excluded evidence areas."
+      },
+      {
+        "item": "IV-02",
+        "configure": "Define organisational independence, including reporting, contractual separation, conflicts, access rights, and protected escalation.",
+        "traceability": "Organisation chart, contracts, reporting lines, conflict declarations, and access controls -> IV-01, IV-04, RACI/authority matrix.",
+        "planned_acceptance": "Reviewers are not accountable for the development decisions they challenge and have protected access and escalation.",
+        "responsibility": "PA/customer authority with IMVV management; approve at SRR/PDR; PA/customer authority closes.",
+        "residual_rule": "Disclose shared management, funding dependence, unavailable expertise, conflicts, and access restrictions."
+      },
+      {
+        "item": "IV-03",
+        "configure": "Define technical independence and how the team will reproduce, sample, or otherwise challenge controlled AI evidence.",
+        "traceability": "Datasets, scripts, tools, model/software/target artefacts, reproduction plan, and sampling strategy -> CM-01/02, MV-02, DP-01--03, IV-05.",
+        "planned_acceptance": "The independent team can challenge scoped evidence from controlled inputs without relying only on developer interpretation.",
+        "responsibility": "IMVV lead with independent CM/QA; review at TRR/QR; IMVV/PA and the designated review authority close.",
+        "residual_rule": "Record proprietary or unavailable artefacts, shared scripts, sampling limits, and unreproduced results."
+      },
+      {
+        "item": "IV-04",
+        "configure": "Separate evidence ownership, review, finding ownership, disposition proposal, waiver authority, and formal closure.",
+        "traceability": "RACI/authority matrix, review plan, finding process, waiver and risk-acceptance rules -> FR-01--06, SA-03, IV-02, IV-06.",
+        "planned_acceptance": "No evidence owner can unilaterally close an independent finding or accept its residual risk; escalation is named.",
+        "responsibility": "PA/project authority; applies at all relevant gates; project/customer authority closes.",
+        "residual_rule": "Control role overlap, delegated authority, absent customer participation, and emergency dispositions."
+      },
+      {
+        "item": "IV-05",
+        "configure": "Select the AI-specific evidence chain to challenge: requirements, ODD, data/labels, model/pipeline, conversion, target, interfaces, monitors, claims, and traceability.",
+        "traceability": "Approved IMVV scope -> TR-01, SA-02, MV-07, SV-01, SY-01, DP-01--08 and affected configurations/claims.",
+        "planned_acceptance": "The approved scope is covered and unsupported claims or departures become traceable findings.",
+        "responsibility": "IMVV team; developers supply artefacts/responses; review mainly at QR/AR; designated authority decides.",
+        "residual_rule": "Keep exclusions, limited samples, unreproduced evidence, unresolved findings, and scope constraints visible."
+      },
+      {
+        "item": "IV-06",
+        "configure": "Define the finding lifecycle from provenance and severity through action, independent retest/review, disposition, waiver, and authorised closure.",
+        "traceability": "Finding log, affected configuration/claims, owner, corrective evidence, retest, waiver and closure -> TR-01, FR-05/06, SA-02/03, CM-03, DP-08.",
+        "planned_acceptance": "Every finding has complete provenance and an authorised disposition; gates obey project closure rules.",
+        "responsibility": "PA controls; action owners respond; IMVV verifies; project/customer authority closes at the affected gate.",
+        "residual_rule": "Retain open findings, conditional waivers, incomplete retest, recurring defects, and accepted limitations with release acceptance."
+      }
+    ],
+    "execution": [
+      {
+        "item": "IV-01",
+        "check": "Was the IMVV activation decision and approved scope executed as planned?",
+        "evidence_prompt": "Activation decision / plan ID",
+        "decision_prompt": "Activated, not activated, or blocked; deviations/finding",
+        "closure_prompt": "Authority, gate/date, links, and unresolved scope limits"
+      },
+      {
+        "item": "IV-02",
+        "check": "Is organisational independence demonstrated for the people who performed the challenge?",
+        "evidence_prompt": "Independence statement / conflict record",
+        "decision_prompt": "Pass, fail, blocked, or N.A.; finding/disposition",
+        "closure_prompt": "Approver, escalation path, links, and remaining conflicts"
+      },
+      {
+        "item": "IV-03",
+        "check": "Could the independent team reproduce or credibly challenge the controlled technical evidence?",
+        "evidence_prompt": "Independent baseline, scripts, samples, reproduction record",
+        "decision_prompt": "Result and any unreproduced or access-related finding",
+        "closure_prompt": "Review authority, retest/waiver, links, and technical limits"
+      },
+      {
+        "item": "IV-04",
+        "check": "Were review, disposition, waiver, and closure decisions made by the authorised independent roles?",
+        "evidence_prompt": "RACI / authority matrix / decision record",
+        "decision_prompt": "Result and any self-approval or authority finding",
+        "closure_prompt": "Formal closer, gate/date, links, and delegated-authority limits"
+      },
+      {
+        "item": "IV-05",
+        "check": "Was every selected AI evidence area independently challenged, with unsupported claims raised as findings?",
+        "evidence_prompt": "Review/reproduction records and finding IDs",
+        "decision_prompt": "Coverage result, affected claims/configurations, recommendation",
+        "closure_prompt": "Decision authority, links, excluded scope, and residual uncertainty"
+      },
+      {
+        "item": "IV-06",
+        "check": "Does every IMVV finding have corrective evidence, independent verification, and authorised disposition?",
+        "evidence_prompt": "Finding log, corrective action, retest, waiver/closure record",
+        "decision_prompt": "Closed, open, conditionally accepted, or blocked",
+        "closure_prompt": "Closer/signature/date, release links, and retained limitations"
+      }
     ]
+  },
+  "interactive_map": {
+    "title": "Interactive Aerosafe framework map",
+    "intro": "Explore the framework as a navigable diagram. Select a lifecycle phase, review gate, activity, decision point, or output to see its role, related checklist groups, and the corresponding guided-project stage.",
+    "source_basis": {
+      "figure2_json": {
+        "path": "data/diagram_sources/Checklist_amlas_ecss-Pagina-8.json",
+        "page": "Pagina-8",
+        "sha256": "a2d03bf3fc09fa8857467044db1519d2ce7af307b87ce7d795e735ccfa274ddd",
+        "note": "Node labels and directed relations are taken from the diagrams.net JSON export supplied for Figure 2. One visually explicit return loop has missing endpoints in the export and is therefore marked as reconstructed from the rendered figure."
+      },
+      "figure3_tex": {
+        "path": "01-introduction.tex",
+        "label": "fig:framework_flow_chart2",
+        "note": "Lifecycle phases, review-gate labels, and the two cross-cutting bands reproduce the Figure 3 TikZ definition."
+      },
+      "editorial_note": "The website adds selection, zoom, navigation, and links to existing catalogue and guided-mode content. It does not add a new assurance requirement or replace project tailoring."
+    },
+    "views": [
+      {
+        "id": "lifecycle",
+        "label": "Lifecycle and review gates",
+        "short_label": "Lifecycle",
+        "description": "Start here to understand where assurance work sits across the project lifecycle and which ECSS-oriented review gates normally expose the corresponding evidence."
+      },
+      {
+        "id": "decision",
+        "label": "Assurance decision flow",
+        "short_label": "Decision flow",
+        "description": "Follow the detailed Figure 2 logic, including rework loops, deployment checks, and risk-triggered IMVV."
+      }
+    ],
+    "lifecycle": {
+      "view_box": [
+        0,
+        0,
+        1500,
+        520
+      ],
+      "route_order": [
+        "phase-scope",
+        "gate-scope",
+        "phase-data",
+        "gate-data",
+        "phase-learning",
+        "gate-learning",
+        "phase-vv",
+        "gate-vv",
+        "phase-deployment",
+        "gate-deployment"
+      ],
+      "phases": [
+        {
+          "id": "phase-scope",
+          "number": "L1",
+          "title": "Scoping, criticality, and ML safety requirements",
+          "lines": [
+            "Scoping, criticality,",
+            "and ML safety",
+            "requirements"
+          ],
+          "x": 55,
+          "y": 150,
+          "width": 240,
+          "height": 105,
+          "gate_id": "gate-scope",
+          "group_ids": [
+            "governance",
+            "safety-normative"
+          ],
+          "guided_stage": "context",
+          "detail": "Define the AI/ML boundary, ODD, hazards, criticality rationale, review plan, and decision authority before tailoring controls.",
+          "record_focus": "Controlled qualification context and scope."
+        },
+        {
+          "id": "phase-data",
+          "number": "L2",
+          "title": "Data assurance and configuration baseline",
+          "lines": [
+            "Data assurance and",
+            "configuration baseline"
+          ],
+          "x": 345,
+          "y": 150,
+          "width": 240,
+          "height": 105,
+          "gate_id": "gate-data",
+          "group_ids": [
+            "data-assurance",
+            "configuration-traceability"
+          ],
+          "guided_stage": "configure",
+          "detail": "Establish controlled data provenance, quality, partitions, ODD coverage, integrity, and the baseline identifiers needed for later evidence review.",
+          "record_focus": "Baselined data and traceability record."
+        },
+        {
+          "id": "phase-learning",
+          "number": "L3",
+          "title": "Model learning, selection, and design",
+          "lines": [
+            "Model learning, selection,",
+            "and design"
+          ],
+          "x": 635,
+          "y": 150,
+          "width": 240,
+          "height": 105,
+          "gate_id": "gate-learning",
+          "group_ids": [
+            "model-learning"
+          ],
+          "guided_stage": "configure",
+          "detail": "Make training, candidate comparison, selection, mismatch analysis, and assurance-relevant design decisions reproducible and reviewable.",
+          "record_focus": "Model-development and selection evidence."
+        },
+        {
+          "id": "phase-vv",
+          "number": "L4",
+          "title": "Model, software, and system V&V",
+          "lines": [
+            "Model, software,",
+            "and system V&V"
+          ],
+          "x": 925,
+          "y": 150,
+          "width": 240,
+          "height": 105,
+          "gate_id": "gate-vv",
+          "group_ids": [
+            "model-vv",
+            "software-system-vv",
+            "imvv"
+          ],
+          "guided_stage": "execute",
+          "detail": "Assess requirements-linked model evidence separately from implementation, target, interface, integrated-system, and independent-challenge evidence.",
+          "record_focus": "Controlled V&V evidence, findings, and dispositions."
+        },
+        {
+          "id": "phase-deployment",
+          "number": "L5",
+          "title": "Deployment, operation, and controlled change",
+          "lines": [
+            "Deployment, operation,",
+            "and controlled change"
+          ],
+          "x": 1215,
+          "y": 150,
+          "width": 240,
+          "height": 105,
+          "gate_id": "gate-deployment",
+          "group_ids": [
+            "deployment-change",
+            "configuration-traceability",
+            "safety-normative"
+          ],
+          "guided_stage": "conformity",
+          "detail": "Control conversion, target equivalence, release, monitoring, fallback, anomalies, maintenance, and requalification triggers for the accepted baseline.",
+          "record_focus": "Release, operational acceptance, and maintained conformity record."
+        }
+      ],
+      "gates": [
+        {
+          "id": "gate-scope",
+          "title": "SRR / PDR",
+          "lines": [
+            "SRR / PDR"
+          ],
+          "x": 55,
+          "y": 315,
+          "width": 240,
+          "height": 62,
+          "phase_id": "phase-scope",
+          "guided_stage": "scope",
+          "group_ids": [
+            "governance"
+          ],
+          "detail": "Use the applicable review plan to confirm the qualification boundary, evidence expectations, tailoring decisions, and open actions."
+        },
+        {
+          "id": "gate-data",
+          "title": "PDR / CDR",
+          "lines": [
+            "PDR / CDR"
+          ],
+          "x": 345,
+          "y": 315,
+          "width": 240,
+          "height": 62,
+          "phase_id": "phase-data",
+          "guided_stage": "configure",
+          "group_ids": [
+            "data-assurance",
+            "configuration-traceability"
+          ],
+          "detail": "Review the controlled data and configuration baseline before later model evidence is treated as stable."
+        },
+        {
+          "id": "gate-learning",
+          "title": "CDR / TRR",
+          "lines": [
+            "CDR / TRR"
+          ],
+          "x": 635,
+          "y": 315,
+          "width": 240,
+          "height": 62,
+          "phase_id": "phase-learning",
+          "guided_stage": "execute",
+          "group_ids": [
+            "model-learning",
+            "model-vv"
+          ],
+          "detail": "Confirm readiness for verification and testing against predeclared criteria and controlled model artefacts."
+        },
+        {
+          "id": "gate-vv",
+          "title": "TRR / QR or project VVR",
+          "lines": [
+            "TRR / QR or",
+            "project VVR"
+          ],
+          "x": 925,
+          "y": 315,
+          "width": 240,
+          "height": 62,
+          "phase_id": "phase-vv",
+          "guided_stage": "closure",
+          "group_ids": [
+            "model-vv",
+            "software-system-vv",
+            "imvv"
+          ],
+          "detail": "Consolidate evidence, findings, retest, waivers, residual limitations, and the named closure authority at the applicable review."
+        },
+        {
+          "id": "gate-deployment",
+          "title": "AR / project ORR",
+          "lines": [
+            "AR / project ORR"
+          ],
+          "x": 1215,
+          "y": 315,
+          "width": 240,
+          "height": 62,
+          "phase_id": "phase-deployment",
+          "guided_stage": "conformity",
+          "group_ids": [
+            "deployment-change",
+            "safety-normative"
+          ],
+          "detail": "Record the accepted configuration, ODD, authority decision, open conditions, and triggers that reopen affected controls."
+        }
+      ],
+      "bands": [
+        {
+          "id": "band-configuration",
+          "title": "Configuration management and bidirectional traceability across every baseline",
+          "lines": [
+            "Configuration management and bidirectional traceability across every baseline"
+          ],
+          "x": 35,
+          "y": 45,
+          "width": 1440,
+          "height": 70,
+          "group_ids": [
+            "configuration-traceability"
+          ],
+          "guided_stage": "configure",
+          "detail": "This cross-cutting band applies from initial baselines through release and change. It preserves controlled identities and relations among requirements, hazards, data, models, software, tests, claims, findings, and decisions."
+        },
+        {
+          "id": "band-imvv",
+          "title": "IMVV challenge and finding management when activated by criticality and risk",
+          "lines": [
+            "IMVV challenge and finding management when activated by criticality and risk"
+          ],
+          "x": 325,
+          "y": 430,
+          "width": 1150,
+          "height": 58,
+          "group_ids": [
+            "imvv"
+          ],
+          "guided_stage": "execute",
+          "detail": "IMVV is not a universal extra phase. It is activated by a documented independence need and keeps challenge, findings, retest, waiver, and closure authority visible."
+        }
+      ],
+      "gate_disclaimer": "SRR, PDR, CDR, TRR, QR, and AR are ECSS-oriented review labels. VVR and ORR are shown only when the applicable project review plan defines them; exact names and phasing remain contractually tailored."
+    },
+    "decision_flow": {
+      "view_box": [
+        0,
+        0,
+        1600,
+        720
+      ],
+      "route_order": [
+        "configuration-management",
+        "data-management",
+        "all-requirements",
+        "model-learning",
+        "model-requirements",
+        "model-deployment",
+        "embedded-requirements",
+        "design-requirements",
+        "model-imvv",
+        "imvv-requirements",
+        "all-complete"
+      ],
+      "zones": [
+        {
+          "id": "zone-problem",
+          "title": "Problem Definition",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-1",
+          "x": 15,
+          "y": 28,
+          "width": 350,
+          "height": 590,
+          "class": "problem"
+        },
+        {
+          "id": "zone-vv",
+          "title": "Model Verification and Validation",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-2",
+          "x": 390,
+          "y": 28,
+          "width": 850,
+          "height": 590,
+          "class": "vv"
+        },
+        {
+          "id": "zone-deployment",
+          "title": "Model Deployment",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-3",
+          "x": 1265,
+          "y": 28,
+          "width": 320,
+          "height": 590,
+          "class": "deployment"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "configuration-management",
+          "number": "D1",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-5"
+          ],
+          "title": "Configuration Management",
+          "lines": [
+            "Configuration",
+            "Management"
+          ],
+          "type": "activity",
+          "criticality": "all",
+          "x": 85,
+          "y": 130,
+          "width": 230,
+          "height": 92,
+          "group_ids": [
+            "configuration-traceability"
+          ],
+          "guided_stage": "configure",
+          "detail": "Control the identities and changes of datasets, labels, models, code, tools, converters, binaries, and releases before assurance evidence is judged.",
+          "record_focus": "Baselines, configuration identifiers, change status, and traceability relations."
+        },
+        {
+          "id": "data-management",
+          "number": "D2",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-7"
+          ],
+          "title": "Data Management",
+          "lines": [
+            "Data",
+            "Management"
+          ],
+          "type": "activity",
+          "criticality": "all",
+          "x": 85,
+          "y": 300,
+          "width": 230,
+          "height": 92,
+          "group_ids": [
+            "data-assurance",
+            "configuration-traceability"
+          ],
+          "guided_stage": "execute",
+          "detail": "Establish requirements, provenance, labels or measurements, partition independence, ODD coverage, quality, integrity, and context-dependent privacy or disparity evidence.",
+          "record_focus": "Controlled data evidence and acceptance results."
+        },
+        {
+          "id": "all-requirements",
+          "number": "D3",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-10"
+          ],
+          "title": "Are all requirements assured?",
+          "lines": [
+            "Are all requirements",
+            "assured?"
+          ],
+          "type": "decision",
+          "criticality": "all",
+          "x": 55,
+          "y": 465,
+          "width": 290,
+          "height": 86,
+          "group_ids": [
+            "data-assurance",
+            "governance"
+          ],
+          "guided_stage": "closure",
+          "detail": "Decide whether the controlled problem-definition and data evidence supports the applicable requirements. Missing or inadequate evidence remains a visible rework condition.",
+          "record_focus": "Decision, evidence reference, finding or blocker, authority, and residual limitation."
+        },
+        {
+          "id": "model-learning",
+          "number": "D4",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-14"
+          ],
+          "title": "Model Learning",
+          "lines": [
+            "Model",
+            "Learning"
+          ],
+          "type": "activity",
+          "criticality": "all",
+          "x": 445,
+          "y": 160,
+          "width": 160,
+          "height": 92,
+          "group_ids": [
+            "model-learning"
+          ],
+          "guided_stage": "execute",
+          "detail": "Execute reproducible training, candidate comparison and selection, mismatch analysis, and any assurance-relevant explainability activity.",
+          "record_focus": "Training configuration, candidate evidence, selection rationale, and limitations."
+        },
+        {
+          "id": "model-requirements",
+          "number": "D5",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-27"
+          ],
+          "title": "Are model requirements assured?",
+          "lines": [
+            "Are model requirements",
+            "assured?"
+          ],
+          "type": "decision",
+          "criticality": "all",
+          "x": 670,
+          "y": 155,
+          "width": 255,
+          "height": 100,
+          "group_ids": [
+            "model-learning",
+            "model-vv"
+          ],
+          "guided_stage": "closure",
+          "detail": "Determine whether model-level requirements are supported by controlled and requirements-linked evidence before deployment or completion of the non-embedded route.",
+          "record_focus": "Model-level result, rework decision, and next assurance route."
+        },
+        {
+          "id": "model-deployment",
+          "number": "D6",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-29",
+            "Atoau5tYlu5lBZZD6wAI-3"
+          ],
+          "title": "Model Deployment",
+          "lines": [
+            "Model",
+            "Deployment"
+          ],
+          "type": "activity",
+          "criticality": "deployment",
+          "x": 1340,
+          "y": 180,
+          "width": 175,
+          "height": 90,
+          "group_ids": [
+            "deployment-change",
+            "software-system-vv"
+          ],
+          "guided_stage": "execute",
+          "detail": "Control conversion, target resources and equivalence, release and rollback, monitoring, fallback, and the software/system evidence needed for the embedded model.",
+          "record_focus": "Target configuration, equivalence evidence, release record, and operational provisions."
+        },
+        {
+          "id": "embedded-requirements",
+          "number": "D7",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-35"
+          ],
+          "title": "Are requirements assured by the embedded model?",
+          "lines": [
+            "Are requirements assured",
+            "by the embedded model?"
+          ],
+          "type": "decision",
+          "criticality": "ba",
+          "x": 965,
+          "y": 275,
+          "width": 280,
+          "height": 120,
+          "group_ids": [
+            "software-system-vv",
+            "deployment-change"
+          ],
+          "guided_stage": "closure",
+          "detail": "Judge the deployed implementation and target evidence, rather than assuming that model-level performance automatically transfers to the embedded system.",
+          "record_focus": "Target/system result, rework action, gate decision, and retained limitations."
+        },
+        {
+          "id": "design-requirements",
+          "number": "D8",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-44"
+          ],
+          "title": "Are design requirements assured?",
+          "lines": [
+            "Are design requirements",
+            "assured?"
+          ],
+          "type": "decision",
+          "criticality": "ba",
+          "x": 970,
+          "y": 450,
+          "width": 255,
+          "height": 100,
+          "group_ids": [
+            "software-system-vv",
+            "safety-normative",
+            "imvv"
+          ],
+          "guided_stage": "closure",
+          "detail": "Use the project-tailored criticality and risk decision to determine whether the design evidence is sufficient or whether independent model challenge is activated.",
+          "record_focus": "Design assurance result, criticality/risk rationale, and IMVV activation decision."
+        },
+        {
+          "id": "model-imvv",
+          "number": "D9",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-16"
+          ],
+          "title": "Model IMVV",
+          "lines": [
+            "Model",
+            "IMVV"
+          ],
+          "type": "activity",
+          "criticality": "ba",
+          "x": 760,
+          "y": 430,
+          "width": 160,
+          "height": 92,
+          "group_ids": [
+            "imvv"
+          ],
+          "guided_stage": "execute",
+          "detail": "Perform the documented independent challenge of AI-specific evidence, independence arrangements, findings, retest, waiver, and closure status.",
+          "record_focus": "Independent evidence review, findings, retest, and authority-separated closure."
+        },
+        {
+          "id": "imvv-requirements",
+          "number": "D10",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-20"
+          ],
+          "title": "Are requirements and IMVV activity assured?",
+          "lines": [
+            "Are requirements and",
+            "IMVV activity assured?"
+          ],
+          "type": "decision",
+          "criticality": "ba",
+          "x": 430,
+          "y": 430,
+          "width": 280,
+          "height": 105,
+          "group_ids": [
+            "imvv",
+            "safety-normative"
+          ],
+          "guided_stage": "closure",
+          "detail": "Consolidate the independent challenge with the underlying requirements evidence. Open findings or inadequate design evidence prevent silent completion.",
+          "record_focus": "Independent disposition, closure authority, open conditions, and residual risk."
+        },
+        {
+          "id": "imvv-output",
+          "number": "O1",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-28"
+          ],
+          "title": "Independent Model Verification and Validation",
+          "lines": [
+            "Independent Model Verification",
+            "and Validation"
+          ],
+          "type": "output",
+          "criticality": "ba",
+          "x": 725,
+          "y": 555,
+          "width": 250,
+          "height": 65,
+          "group_ids": [
+            "imvv"
+          ],
+          "guided_stage": "closure",
+          "detail": "The controlled IMVV output retains the independent scope, evidence reviewed, findings, retest or waiver status, decision authority, and residual limitations.",
+          "record_focus": "Independent assessment and finding-management record."
+        },
+        {
+          "id": "all-complete",
+          "number": "C",
+          "source_ids": [
+            "Atoau5tYlu5lBZZD6wAI-38",
+            "Atoau5tYlu5lBZZD6wAI-54"
+          ],
+          "title": "All steps completed",
+          "lines": [
+            "All steps completed"
+          ],
+          "type": "completion",
+          "criticality": "all",
+          "cx": 930,
+          "cy": 370,
+          "radius": 27,
+          "group_ids": [
+            "governance",
+            "safety-normative"
+          ],
+          "guided_stage": "conformity",
+          "detail": "Completion means the selected controls and applicable gates have a controlled record. It does not by itself constitute ECSS certification or automatic qualification approval.",
+          "record_focus": "Final checklist-conformity page, accepted scope, open conditions, authority, and change triggers."
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge-cm-data",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-4",
+          "from": "configuration-management",
+          "to": "data-management",
+          "kind": "bidirectional",
+          "path": "M 200 222 L 200 300",
+          "label": "Controlled exchange"
+        },
+        {
+          "id": "edge-data-all",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-6",
+          "from": "data-management",
+          "to": "all-requirements",
+          "kind": "forward",
+          "path": "M 200 392 L 200 465"
+        },
+        {
+          "id": "edge-all-data",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-8",
+          "from": "all-requirements",
+          "to": "data-management",
+          "kind": "rework",
+          "path": "M 55 508 L 34 508 L 34 346 L 85 346",
+          "label": "No: improve dataset",
+          "label_x": 42,
+          "label_y": 425
+        },
+        {
+          "id": "edge-all-learning",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-11",
+          "from": "all-requirements",
+          "to": "model-learning",
+          "kind": "forward",
+          "path": "M 345 508 L 395 508 L 395 206 L 445 206",
+          "label": "Yes",
+          "label_x": 352,
+          "label_y": 492
+        },
+        {
+          "id": "edge-learning-model",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-13",
+          "from": "model-learning",
+          "to": "model-requirements",
+          "kind": "forward",
+          "path": "M 605 206 L 670 206"
+        },
+        {
+          "id": "edge-model-learning",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-25",
+          "from": "model-requirements",
+          "to": "model-learning",
+          "kind": "rework",
+          "path": "M 797 155 L 797 92 L 525 92 L 525 160",
+          "label": "No: improve model definition and/or training method",
+          "label_x": 555,
+          "label_y": 72
+        },
+        {
+          "id": "edge-model-deployment",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-21",
+          "from": "model-requirements",
+          "to": "model-deployment",
+          "kind": "forward",
+          "path": "M 925 205 L 1295 205 L 1340 225",
+          "label": "Model embedding needed",
+          "label_x": 1035,
+          "label_y": 188
+        },
+        {
+          "id": "edge-model-complete",
+          "source_id": "SSdyoXZw2NnMWia9ZhrV-1",
+          "from": "model-requirements",
+          "to": "all-complete",
+          "kind": "forward",
+          "path": "M 797 255 L 797 370 L 903 370",
+          "label": "No embedding: Cat C",
+          "label_x": 805,
+          "label_y": 332
+        },
+        {
+          "id": "edge-deploy-embedded",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-45",
+          "from": "model-deployment",
+          "to": "embedded-requirements",
+          "kind": "forward",
+          "path": "M 1340 225 L 1285 225 L 1285 335 L 1245 335"
+        },
+        {
+          "id": "edge-embedded-deploy",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-30",
+          "from": "embedded-requirements",
+          "to": "model-deployment",
+          "kind": "rework",
+          "path": "M 1245 335 L 1560 335 L 1560 225 L 1515 225",
+          "label": "No: improve embedding strategies",
+          "label_x": 1270,
+          "label_y": 365
+        },
+        {
+          "id": "edge-embedded-design",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-34",
+          "from": "embedded-requirements",
+          "to": "design-requirements",
+          "kind": "forward",
+          "path": "M 1105 395 L 1105 450"
+        },
+        {
+          "id": "edge-design-imvv",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-32",
+          "from": "design-requirements",
+          "to": "model-imvv",
+          "kind": "forward",
+          "path": "M 970 500 L 945 500 L 945 476 L 920 476",
+          "label": "Yes: Cat A/B",
+          "label_x": 905,
+          "label_y": 530
+        },
+        {
+          "id": "edge-design-complete",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-42",
+          "from": "design-requirements",
+          "to": "all-complete",
+          "kind": "forward",
+          "path": "M 1097 450 L 1097 370 L 957 370",
+          "label": "Yes: Cat C",
+          "label_x": 1030,
+          "label_y": 350
+        },
+        {
+          "id": "edge-imvv-decision",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-15",
+          "from": "model-imvv",
+          "to": "imvv-requirements",
+          "kind": "forward",
+          "path": "M 760 476 L 710 476"
+        },
+        {
+          "id": "edge-imvv-complete",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-17",
+          "from": "imvv-requirements",
+          "to": "all-complete",
+          "kind": "forward",
+          "path": "M 710 455 L 735 455 L 735 370 L 903 370",
+          "label": "Yes",
+          "label_x": 744,
+          "label_y": 395
+        },
+        {
+          "id": "edge-imvv-design",
+          "source_id": "Atoau5tYlu5lBZZD6wAI-18",
+          "from": "imvv-requirements",
+          "to": "design-requirements",
+          "kind": "rework",
+          "path": "M 570 535 L 570 600 L 1097 600 L 1097 550",
+          "label": "No: check design",
+          "label_x": 600,
+          "label_y": 588,
+          "reconstructed_from_render": true
+        }
+      ],
+      "branches": {
+        "all-requirements": [
+          {
+            "label": "Yes",
+            "target": "model-learning",
+            "meaning": "Proceed to model learning."
+          },
+          {
+            "label": "No",
+            "target": "data-management",
+            "meaning": "Improve the dataset and repeat the assurance decision."
+          }
+        ],
+        "model-requirements": [
+          {
+            "label": "No",
+            "target": "model-learning",
+            "meaning": "Improve the model definition and/or training method."
+          },
+          {
+            "label": "Embedding needed",
+            "target": "model-deployment",
+            "meaning": "Continue through deployment and embedded-model assurance."
+          },
+          {
+            "label": "No embedding: Cat C",
+            "target": "all-complete",
+            "meaning": "Follow the compact Category C completion route shown in Figure 2, subject to project tailoring."
+          }
+        ],
+        "embedded-requirements": [
+          {
+            "label": "No",
+            "target": "model-deployment",
+            "meaning": "Improve embedding strategies and repeat the embedded-model check."
+          },
+          {
+            "label": "Continue",
+            "target": "design-requirements",
+            "meaning": "Assess the design requirements and the need for independent challenge."
+          }
+        ],
+        "design-requirements": [
+          {
+            "label": "Yes: Cat C",
+            "target": "all-complete",
+            "meaning": "Proceed to the completion marker shown by the source diagram."
+          },
+          {
+            "label": "Yes: Cat A/B",
+            "target": "model-imvv",
+            "meaning": "Activate the IMVV route shown by the source diagram."
+          }
+        ],
+        "imvv-requirements": [
+          {
+            "label": "Yes",
+            "target": "all-complete",
+            "meaning": "Proceed to the completion marker."
+          },
+          {
+            "label": "No",
+            "target": "design-requirements",
+            "meaning": "Check the design and repeat the relevant assurance activities."
+          }
+        ]
+      },
+      "legend": [
+        {
+          "id": "all-criticality",
+          "label": "Activity for all criticality",
+          "class": "all"
+        },
+        {
+          "id": "ba-criticality",
+          "label": "Activity for Criticality B & A",
+          "class": "ba"
+        },
+        {
+          "id": "deployment",
+          "label": "Deployment activity",
+          "class": "deployment"
+        },
+        {
+          "id": "decision",
+          "label": "Decision point",
+          "class": "decision"
+        },
+        {
+          "id": "output",
+          "label": "Output",
+          "class": "output"
+        },
+        {
+          "id": "completion",
+          "label": "All steps completed",
+          "class": "completion"
+        }
+      ],
+      "criticality_disclaimer": "The colour coding reproduces the compact category-oriented view of Figure 2. Final activation remains risk-informed and project-tailored; a Category C item may still require a control normally associated with Category B when the documented risk conditions justify it."
+    }
   }
 };

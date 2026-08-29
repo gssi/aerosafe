@@ -1,0 +1,29 @@
+\revision{\begin{figure*}[htbp!]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  node distance=5mm and 7mm,
+  phase/.style={draw,rounded corners,minimum height=12mm,text width=2.55cm,align=center,fill=blue!8},
+  gate/.style={draw,minimum height=7mm,text width=2.55cm,align=center,fill=gray!10},
+  band/.style={draw,dashed,rounded corners,inner sep=4pt},
+  arr/.style={-Latex,thick}
+]
+\node[phase] (scope) {Scoping, criticality, and ML safety requirements};
+\node[phase,right=of scope] (data) {Data assurance and configuration baseline};
+\node[phase,right=of data] (learn) {Model learning, selection, and design};
+\node[phase,right=of learn] (vv) {Model, software, and system V\&V};
+\node[phase,right=of vv] (deploy) {Deployment, operation, and controlled change};
+\draw[arr] (scope)--(data); \draw[arr] (data)--(learn); \draw[arr] (learn)--(vv); \draw[arr] (vv)--(deploy);
+\node[gate,below=of scope] (g1) {SRR / PDR};
+\node[gate,below=of data] (g2) {PDR / CDR};
+\node[gate,below=of learn] (g3) {CDR / TRR};
+\node[gate,below=of vv] (g4) {TRR / QR or project VVR};
+\node[gate,below=of deploy] (g5) {AR / project ORR};
+\draw[dashed] (scope)--(g1); \draw[dashed] (data)--(g2); \draw[dashed] (learn)--(g3); \draw[dashed] (vv)--(g4); \draw[dashed] (deploy)--(g5);
+\node[band,fit=(scope)(deploy),label={[font=\scriptsize]above:Configuration management and bidirectional traceability across every baseline}] {};
+\node[band,fit=(g2)(g5),label={[font=\scriptsize]below:IMVV challenge and finding management when activated by criticality and risk}] {};
+\end{tikzpicture}
+\caption{Aerosafe lifecycle and its relationship with ECSS-oriented review gates. SRR, PDR, CDR, TRR, QR, and AR correspond to ECSS software project or technical reviews; ``VVR'' and ``ORR'' are project-level labels used only when the applicable review plan defines them. The exact names and phasing remain subject to contractual tailoring. Configuration management and traceability span all phases, while IMVV is activated by the documented independence need.}
+\label{fig:framework_flow_chart2}
+\end{figure*}
+}
