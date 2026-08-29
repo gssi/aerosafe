@@ -141,44 +141,93 @@
     });
   }
 
-  function genericConstructionCard(row) {
-    return `<details class="iv-record-card" open>
+  function paperConstructionCard(row) {
+    return `<details class="iv-record-card paper-table-row" id="paper-construction-${escapeHtml(row.item)}" open>
       <summary><span class="control-id">${escapeHtml(row.item)}</span><strong>${escapeHtml(row.configure)}</strong></summary>
       <dl>
-        ${field('Inputs and traceability', row.traceability)}
+        ${field('Inputs and traceability links', row.traceability, 'trace-field')}
         ${field('Planned evidence / acceptance', row.planned_acceptance)}
         ${field('Responsibility, gate, closure', row.responsibility)}
-        ${field('Residual rule', row.residual_rule)}
+        ${field('Residual rule', row.residual_rule, 'residual-field')}
       </dl>
     </details>`;
   }
 
-  function genericExecutionCard(row) {
-    const id = escapeHtml(row.item);
-    return `<article class="iv-fill-card">
-      <header><span class="control-id">${id}</span><strong>${escapeHtml(row.check)}</strong></header>
-      <div class="iv-fill-grid">
-        <label><span>${escapeHtml(row.evidence_prompt)}</span><textarea aria-label="${id} evidence"></textarea></label>
-        <label><span>${escapeHtml(row.decision_prompt)}</span><textarea aria-label="${id} result and finding"></textarea></label>
-        <label><span>${escapeHtml(row.closure_prompt)}</span><textarea aria-label="${id} closure and residuals"></textarea></label>
+  function paperStatus(value, label = value) {
+    const allowed = new Set(['available', 'missing', 'pass', 'fail', 'blocked', 'open', 'closed', 'waived']);
+    const status = allowed.has(String(value)) ? String(value) : 'open';
+    return `<span class="paper-status paper-status-${status}">${escapeHtml(label)}</span>`;
+  }
+
+  function formatCaseText(value) {
+    return escapeHtml(value)
+      .replaceAll('Traceability:', '<strong>Traceability:</strong>')
+      .replaceAll('Residuals:', '<strong>Residuals:</strong>');
+  }
+
+  function paperCaseExecutionCard(row) {
+    const findings = (row.finding_ids || []).map(id => `<span class="finding-chip">${escapeHtml(id)}</span>`).join('');
+    return `<article class="iv-case-card" id="paper-execution-${escapeHtml(row.item)}">
+      <header>
+        <div class="iv-case-title"><span class="control-id">${escapeHtml(row.item)}</span><strong>${escapeHtml(row.check)}</strong></div>
+        <div class="paper-status-cluster" aria-label="Record status">
+          ${paperStatus(row.evidence_status, `Evidence: ${row.evidence_status}`)}
+          ${paperStatus(row.result_status, `Result: ${row.result_label}`)}
+          ${paperStatus(row.closure_status, `Closure: ${row.closure_status}`)}
+        </div>
+      </header>
+      <div class="iv-case-grid">
+        <section>
+          <p class="case-field-label">Evidence / controlled record</p>
+          <p><strong class="inline-record-status ${escapeHtml(row.evidence_status)}">${escapeHtml(row.evidence_status)}</strong>: ${escapeHtml(row.evidence)}</p>
+        </section>
+        <section>
+          <p class="case-field-label">Result / finding / decision</p>
+          <p><strong class="inline-record-status ${escapeHtml(row.result_status)}">${escapeHtml(row.result_label)}</strong>: ${escapeHtml(row.result)}</p>
+          ${findings ? `<div class="finding-list" aria-label="Finding identifiers">${findings}</div>` : ''}
+        </section>
+        <section class="wide">
+          <p class="case-field-label">Closure, traceability, residuals</p>
+          <p><strong class="inline-record-status ${escapeHtml(row.closure_status)}">${escapeHtml(row.closure_status)}</strong>: ${formatCaseText(row.closure_traceability_residuals)}</p>
+        </section>
       </div>
-      <div class="inline-checks"><label><input type="checkbox"> Pass</label><label><input type="checkbox"> Fail</label><label><input type="checkbox"> Blocked</label><label><input type="checkbox"> N.A.</label><label><input type="checkbox"> Closed</label></div>
     </article>`;
   }
 
   function renderIMVVVertical() {
-    $('#imvv-construction-view').innerHTML = `<div class="iv-record-list">${data.imvv_generic.construction.map(genericConstructionCard).join('')}</div>`;
-    $('#imvv-execution-view').innerHTML = `<div class="iv-fill-list">${data.imvv_generic.execution.map(genericExecutionCard).join('')}</div><p class="guided-cta"><a class="button primary" href="#guided-use">Create a persistent project record</a></p>`;
+    const paper = data.imvv_paper_tables || {
+      construction: data.imvv_generic.construction,
+      execution_case: [],
+      construction_caption: '',
+      execution_caption: ''
+    };
+    $('#imvv-construction-view').innerHTML = `<div class="iv-record-list">${paper.construction.map(paperConstructionCard).join('')}</div>`;
+    $('#imvv-construction-caption').textContent = paper.construction_caption || '';
+
+    const caseRows = paper.execution_case || [];
+    const resultCounts = caseRows.reduce((counts, row) => {
+      counts[row.result_status] = (counts[row.result_status] || 0) + 1;
+      return counts;
+    }, {});
+    const evidenceCounts = caseRows.reduce((counts, row) => {
+      counts[row.evidence_status] = (counts[row.evidence_status] || 0) + 1;
+      return counts;
+    }, {});
+    const findingCount = new Set(caseRows.flatMap(row => row.finding_ids || [])).size;
+    $('#imvv-case-summary').innerHTML = `
+      <article><strong>${caseRows.length}</strong><span>paper case checks</span></article>
+      <article><strong>${evidenceCounts.available || 0} / ${evidenceCounts.missing || 0}</strong><span>evidence available / missing</span></article>
+      <article><strong>${resultCounts.pass || 0} / ${resultCounts.fail || 0} / ${resultCounts.blocked || 0}</strong><span>pass / fail / blocked</span></article>
+      <article><strong>${findingCount}</strong><span>distinct findings retained open</span></article>`;
+    $('#imvv-execution-view').innerHTML = caseRows.length
+      ? `<div class="iv-case-list">${caseRows.map(paperCaseExecutionCard).join('')}</div>`
+      : '<div class="empty-state">The populated paper case is not available in this build.</div>';
+    $('#imvv-execution-caption').textContent = paper.execution_caption || '';
   }
 
   function renderCase() {
     $('#case-boundary').innerHTML = data.imvv_case.case_boundary.map(row => `
       <article class="boundary-card"><p class="mini-label">${escapeHtml(row.element)}</p><h3>${escapeHtml(row.evidence_status)}</h3><p>${escapeHtml(row.configuration)}</p><details><summary>IMVV implication</summary><p>${escapeHtml(row.imvv_implication)}</p></details></article>`).join('');
-    $('#case-application').innerHTML = `<div class="case-records">${data.imvv_case.application.map(row => `
-      <article class="case-record-card">
-        <header><span class="control-id">${escapeHtml(row.item)}</span><strong>${escapeHtml(row.instantiated_focus)}</strong></header>
-        <dl>${field('Evidence reviewed', row.evidence_reviewed)}${field('Analytical outcome / finding', row.outcome)}${field('Closure status / residual', row.closure_residual)}</dl>
-      </article>`).join('')}</div>`;
   }
 
   function switchIMVV(view) {
@@ -187,8 +236,8 @@
     $('#tab-imvv-execution').classList.toggle('active', !construction);
     $('#tab-imvv-construction').setAttribute('aria-selected', String(construction));
     $('#tab-imvv-execution').setAttribute('aria-selected', String(!construction));
-    $('#imvv-generic-construction').hidden = !construction;
-    $('#imvv-generic-execution').hidden = construction;
+    $('#imvv-paper-construction').hidden = !construction;
+    $('#imvv-paper-execution').hidden = construction;
   }
 
   function bindEvents() {
@@ -225,9 +274,20 @@
     });
     $('#tab-imvv-construction').addEventListener('click', () => switchIMVV('construction'));
     $('#tab-imvv-execution').addEventListener('click', () => switchIMVV('execution'));
+    $('#open-imvv-paper-case').addEventListener('click', () => {
+      switchIMVV('execution');
+      history.replaceState(null, '', '#imvv-paper-execution');
+      $('#imvv-paper-execution').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    $('#open-imvv-blank-template').addEventListener('click', () => openGroup('imvv', 'execution'));
   }
 
   function openHashTarget() {
+    if (location.hash === '#imvv-paper-execution') {
+      switchIMVV('execution');
+      setTimeout(() => $('#imvv-paper-execution').scrollIntoView({ block: 'start' }), 80);
+      return;
+    }
     const groupMatch = location.hash.match(/^#group-(.+)$/);
     if (groupMatch && groupById.has(groupMatch[1])) {
       state.groupId = groupMatch[1];

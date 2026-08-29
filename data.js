@@ -2,7 +2,7 @@ window.AEROSAFE_DATA = {
   "metadata": {
     "framework": "Aerosafe",
     "paper_title": "Aerosafe: A Software Quality Assurance Framework for AI-Based Aerospace Systems in ECSS Lifecycles",
-    "version": "interactive-map, checklist-catalogue, guided-recommender, and first-evaluation edition",
+    "version": "interactive-map, paper-aligned IMVV case, checklist-catalogue, guided-recommender, and first-evaluation edition",
     "disclaimer": "Aerosafe is an operational assurance aid. The catalogue contains 52 controls in nine named checklist groups. The guided recommender proposes groups for project review, but every recommendation requires project tailoring and authority confirmation. The final record is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
     "companion_url": "https://gssi.github.io/aerosafe/"
   },
@@ -2760,5 +2760,149 @@ window.AEROSAFE_DATA = {
       ],
       "criticality_disclaimer": "The colour coding reproduces the compact category-oriented view of Figure 2. Final activation remains risk-informed and project-tailored; a Category C item may still require a control normally associated with Category B when the documented risk conditions justify it."
     }
+  },
+  "imvv_paper_tables": {
+    "source_note": "Paper-aligned transcription of Table 4 and Table 5 supplied as LaTeX for the companion-site update.",
+    "construction_caption": "Generic construction and traceability view for the IMVV group (IV-01–IV-06), configured by the assurance planner before evidence review. Internal traceability links denote assurance-traceability relations among hazards, requirements, configurations, tests, claims, findings, waivers, and decisions.",
+    "execution_caption": "Populated user-completed execution checklist for the IMVV group (IV-01–IV-06), instantiated with the spacecraft-FDIR literature case study. The records expose findings F-IMVV-01–05 and blocked closure for the autonomous claim.",
+    "construction": [
+      {
+        "item": "IV-01",
+        "configure": "Decide whether AI-specific independent V&V is required and define scope, methods, artefacts, interfaces, deliverables, escalation, and findings.",
+        "traceability": "Criticality, hazards, AI authority, novelty, uncertainty, compensating provisions, contract, assurance plan -> SC-01, FR-01/02, SA-01, IV-02–06.",
+        "planned_acceptance": "Approved activation rationale and feasible independent plan traceable to the assurance scope.",
+        "responsibility": "PA/project authority with IMVV lead; decide at SRR/PDR; project/PA authority closes.",
+        "residual_rule": "Record unresolved criticality, access/resource limits, and excluded evidence areas."
+      },
+      {
+        "item": "IV-02",
+        "configure": "Define organisational independence: reporting, contractual separation, conflicts, access rights, and protected escalation.",
+        "traceability": "Organisation chart, contracts, reporting lines, conflict declarations, access controls -> IV-01, IV-04, RACI/authority matrix.",
+        "planned_acceptance": "Reviewers are independent of challenged development decisions and have protected access and escalation.",
+        "responsibility": "PA/customer authority with IMVV management; approve at SRR/PDR; PA/customer authority closes.",
+        "residual_rule": "Disclose shared management, funding dependence, expertise gaps, conflicts, and access restrictions."
+      },
+      {
+        "item": "IV-03",
+        "configure": "Define technical independence and how controlled AI evidence will be reproduced, sampled, or challenged.",
+        "traceability": "Datasets, scripts, tools, model/software/target artefacts, reproduction plan, sampling strategy -> CM-01/02, MV-02, DP-01–03, IV-05.",
+        "planned_acceptance": "Independent challenge is possible from controlled inputs without relying only on developer interpretation.",
+        "responsibility": "IMVV lead with independent CM/QA; review at TRR/QR; IMVV/PA and designated review authority close.",
+        "residual_rule": "Record unavailable artefacts, shared scripts, sampling limits, and unreproduced results."
+      },
+      {
+        "item": "IV-04",
+        "configure": "Separate evidence ownership, review, finding ownership, disposition, waiver authority, and formal closure.",
+        "traceability": "RACI/authority matrix, review plan, finding process, waiver/risk-acceptance rules -> FR-01–06, SA-03, IV-02, IV-06.",
+        "planned_acceptance": "Evidence owners cannot close independent findings or accept residual risk unilaterally.",
+        "responsibility": "PA/project authority; applies at relevant gates; project/customer authority closes.",
+        "residual_rule": "Record role overlap, delegated authority, absent customer participation, and emergency dispositions."
+      },
+      {
+        "item": "IV-05",
+        "configure": "Select the AI evidence chain to challenge: requirements, ODD, data/labels, model/pipeline, conversion, target, interfaces, monitors, claims, and traceability.",
+        "traceability": "Approved IMVV scope -> TR-01, SA-02, MV-07, SV-01, SY-01, DP-01–08 and affected configurations/claims.",
+        "planned_acceptance": "Approved scope is covered; unsupported claims or departures become traceable findings.",
+        "responsibility": "IMVV team; developers provide artefacts/responses; review mainly at QR/AR; designated authority decides.",
+        "residual_rule": "Keep exclusions, limited samples, unreproduced evidence, open findings, and scope limits visible."
+      },
+      {
+        "item": "IV-06",
+        "configure": "Define the finding lifecycle: provenance, severity, action, independent retest/review, disposition, waiver, and closure.",
+        "traceability": "Finding log, affected configuration/claims, owner, corrective evidence, retest, waiver, closure -> TR-01, FR-05/06, SA-02/03, CM-03, DP-08.",
+        "planned_acceptance": "Every finding has complete provenance and authorised disposition; gate closure rules are satisfied.",
+        "responsibility": "PA controls; action owners respond; IMVV verifies; project/customer authority closes at the affected gate.",
+        "residual_rule": "Retain open findings, conditional waivers, incomplete retest, recurring defects, and accepted limitations."
+      }
+    ],
+    "execution_case": [
+      {
+        "item": "IV-01",
+        "check": "Was the IMVV activation decision and approved scope executed as planned?",
+        "evidence_status": "available",
+        "evidence": "Gallon et al. (paper reference key: gallon2024spacecraft), H-FDIR-01–10 hazards, direct-reconfiguration authority, and preliminary claim G-FDIR-1.",
+        "result_status": "pass",
+        "result_label": "pass",
+        "result": "Activate IMVV because direct-action authority and incomplete system evidence require independent challenge.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "Analytical case configured at SRR/PDR; no industrial closure available. Traceability: H-FDIR-01–10, G-FDIR-1, SC-01, SA-01. Residuals: Criticality and budget unknown.",
+        "finding_ids": []
+      },
+      {
+        "item": "IV-02",
+        "check": "Is organisational independence demonstrated for the people who performed the challenge?",
+        "evidence_status": "available",
+        "evidence": "Public sources exist, but reporting lines, contractual separation, and protected escalation are not documented.",
+        "result_status": "fail",
+        "result_label": "fail (F-IMVV-01)",
+        "result": "Organisational independence is not demonstrated.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "Open at PDR; only project/customer authority may accept the arrangement. Traceability: IV-01, IV-04, RACI. Residuals: Independence cannot be inferred from authorship.",
+        "finding_ids": [
+          "F-IMVV-01"
+        ]
+      },
+      {
+        "item": "IV-03",
+        "check": "Could the independent team reproduce or credibly challenge the controlled technical evidence?",
+        "evidence_status": "missing",
+        "evidence": "Published descriptions exist, but no immutable baseline, independent reproduction scripts, or target binary are publicly available.",
+        "result_status": "fail",
+        "result_label": "fail (F-IMVV-02)",
+        "result": "Technical independence and independent reproduction are not established.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "Open at TRR/QR; baseline and readiness criteria unmet. Traceability: CM-01/02, MV-02, DP-01–03. Residuals: Results remain publication evidence.",
+        "finding_ids": [
+          "F-IMVV-02"
+        ]
+      },
+      {
+        "item": "IV-04",
+        "check": "Were review, disposition, waiver, and closure decisions made by the authorised independent roles?",
+        "evidence_status": "missing",
+        "evidence": "Aerosafe role model proposed, but no project RACI, waiver path, or signed closure record is public.",
+        "result_status": "blocked",
+        "result_label": "blocked (F-IMVV-03)",
+        "result": "Decision independence and closure authority are not evidenced.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "Open across QR/AR; evidence owners cannot close independent findings. Traceability: FR-05/06, SA-03, IV-06. Residuals: Role model is proposed, not project evidence.",
+        "finding_ids": [
+          "F-IMVV-03"
+        ]
+      },
+      {
+        "item": "IV-05",
+        "check": "Was every selected AI evidence area independently challenged, with unsupported claims raised as findings?",
+        "evidence_status": "available",
+        "evidence": "Precision/recall, hazard thresholds, partition lineage, target equivalence, arbitration, recovery sequencing, and timing were examined.",
+        "result_status": "fail",
+        "result_label": "fail (F-IMVV-04/05)",
+        "result": "F-IMVV-04: metrics insufficient for the system claim. F-IMVV-05: autonomous-reconfiguration evidence absent.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "Do not close G-FDIR-1 for autonomous authority; restrict the claim to available evidence. Traceability: G-FDIR-1.1–1.8, MV-07, SV-01, SY-01, DP-01–08, SA-02.",
+        "finding_ids": [
+          "F-IMVV-04",
+          "F-IMVV-05"
+        ]
+      },
+      {
+        "item": "IV-06",
+        "check": "Does every IMVV finding have corrective evidence, independent verification, and authorised disposition?",
+        "evidence_status": "missing",
+        "evidence": "No project finding log, corrective evidence, independent retest, waiver, or signed QR/AR closure is publicly available.",
+        "result_status": "blocked",
+        "result_label": "blocked (open 01–05)",
+        "result": "F-IMVV-01 to 05 remain open; no waiver or closure is asserted.",
+        "closure_status": "open",
+        "closure_traceability_residuals": "QR/AR remains blocked for the autonomous claim; only designated customer authority may close it. Traceability: TR-01, FR-05/06, SA-02/03, G-FDIR-1.",
+        "finding_ids": [
+          "F-IMVV-01",
+          "F-IMVV-02",
+          "F-IMVV-03",
+          "F-IMVV-04",
+          "F-IMVV-05"
+        ]
+      }
+    ]
   }
 };

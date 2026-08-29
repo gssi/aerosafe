@@ -1,0 +1,417 @@
+% ==============================================================================
+% TABLE 4: Generic Construction and Traceability View (Planning View)
+% ==============================================================================
+
+\begin{tabularx}{\textwidth}{
+@{}
+>{\RaggedRight\arraybackslash}p{0.70cm}
+>{\RaggedRight\arraybackslash}p{3.2cm}
+>{\RaggedRight\arraybackslash}p{3.6cm}
+>{\RaggedRight\arraybackslash}p{3.1cm}
+>{\RaggedRight\arraybackslash}p{3.0cm}
+>{\RaggedRight\arraybackslash}X
+@{}
+}
+
+\toprule
+
+\revision{\textbf{ID}}
+&
+\revision{\textbf{What is configured}}
+&
+\revision{\textbf{Inputs and traceability links}}
+&
+\revision{\textbf{Planned evidence / acceptance}}
+&
+\revision{\textbf{Responsibility, gate, closure}}
+&
+\revision{\textbf{Residual rule}}
+\\
+
+\midrule
+
+\revision{\textbf{IV-01}}
+&
+\revision{
+Decide whether AI-specific independent V\&V is required and define scope,
+methods, artefacts, interfaces, deliverables, escalation, and findings.
+}
+&
+\revision{
+Criticality, hazards, AI authority, novelty, uncertainty, compensating
+provisions, contract, assurance plan
+-> SC-01, FR-01/02, SA-01, IV-02--06.
+}
+&
+\revision{
+Approved activation rationale and feasible independent plan
+traceable to the assurance scope.
+}
+&
+\revision{
+PA/project authority with IMVV lead; decide at SRR/PDR;
+project/PA authority closes.
+}
+&
+\revision{
+Record unresolved criticality, access/resource limits,
+and excluded evidence areas.
+}
+\\
+
+\revision{\textbf{IV-02}}
+&
+\revision{
+Define organisational independence: reporting, contractual separation,
+conflicts, access rights, and protected escalation.
+}
+&
+\revision{
+Organisation chart, contracts, reporting lines, conflict declarations,
+access controls -> IV-01, IV-04, RACI/authority matrix.
+}
+&
+\revision{
+Reviewers are independent of challenged development decisions
+and have protected access and escalation.
+}
+&
+\revision{
+PA/customer authority with IMVV management; approve at SRR/PDR;
+PA/customer authority closes.
+}
+&
+\revision{
+Disclose shared management, funding dependence, expertise gaps,
+conflicts, and access restrictions.
+}
+\\
+
+\revision{\textbf{IV-03}}
+&
+\revision{
+Define technical independence and how controlled AI evidence
+will be reproduced, sampled, or challenged.
+}
+&
+\revision{
+Datasets, scripts, tools, model/software/target artefacts,
+reproduction plan, sampling strategy
+-> CM-01/02, MV-02, DP-01--03, IV-05.
+}
+&
+\revision{
+Independent challenge is possible from controlled inputs
+without relying only on developer interpretation.
+}
+&
+\revision{
+IMVV lead with independent CM/QA; review at TRR/QR;
+IMVV/PA and designated review authority close.
+}
+&
+\revision{
+Record unavailable artefacts, shared scripts,
+sampling limits, and unreproduced results.
+}
+\\
+
+\revision{\textbf{IV-04}}
+&
+\revision{
+Separate evidence ownership, review, finding ownership,
+disposition, waiver authority, and formal closure.
+}
+&
+\revision{
+RACI/authority matrix, review plan, finding process,
+waiver/risk-acceptance rules
+-> FR-01--06, SA-03, IV-02, IV-06.
+}
+&
+\revision{
+Evidence owners cannot close independent findings
+or accept residual risk unilaterally.
+}
+&
+\revision{
+PA/project authority; applies at relevant gates;
+project/customer authority closes.
+}
+&
+\revision{
+Record role overlap, delegated authority,
+absent customer participation, and emergency dispositions.
+}
+\\
+
+\revision{\textbf{IV-05}}
+&
+\revision{
+Select the AI evidence chain to challenge: requirements, ODD,
+data/labels, model/pipeline, conversion, target, interfaces,
+monitors, claims, and traceability.
+}
+&
+\revision{
+Approved IMVV scope -> TR-01, SA-02, MV-07, SV-01,
+SY-01, DP-01--08 and affected configurations/claims.
+}
+&
+\revision{
+Approved scope is covered; unsupported claims or departures
+become traceable findings.
+}
+&
+\revision{
+IMVV team; developers provide artefacts/responses;
+review mainly at QR/AR; designated authority decides.
+}
+&
+\revision{
+Keep exclusions, limited samples, unreproduced evidence,
+open findings, and scope limits visible.
+}
+\\
+
+\revision{\textbf{IV-06}}
+&
+\revision{
+Define the finding lifecycle: provenance, severity, action,
+independent retest/review, disposition, waiver, and closure.
+}
+&
+\revision{
+Finding log, affected configuration/claims, owner, corrective evidence,
+retest, waiver, closure
+-> TR-01, FR-05/06, SA-02/03, CM-03, DP-08.
+}
+&
+\revision{
+Every finding has complete provenance and authorised disposition;
+gate closure rules are satisfied.
+}
+&
+\revision{
+PA controls; action owners respond; IMVV verifies;
+project/customer authority closes at the affected gate.
+}
+&
+\revision{
+Retain open findings, conditional waivers, incomplete retest,
+recurring defects, and accepted limitations.
+}
+\\
+
+\bottomrule
+\end{tabularx}
+
+\caption{
+\revision{
+Generic construction and traceability view for the IMVV group
+(IV-01--IV-06), configured by the assurance planner before evidence review
+(internal traceability links denote assurance-traceability relations among
+hazards, requirements, configurations, tests, claims, findings, waivers,
+and decisions).
+}
+}
+
+\label{tab:imvv_generic_construction}
+
+\vspace{0.5em}
+
+% ==============================================================================
+% TABLE 5: Populated User Execution Checklist (Case Study View)
+% ==============================================================================
+
+\begin{tabularx}{\textwidth}{
+@{}
+>{\RaggedRight\arraybackslash}p{0.55cm}
+>{\RaggedRight\arraybackslash}p{3.4cm}
+>{\RaggedRight\arraybackslash}p{3.7cm}
+>{\RaggedRight\arraybackslash}p{3.7cm}
+>{\RaggedRight\arraybackslash}X
+@{}
+}
+
+\toprule
+
+\revision{\textbf{ID}}
+&
+\revision{\textbf{Execution check}}
+&
+\revision{\textbf{Evidence / controlled record}}
+&
+\revision{\textbf{Result / finding / decision}}
+&
+\revision{\textbf{Closure, traceability, residuals}}
+\\
+
+\midrule
+
+\revision{\textbf{IV-01}}
+&
+\revision{
+Was the IMVV activation decision and approved scope executed as planned?
+}
+&
+\revision{
+[\checkee]~\textbf{available}: Gallon et al.~\cite{gallon2024spacecraft},
+H-FDIR-01--10 hazards, direct-reconfiguration authority,
+and preliminary claim G-FDIR-1.
+}
+&
+\revision{
+[\checkee]~\textbf{pass}: Activate IMVV because direct-action authority
+and incomplete system evidence require independent challenge.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: Analytical case configured at SRR/PDR;
+no industrial closure available.
+\textit{Traceability:} H-FDIR-01--10, G-FDIR-1, SC-01, SA-01.
+\textit{Residuals:} Criticality and budget unknown.
+}
+\\
+
+\revision{\textbf{IV-02}}
+&
+\revision{
+Is organisational independence demonstrated for the people
+who performed the challenge?
+}
+&
+\revision{
+[\checkee]~\textbf{available}: Public sources exist, but reporting lines,
+contractual separation, and protected escalation are not documented.
+}
+&
+\revision{
+[\checkee]~\textbf{fail (F-IMVV-01)}:
+Organisational independence is not demonstrated.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: Open at PDR; only project/customer authority
+may accept the arrangement.
+\textit{Traceability:} IV-01, IV-04, RACI.
+\textit{Residuals:} Independence cannot be inferred from authorship.
+}
+\\
+
+\revision{\textbf{IV-03}}
+&
+\revision{
+Could the independent team reproduce or credibly challenge
+the controlled technical evidence?
+}
+&
+\revision{
+[\checkee]~\textbf{missing}: Published descriptions exist,
+but no immutable baseline, independent reproduction scripts,
+or target binary are publicly available.
+}
+&
+\revision{
+[\checkee]~\textbf{fail (F-IMVV-02)}:
+Technical independence and independent reproduction are not established.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: Open at TRR/QR;
+baseline and readiness criteria unmet.
+\textit{Traceability:} CM-01/02, MV-02, DP-01--03.
+\textit{Residuals:} Results remain publication evidence.
+}
+\\
+
+\revision{\textbf{IV-04}}
+&
+\revision{
+Were review, disposition, waiver, and closure decisions made by
+the authorised independent roles?
+}
+&
+\revision{
+[\checkee]~\textbf{missing}: Aerosafe role model proposed,
+but no project RACI, waiver path, or signed closure record is public.
+}
+&
+\revision{
+[\checkee]~\textbf{blocked (F-IMVV-03)}:
+Decision independence and closure authority are not evidenced.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: Open across QR/AR;
+evidence owners cannot close independent findings.
+\textit{Traceability:} FR-05/06, SA-03, IV-06.
+\textit{Residuals:} Role model is proposed, not project evidence.
+}
+\\
+
+\revision{\textbf{IV-05}}
+&
+\revision{
+Was every selected AI evidence area independently challenged,
+with unsupported claims raised as findings?
+}
+&
+\revision{
+[\checkee]~\textbf{available}: Precision/recall, hazard thresholds,
+partition lineage, target equivalence, arbitration,
+recovery sequencing, and timing were examined.
+}
+&
+\revision{
+[\checkee]~\textbf{fail (F-IMVV-04/05)}:
+F-IMVV-04: metrics insufficient for the system claim.
+F-IMVV-05: autonomous-reconfiguration evidence absent.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: Do not close G-FDIR-1 for autonomous authority;
+restrict the claim to available evidence.
+\textit{Traceability:} G-FDIR-1.1--1.8, MV-07, SV-01, SY-01,
+DP-01--08, SA-02.
+}
+\\
+
+\revision{\textbf{IV-06}}
+&
+\revision{
+Does every IMVV finding have corrective evidence,
+independent verification, and authorised disposition?
+}
+&
+\revision{
+[\checkee]~\textbf{missing}: No project finding log,
+corrective evidence, independent retest, waiver,
+or signed QR/AR closure is publicly available.
+}
+&
+\revision{
+[\checkee]~\textbf{blocked (open 01--05)}:
+F-IMVV-01 to 05 remain open; no waiver or closure is asserted.
+}
+&
+\revision{
+[\checkee]~\textbf{open}: QR/AR remains blocked for the autonomous claim;
+only designated customer authority may close it.
+\textit{Traceability:} TR-01, FR-05/06, SA-02/03, G-FDIR-1.
+}
+\\
+
+\bottomrule
+\end{tabularx}
+
+\caption{
+\revision{
+Populated user-completed execution checklist for the IMVV group
+(IV-01--IV-06), instantiated with the spacecraft-FDIR literature case
+study described in Section~\ref{sec:validation} (checkmarks show findings
+F-IMVV-01--05 and blocked closure for the autonomous claim).
+}
+}
+
+\label{tab:imvv_generic_execution}

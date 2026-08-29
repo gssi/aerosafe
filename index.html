@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Static companion for Aerosafe: an interactive framework map, nine named checklist groups, 52 controls, separate construction and execution views, a transparent project recommender, an IMVV example, and evaluation evidence." name="description"/>
+<meta content="Static companion for Aerosafe: an interactive framework map, nine named checklist groups, 52 controls, separate construction and execution views, a transparent project recommender, an IMVV vertical, and evaluation evidence." name="description"/>
 <title>Aerosafe | Interactive Framework Map and Guided Use</title>
 <link href="styles.css" rel="stylesheet"/>
 </head>
@@ -20,7 +20,7 @@
 <a href="#framework-map">Interactive map</a>
 <a href="#guided-use">Guided recommender</a>
 <a href="#catalogue">Checklist catalogue</a>
-<a href="#imvv-example">IMVV example</a>
+<a href="#imvv-vertical">IMVV plan + case</a>
 <a href="#analytical-evaluation">VQ1 application</a>
 <a href="#validation">First evaluation</a>
 <a href="#use">How to use</a>
@@ -183,30 +183,44 @@
 </div>
 </div>
 </section>
-<section class="section section-tinted" id="imvv-example">
+<section class="section section-tinted" id="imvv-vertical">
 <div class="shell">
 <div class="section-heading">
-<p class="eyebrow">Detailed reusable example</p>
+<p class="eyebrow">Paper-aligned IMVV vertical</p>
 <h2>Independent Model Verification and Validation (IV-01–IV-06)</h2>
-<p>This is the paper's detailed generic excerpt: six of the 52 controls. It is not tied to the later spacecraft-FDIR evaluation case.</p>
+<p>The site now reproduces the two complementary records used in the paper: Table 4 configures the generic IMVV challenge before evidence review; Table 5 shows the same six controls completed for the spacecraft-FDIR literature case. A blank reusable execution form remains available through the checklist catalogue and guided project mode.</p>
 </div>
-<div aria-label="Generic IMVV records" class="flow-switcher" role="tablist">
-<button aria-selected="true" class="flow-tab active" id="tab-imvv-construction" role="tab" type="button">1. Construction &amp; traceability</button>
-<button aria-selected="false" class="flow-tab" id="tab-imvv-execution" role="tab" type="button">2. User-completed execution</button>
+<aside class="imvv-orientation">
+<div><strong>Planning audience</strong><span>Assurance planner / configurator</span></div>
+<div><strong>Execution audience</strong><span>Independent reviewer / checklist user / closure authority</span></div>
+<div><strong>Case boundary</strong><span>Published detector evidence plus an author-defined autonomous-reconfiguration extension</span></div>
+</aside>
+<div aria-label="Paper IMVV records" class="flow-switcher" role="tablist">
+<button aria-selected="true" class="flow-tab active" id="tab-imvv-construction" role="tab" type="button">Table 4 · Generic construction</button>
+<button aria-selected="false" class="flow-tab" id="tab-imvv-execution" role="tab" type="button">Table 5 · Spacecraft-FDIR execution</button>
 </div>
-<section class="flow-panel active" id="imvv-generic-construction" role="tabpanel"><div class="panel-heading"><div><p class="eyebrow">Generic form</p><h3>Configure the independent challenge before evidence review</h3></div><p>Scope, evidence, criteria, responsibility, gates, authority, traceability, and residual handling are predeclared.</p></div><div id="imvv-construction-view"></div></section>
-<section class="flow-panel" hidden="" id="imvv-generic-execution" role="tabpanel"><div class="panel-heading"><div><p class="eyebrow">Fillable form</p><h3>Record evidence, findings, disposition, closure, and residuals</h3></div><p>Use the guided mode for a persistent project record across all selected groups.</p></div><div id="imvv-execution-view"></div></section>
+<section class="flow-panel active" id="imvv-paper-construction" role="tabpanel">
+<div class="panel-heading"><div><p class="eyebrow">Paper Table 4</p><h3>Configure the independent challenge before evidence review</h3></div><p>Each IV control fixes scope, inputs, planned evidence and acceptance, responsibility, gates, closure authority, traceability, and residual handling.</p></div>
+<div class="paper-table-actions"><a class="button small secondary" download="" href="downloads/imvv-paper-tables.tex">Download the LaTeX source</a><button class="button small secondary" id="open-imvv-blank-template" type="button">Open blank execution template</button></div>
+<div id="imvv-construction-view"></div>
+<p class="paper-table-caption" id="imvv-construction-caption"></p>
+</section>
+<section class="flow-panel" hidden="" id="imvv-paper-execution" role="tabpanel">
+<div class="panel-heading"><div><p class="eyebrow">Paper Table 5 · Populated case</p><h3>Execute IV-01–IV-06 on the spacecraft-FDIR literature case</h3></div><p>This is not an empty template: it preserves the evidence status, pass/fail/blocked decisions, findings, open closure, traceability, and residual limitations reported in the paper.</p></div>
+<div aria-label="Spacecraft-FDIR IMVV case summary" class="imvv-case-summary" id="imvv-case-summary"></div>
+<div id="imvv-execution-view"></div>
+<p class="paper-table-caption" id="imvv-execution-caption"></p>
+</section>
 </div>
 </section>
 <section class="section shell" id="analytical-evaluation">
 <div class="section-heading">
 <p class="eyebrow">Evaluation question VQ1</p>
-<h2>Can the generic IMVV example be instantiated without hiding evidence or authority gaps?</h2>
+<h2>Can the generic IMVV vertical be instantiated without hiding evidence or authority gaps?</h2>
 <p>The bounded spacecraft-FDIR application keeps published detector evidence separate from an author-defined autonomous-reconfiguration extension. It tests structural instantiability and transparency, not qualification success.</p>
 </div>
 <div class="boundary-grid evaluation-boundary" id="case-boundary"></div>
-<article class="vq-answer"><p class="mini-label">What the case evaluates</p><h3>One consolidated construction-and-execution record</h3><p>Because the generic forms are already shown above, the case records each IV item once: instantiated focus, evidence reviewed, outcome or finding, and closure/residual status.</p></article>
-<div class="table-shell case-application" id="case-application"></div>
+<article class="vq-answer"><p class="mini-label">Paper-aligned case record</p><h3>The populated execution checklist is available as Table 5 above</h3><p>The six spacecraft-FDIR rows reproduce the paper's evidence states, decisions, findings F-IMVV-01–05, traceability, and open closure. The boundary cards here explain which parts come from published sources and which parts are analytical extensions.</p><button class="button primary" id="open-imvv-paper-case" type="button">Open populated Table 5</button></article>
 <aside class="case-answer"><strong>VQ1 answer.</strong><span>The structure can be instantiated while preserving provenance, findings, and closure authority. The public evidence is insufficient for a positive qualification conclusion, so open gaps remain visible.</span></aside>
 </section>
 <section class="section validation-section" id="validation">
@@ -290,11 +304,11 @@
 </div>
 </section>
 <section class="section shell" id="use">
-<div class="section-heading"><p class="eyebrow">How to use this companion</p><h2>Choose the view that matches your task</h2><p>The catalogue explains coverage; the guided mode creates a project record; the IMVV example shows the reusable paper excerpt; the VQ1 case demonstrates analytical instantiation; the first-evaluation section reports the formative practitioner data.</p></div>
+<div class="section-heading"><p class="eyebrow">How to use this companion</p><h2>Choose the view that matches your task</h2><p>The catalogue explains coverage; the guided mode creates a project record; the IMVV vertical shows both the generic construction record and the populated spacecraft-FDIR execution case; the VQ1 section explains its analytical boundary; the first-evaluation section reports the formative practitioner data.</p></div>
 <div class="use-grid">
 <article><span>01</span><h3>Navigate the framework</h3><p>Follow Figure 2 decisions or Figure 3 lifecycle gates, inspect each step, and jump to the relevant checklist group or guided stage.</p><a href="#framework-map">Open interactive map</a></article>
 <article><span>02</span><h3>Understand a control</h3><p>Browse by clear group name and compare construction information with the execution record expected at a gate.</p><a href="#catalogue">Browse catalogue</a></article>
-<article><span>03</span><h3>Reuse the paper example</h3><p>Apply the generic IV construction and execution forms to another project rather than copying the analytical example.</p><a href="#imvv-example">Open IMVV example</a></article>
+<article><span>03</span><h3>Compare plan and execution</h3><p>Read Table 4 as the reusable configuration record, then inspect Table 5 to see exactly how the spacecraft-FDIR case exposes evidence gaps and open findings.</p><a href="#imvv-vertical">Open IMVV vertical</a></article>
 <article><span>04</span><h3>Inspect evidence</h3><p>Review the analytical VQ1 boundary and the separate first formative questionnaire without conflating their claims.</p><a href="#analytical-evaluation">Open evaluation</a></article>
 </div>
 </section>
