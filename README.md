@@ -21,7 +21,7 @@ The IMVV section distinguishes two records:
 1. **Table 4 - generic construction and traceability.** Six expandable records reproduce the planning information for IV-01 through IV-06: what is configured, inputs and traceability, planned evidence and acceptance, responsibility/gate/closure, and the residual rule.
 2. **Table 5 - populated spacecraft-FDIR execution.** Six case records reproduce the evidence status, result, finding or decision, closure, traceability, and residual information supplied in the paper. The visible summary reports three available and three missing evidence records, one pass, three fails, two blocked decisions, five distinct findings (F-IMVV-01 through F-IMVV-05), and open closure for every row.
 
-The populated case is not presented as a reusable blank form. A blank execution template for IV-01 through IV-06 remains available from the **Checklist catalogue** and through **Guided project mode**. The exact supplied LaTeX is retained as `downloads/imvv-paper-tables.tex`. The structured web representation is stored under `imvv_paper_tables` in `../data/framework_data.json`.
+The populated case is not presented as a reusable blank form. A blank execution template for IV-01 through IV-06 remains available from the **Checklist catalogue** and through **Guided project mode**. The structured web representation is stored under `imvv_paper_tables` in `../data/framework_data.json`. The LaTeX source remains in the technical source tree but is not exposed as a public website download.
 
 ## Interactive framework map
 
@@ -41,7 +41,7 @@ Select any node to see:
 
 The map includes Previous/Next navigation, an optional guided tour, pan and zoom, a text alternative, keyboard controls, and direct links to the checklist catalogue and guided project mode. It is an explanatory navigation aid, not an automated assurance or applicability decision.
 
-The canonical visual data are stored in `../data/framework_map_data.json`. The source materials are retained in `../data/diagram_sources/` and downloadable from the website. The Figure 2 export contains one unattached edge labelled “No: Check design”; its placement follows the rendered Figure 2 and is explicitly recorded as an editorial interpretation in the canonical map data.
+The canonical visual data are stored in `../data/framework_map_data.json`. The source materials are retained in `../data/diagram_sources/` for technical provenance but are not exposed as public website downloads. The Figure 2 export contains one unattached edge labelled “No: Check design”; its placement follows the rendered Figure 2 and is explicitly recorded as an editorial interpretation in the canonical map data.
 
 ## Two audiences and records
 

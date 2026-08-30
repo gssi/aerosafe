@@ -1420,17 +1420,6 @@ tbody tr:hover td { background: #f7fbfa; }
 .map-mode-tab:hover { border-color: #91dbd5; background: rgba(255,255,255,.1); }
 .map-mode-tab.active { color: var(--navy); border-color: #91dbd5; background: #91dbd5; }
 .map-mode-tab.active span { color: #0d5a55; }
-.map-source-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-.map-source-links a {
-  padding: 7px 10px;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 8px;
-  color: #dbe8e9;
-  font-size: .76rem;
-  font-weight: 750;
-  text-decoration: none;
-}
-.map-source-links a:hover { color: white; border-color: #91dbd5; }
 .map-mode-intro {
   display: grid;
   grid-template-columns: minmax(190px, .34fr) minmax(0, 1fr);
@@ -1694,7 +1683,6 @@ tbody tr:hover td { background: #f7fbfa; }
   .map-shell-header { align-items: stretch; flex-direction: column; }
   .map-mode-tabs { display: grid; grid-template-columns: 1fr 1fr; }
   .map-mode-tab { min-width: 0; }
-  .map-source-links { justify-content: flex-start; }
   .map-mode-intro { grid-template-columns: 1fr; gap: 5px; }
   .map-workbench { grid-template-columns: 1fr; }
   .map-canvas-card { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -1721,7 +1709,7 @@ tbody tr:hover td { background: #f7fbfa; }
 
 @media print {
   .framework-map-section { background: white; }
-  .map-shell-header, .map-toolbar, .map-tour-wrapper, .map-gesture-hint, .map-source-links { display: none !important; }
+  .map-shell-header, .map-toolbar, .map-tour-wrapper, .map-gesture-hint { display: none !important; }
   .interactive-map-shell { box-shadow: none; border-color: #aaa; }
   .map-workbench { display: block; min-height: 0; }
   .map-canvas-card { border: 0; }
