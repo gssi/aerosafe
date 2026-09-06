@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Static companion for Aerosafe: an interactive framework map, nine named checklist groups, 52 controls, separate construction and execution views, a transparent project recommender, an IMVV vertical, and evaluation evidence." name="description"/>
+<meta content="Static companion for Aerosafe: an interactive framework map, nine named checklist groups, 52 controls, separate construction and execution views, a transparent project recommender, an IMVV vertical, and two practitioner-evaluation dashboards." name="description"/>
 <title>Aerosafe | Interactive Framework Map and Guided Use</title>
 <link href="styles.css" rel="stylesheet"/>
 </head>
@@ -23,6 +23,7 @@
 <a href="#imvv-vertical">IMVV plan + case</a>
 <a href="#analytical-evaluation">VQ1 application</a>
 <a href="#validation">First evaluation</a>
+<a href="#second-validation">Second validation</a>
 <a href="#use">How to use</a>
 </nav>
 </div>
@@ -299,21 +300,124 @@
 </div>
 </div>
 </section>
+
+<section class="section second-validation-section" id="second-validation">
+<div class="shell">
+<div class="section-heading second-validation-heading">
+<p class="eyebrow">Evaluation question VQ3</p>
+<h2>Second validation of the final 52-control catalogue</h2>
+<p>A self-contained questionnaire asked practitioners to assess every final Aerosafe control without reading the paper or this website. This section preserves the exact administered questions, all anonymised categorical ratings, the main descriptive statistics, the response-pattern qualification, and the clarification register introduced after option B was selected.</p>
+</div>
+<aside class="second-validation-caveat" id="second-validation-caveat"></aside>
+<div aria-label="Second validation summary statistics" class="second-validation-kpis" id="second-validation-kpis"></div>
+
+<div class="second-validation-overview-grid">
+<article class="second-validation-panel">
+<div class="second-validation-panel-heading">
+<div><p class="mini-label">Validation question</p><h3>What the second round examined</h3></div>
+<span class="second-validation-period" id="second-validation-period"></span>
+</div>
+<blockquote class="second-validation-question" id="second-validation-question"></blockquote>
+<div class="second-validation-instrument" id="second-validation-instrument"></div>
+</article>
+<article class="second-validation-panel">
+<div class="second-validation-panel-heading">
+<div><p class="mini-label">Purposive sample</p><h3>Who participated</h3></div>
+<span class="second-validation-panel-note">n = 5</span>
+</div>
+<div id="second-validation-profile"></div>
+</article>
+</div>
+
+<article class="second-validation-panel second-validation-panel-wide">
+<div class="second-validation-panel-heading">
+<div><p class="mini-label">A / B / C / X instrument</p><h3>Distribution of all 260 control judgements</h3></div>
+<span class="second-validation-panel-note">52 controls × 5 participants</span>
+</div>
+<div class="second-validation-rating-legend" id="second-validation-rating-legend"></div>
+<div class="second-validation-distribution" id="second-validation-distribution"></div>
+<p class="second-validation-inline-note">X means “outside expertise / cannot assess” and is retained as a specialisation boundary, not converted into disagreement. The A-among-assessable percentage uses A+B+C as its denominator.</p>
+</article>
+
+<div class="second-validation-overview-grid second-validation-results-grid">
+<article class="second-validation-panel">
+<div class="second-validation-panel-heading"><div><p class="mini-label">Three five-point questions</p><h3>Overall judgements</h3></div><span class="second-validation-panel-note">All responses were 4 or 5</span></div>
+<div id="second-validation-overall-scales"></div>
+</article>
+<article class="second-validation-panel second-validation-pattern-panel">
+<div class="second-validation-panel-heading"><div><p class="mini-label">Interpretation safeguard</p><h3>Response-pattern sensitivity</h3></div><span class="second-validation-panel-note">No response excluded</span></div>
+<div id="second-validation-pattern"></div>
+</article>
+</div>
+
+<article class="second-validation-panel second-validation-panel-wide">
+<div class="second-validation-panel-heading"><div><p class="mini-label">Nine checklist groups</p><h3>Group-level descriptive results</h3></div><span class="second-validation-panel-note">Counts pool five judgements per control</span></div>
+<div class="second-validation-group-chart" id="second-validation-group-chart"></div>
+<div class="table-shell second-validation-group-table-shell" id="second-validation-group-table"></div>
+</article>
+
+<article class="second-validation-panel second-validation-panel-wide">
+<div class="second-validation-panel-heading second-validation-explorer-heading">
+<div><p class="mini-label">Control-level explorer</p><h3>Inspect the exact questions, ratings, and clarification applied</h3></div>
+<div class="validation-download-inline"><a download="" href="downloads/second-validation-item-statistics.csv">Download item statistics CSV</a></div>
+</div>
+<div aria-label="Second validation item filters" class="second-validation-filter-row">
+<label class="search-field"><span>Search controls</span><input id="second-validation-item-search" placeholder="Control ID, wording, group, or clarification" type="search"/></label>
+<label class="select-field second-validation-light-select"><span>Checklist group</span><select id="second-validation-item-group"><option value="all">All groups</option></select></label>
+<label class="select-field second-validation-light-select"><span>Focus</span><select id="second-validation-item-focus"><option value="all">All 52 controls</option><option value="repeated-b">Repeated B (targeted clarification)</option><option value="any-b">Any B response</option><option value="x">At least one X response</option></select></label>
+<label class="select-field second-validation-light-select"><span>Sort</span><select id="second-validation-item-sort"><option value="catalogue">Catalogue order</option><option value="b-desc">B count: high to low</option><option value="a-desc">A share: high to low</option><option value="x-desc">X count: high to low</option></select></label>
+</div>
+<div aria-live="polite" class="validation-result-summary" id="second-validation-item-summary"></div>
+<p class="validation-table-hint">The table keeps all five anonymised ratings visible. Open a clarification cell to distinguish the group-level tailoring note from a targeted item-level clarification.</p>
+<div class="table-shell second-validation-item-table-shell" id="second-validation-item-table"></div>
+</article>
+
+<article class="second-validation-panel second-validation-panel-wide second-validation-clarification-panel">
+<div class="second-validation-panel-heading"><div><p class="mini-label">Author response to B ratings</p><h3>Six targeted clarification themes</h3></div><span class="second-validation-panel-note">15 controls received B from at least two participants</span></div>
+<p class="second-validation-inline-note">Option B combined “needs clarification” and “needs project tailoring” and did not require a reason. These are therefore author-added explanations grounded in the existing framework semantics, not reconstructed participant statements. Every control with any B also receives its group-level interpretation note in the catalogue.</p>
+<div class="second-validation-theme-grid" id="second-validation-themes"></div>
+</article>
+
+<div class="second-validation-method-grid">
+<article class="second-validation-method-card">
+<p class="mini-label">Open feedback</p><h3>What was written</h3>
+<div id="second-validation-comments"></div>
+</article>
+<article class="second-validation-method-card second-validation-limitations-card">
+<p class="mini-label">Evidential boundary</p><h3>What this round does not establish</h3>
+<ul id="second-validation-limitations"></ul>
+</article>
+</div>
+
+<div class="second-validation-downloads">
+<div><p class="mini-label">Reproducibility tables</p><h3>Download the anonymised derived data</h3><p>The four CSV files are generated from the submitted response table and checked against the 52-control catalogue. The public site does not expose names, e-mail addresses, or reviewer codes.</p></div>
+<div class="validation-download-links">
+<a class="button secondary" download="" href="downloads/second-validation-participant-profile.csv">Participant profile CSV</a>
+<a class="button secondary" download="" href="downloads/second-validation-group-statistics.csv">Group statistics CSV</a>
+<a class="button secondary" download="" href="downloads/second-validation-item-statistics.csv">Item statistics CSV</a>
+<a class="button secondary" download="" href="downloads/second-validation-anonymised-response-matrix.csv">Anonymised response matrix CSV</a>
+</div>
+</div>
+</div>
+</section>
+
 <section class="section shell" id="use">
-<div class="section-heading"><p class="eyebrow">How to use this companion</p><h2>Choose the view that matches your task</h2><p>The catalogue explains coverage; the guided mode creates a project record; the IMVV vertical shows both the generic construction record and the populated spacecraft-FDIR execution case; the VQ1 section explains its analytical boundary; the first-evaluation section reports the formative practitioner data.</p></div>
+<div class="section-heading"><p class="eyebrow">How to use this companion</p><h2>Choose the view that matches your task</h2><p>The catalogue explains coverage; the guided mode creates a project record; the IMVV vertical shows both the generic construction record and the populated spacecraft-FDIR execution case; VQ1 explains its analytical boundary; VQ2 reports the first formative questionnaire; and VQ3 reports the second validation of all 52 final controls and the resulting clarification register.</p></div>
 <div class="use-grid">
 <article><span>01</span><h3>Navigate the framework</h3><p>Follow Figure 2 decisions or Figure 3 lifecycle gates, inspect each step, and jump to the relevant checklist group or guided stage.</p><a href="#framework-map">Open interactive map</a></article>
 <article><span>02</span><h3>Understand a control</h3><p>Browse by clear group name and compare construction information with the execution record expected at a gate.</p><a href="#catalogue">Browse catalogue</a></article>
 <article><span>03</span><h3>Compare plan and execution</h3><p>Read Table 4 as the reusable configuration record, then inspect Table 5 to see exactly how the spacecraft-FDIR case exposes evidence gaps and open findings.</p><a href="#imvv-vertical">Open IMVV vertical</a></article>
-<article><span>04</span><h3>Inspect evidence</h3><p>Review the analytical VQ1 boundary and the separate first formative questionnaire without conflating their claims.</p><a href="#analytical-evaluation">Open evaluation</a></article>
+<article><span>04</span><h3>Inspect evaluation evidence</h3><p>Review the analytical VQ1 boundary, the earlier VQ2 formative questionnaire, and the VQ3 control-level validation without conflating their claims.</p><a href="#second-validation">Open second validation</a></article>
 </div>
 </section>
 </main>
-<footer class="site-footer"><div class="shell footer-grid"><div><strong>Aerosafe companion</strong><p id="footer-version"></p></div><p>Static HTML, CSS, and JavaScript. Paper tables, catalogue views, guided logic, and evaluation data are generated from version-controlled source datasets.</p><a href="#top">Back to top ↑</a></div></footer>
+<footer class="site-footer"><div class="shell footer-grid"><div><strong>Aerosafe companion</strong><p id="footer-version"></p></div><p>Static HTML, CSS, and JavaScript. Paper tables, catalogue views, guided logic, clarification notes, and both evaluation dashboards are generated from version-controlled source datasets.</p><a href="#top">Back to top ↑</a></div></footer>
 <script src="data.js"></script>
 <script src="validation-data.js"></script>
+<script src="second-validation-data.js"></script>
 <script src="app.js"></script>
 <script src="validation.js"></script>
+<script src="second-validation.js"></script>
 <script src="guided.js"></script>
 <script src="framework-map-data.js"></script>
 <script src="framework-map.js"></script>

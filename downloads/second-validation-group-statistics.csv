@@ -1,0 +1,10 @@
+Code,Group,Controls,Ratings,A,B,C,X,A among assessable (%),B among assessable (%),Items with repeated B
+SC/FR,"Scope, Review, and Planning Checklists",7,35,26,7,0,2,78.8,21.2,0
+CM/TR,Configuration and Traceability Checklists,5,25,18,6,0,1,75.0,25.0,1
+DM,Data Assurance Checklists,9,45,29,11,0,5,72.5,27.5,2
+ML,Model Learning Checklists,4,20,11,7,0,2,61.1,38.9,2
+MV,Model Verification and Validation Checklists,7,35,21,11,0,3,65.6,34.4,4
+SV/SY,Software and System V&V Checklists,2,10,7,3,0,0,70.0,30.0,1
+DP,"Deployment, Operations, and Change Checklists",8,40,24,10,0,6,70.6,29.4,2
+SA,Safety Argument and Normative-Status Checklists,4,20,13,7,0,0,65.0,35.0,3
+IV,Independent Model Verification and Validation Checklists,6,30,18,6,0,6,75.0,25.0,0

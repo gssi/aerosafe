@@ -3,8 +3,8 @@ window.AEROSAFE_MAP_DATA = {
     "version": "1.0.0",
     "title": "Aerosafe interactive framework map",
     "purpose": "A navigable visual entry point that links framework steps to named checklist groups and the guided project record.",
-    "figure2_source": "data/diagram_sources/Checklist_amlas_ecss-Pagina-8.json",
-    "figure3_source": "data/diagram_sources/figure3-lifecycle.tikz.tex",
+    "figure2_basis": "Supplied diagrams.net export retained in the technical source package.",
+    "figure3_basis": "Lifecycle-and-gates TikZ definition retained in the manuscript source.",
     "interpretation_note": "The map preserves the source labels and graph relations. Screen layout, explanatory text, checklist-group links, and guided-stage links are editorial navigation aids. The source JSON contains one unattached feedback edge; its placement follows the rendered Figure 2 and is recorded explicitly in the edge metadata."
   },
   "modes": [

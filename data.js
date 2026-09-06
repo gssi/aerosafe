@@ -2,7 +2,7 @@ window.AEROSAFE_DATA = {
   "metadata": {
     "framework": "Aerosafe",
     "paper_title": "Aerosafe: A Software Quality Assurance Framework for AI-Based Aerospace Systems in ECSS Lifecycles",
-    "version": "interactive-map, paper-aligned IMVV case, checklist-catalogue, guided-recommender, and first-evaluation edition",
+    "version": "interactive-map, paper-aligned IMVV case, guided-recommender, first-evaluation, and second-validation edition",
     "disclaimer": "Aerosafe is an operational assurance aid. The catalogue contains 52 controls in nine named checklist groups. The guided recommender proposes groups for project review, but every recommendation requires project tailoring and authority confirmation. The final record is not an ECSS certificate, compliance decision, qualification approval, or substitute for the designated authority.",
     "companion_url": "https://gssi.github.io/aerosafe/"
   },
@@ -1863,13 +1863,13 @@ window.AEROSAFE_DATA = {
     "intro": "Explore the framework as a navigable diagram. Select a lifecycle phase, review gate, activity, decision point, or output to see its role, related checklist groups, and the corresponding guided-project stage.",
     "source_basis": {
       "figure2_json": {
-        "path": "data/diagram_sources/Checklist_amlas_ecss-Pagina-8.json",
+        "basis": "Supplied diagrams.net export retained in the technical source package.",
         "page": "Pagina-8",
         "sha256": "a2d03bf3fc09fa8857467044db1519d2ce7af307b87ce7d795e735ccfa274ddd",
         "note": "Node labels and directed relations are taken from the diagrams.net JSON export supplied for Figure 2. One visually explicit return loop has missing endpoints in the export and is therefore marked as reconstructed from the rendered figure."
       },
       "figure3_tex": {
-        "path": "01-introduction.tex",
+        "basis": "Figure 3 TikZ definition retained in the manuscript source.",
         "label": "fig:framework_flow_chart2",
         "note": "Lifecycle phases, review-gate labels, and the two cross-cutting bands reproduce the Figure 3 TikZ definition."
       },

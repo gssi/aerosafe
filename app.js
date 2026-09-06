@@ -2,6 +2,7 @@
   'use strict';
 
   const data = window.AEROSAFE_DATA;
+  const secondValidation = window.AEROSAFE_SECOND_VALIDATION || null;
   if (!data) throw new Error('AEROSAFE_DATA is not available.');
 
   const $ = (selector, scope = document) => scope.querySelector(selector);
@@ -33,6 +34,7 @@
   });
   const groupById = new Map(groups.map(group => [group.id, group]));
   const groupByItem = new Map(groups.flatMap(group => group.ids.map(id => [id, group])));
+  const secondValidationItemMap = new Map((secondValidation?.items || []).map(item => [item.id, item]));
 
   const state = {
     groupId: groups[0].id,
@@ -87,11 +89,34 @@
     return `<div class="control-field ${className}"><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value || 'Not specified')}</dd></div>`;
   }
 
+
+  function secondValidationSummary(item) {
+    const result = secondValidationItemMap.get(item.id);
+    if (!result) return '';
+    return `<span class="control-validation-summary" aria-label="Second validation counts">
+      <span>A ${result.counts.A}</span><span>B ${result.counts.B}</span><span>C ${result.counts.C}</span><span>X ${result.counts.X}</span>
+    </span>`;
+  }
+
+  function secondValidationNote(item) {
+    const result = secondValidationItemMap.get(item.id);
+    if (!result || result.counts.B < 1) return '';
+    const targeted = result.targeted_clarification
+      ? `<p><strong>Targeted clarification:</strong> ${escapeHtml(result.targeted_clarification)}</p>`
+      : '';
+    return `<aside class="control-validation-note">
+      <header><strong>Second validation interpretation</strong><span class="control-validation-counts" aria-label="A ${result.counts.A}, B ${result.counts.B}, C ${result.counts.C}, X ${result.counts.X}"><span class="rating-a">A${result.counts.A}</span><span class="rating-b">B${result.counts.B}</span><span class="rating-c">C${result.counts.C}</span><span class="rating-x">X${result.counts.X}</span></span></header>
+      <p><strong>Group-level note:</strong> ${escapeHtml(result.group_clarification)}</p>
+      ${targeted}
+      <a href="#second-validation-${escapeHtml(item.id)}" data-second-validation-item="${escapeHtml(item.id)}">Inspect all five ratings and the clarification basis</a>
+    </aside>`;
+  }
+
   function constructionCard(item) {
     return `<details class="control-card" id="item-${escapeHtml(item.id)}">
       <summary>
         <span class="control-id">${escapeHtml(item.id)}</span>
-        <span class="control-summary"><strong>${escapeHtml(item.objective)}</strong><small>${escapeHtml(statusOf(item))}</small></span>
+        <span class="control-summary"><strong>${escapeHtml(item.objective)}</strong><small>${escapeHtml(statusOf(item))}</small>${secondValidationSummary(item)}</span>
         <span class="details-cue">Open record</span>
       </summary>
       <div class="control-card-body">
@@ -106,13 +131,14 @@
           ${field('Traceability links', item.links, 'trace-field')}
           ${field('Residual handling', item.residuals, 'residual-field')}
         </dl>
+        ${secondValidationNote(item)}
       </div>
     </details>`;
   }
 
   function executionCard(item) {
     return `<article class="execution-template-card" id="item-${escapeHtml(item.id)}-execution">
-      <header><span class="control-id">${escapeHtml(item.id)}</span><div><strong>${escapeHtml(item.objective)}</strong><small>Configured criterion: ${escapeHtml(item['acceptance criterion'])}</small></div></header>
+      <header><span class="control-id">${escapeHtml(item.id)}</span><div><strong>${escapeHtml(item.objective)}</strong><small>Configured criterion: ${escapeHtml(item['acceptance criterion'])}</small>${secondValidationSummary(item)}</div></header>
       <div class="execution-template-grid">
         <div><span>Applicability</span><p>□ M &nbsp; □ C &nbsp; □ N.A.</p></div>
         <div><span>Evidence / controlled record</span><p class="blank-line">Record ID and configuration</p></div>
@@ -122,6 +148,7 @@
         <div><span>Traceability links</span><p class="blank-line">Hazards, requirements, configurations, claims, findings</p></div>
         <div class="wide"><span>Residuals / limitations</span><p class="blank-line">Open conditions retained with the baseline</p></div>
       </div>
+      ${secondValidationNote(item)}
     </article>`;
   }
 
@@ -130,7 +157,11 @@
     $('#selected-group-title').innerHTML = `<span class="group-code inline">${escapeHtml(group.code)}</span> ${escapeHtml(group.group_name)}`;
     $('#selected-group-summary').textContent = `${group.purpose} ${group.item_spec} (${group.item_count} controls).`;
     const query = normalize(state.search);
-    const items = group.items.filter(item => !query || normalize([item.id, ...data.schema.map(fieldName => item[fieldName])].join(' ')).includes(query));
+    const items = group.items.filter(item => {
+      if (!query) return true;
+      const validation = secondValidationItemMap.get(item.id);
+      return normalize([item.id, ...data.schema.map(fieldName => item[fieldName]), validation?.group_clarification, validation?.targeted_clarification].join(' ')).includes(query);
+    });
     $('#control-view').innerHTML = items.length
       ? (state.view === 'construction' ? items.map(constructionCard).join('') : items.map(executionCard).join(''))
       : '<div class="empty-state dark-empty">No controls match this search.</div>';
@@ -260,6 +291,14 @@
       history.replaceState(null, '', `#group-${state.groupId}`);
     });
     $('#control-search').addEventListener('input', event => { state.search = event.target.value; renderSelectedGroup(); });
+    $('#control-view').addEventListener('click', event => {
+      const link = event.target.closest('[data-second-validation-item]');
+      if (!link || !window.AEROSAFE_SECOND_VALIDATION_UI) return;
+      event.preventDefault();
+      history.replaceState(null, '', '#second-validation');
+      document.getElementById('second-validation')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => window.AEROSAFE_SECOND_VALIDATION_UI.openItem(link.dataset.secondValidationItem), 220);
+    });
     $('#view-construction').addEventListener('click', () => {
       state.view = 'construction';
       $('#view-construction').classList.add('active'); $('#view-execution').classList.remove('active');
@@ -324,7 +363,7 @@
     return true;
   }
 
-  window.AEROSAFE_UI = { data, groups, groupById, groupByItem, itemMap, expandItemSpec, escapeHtml, openGroup };
+  window.AEROSAFE_UI = { data, groups, groupById, groupByItem, itemMap, secondValidationItemMap, expandItemSpec, escapeHtml, openGroup };
   renderHeader();
   renderWorkflow();
   renderCatalogue();

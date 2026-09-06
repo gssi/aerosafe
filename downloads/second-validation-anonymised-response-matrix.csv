@@ -1,0 +1,6 @@
+Participant,Background,ECSS experience,AI/ML experience,SC-01,FR-01,FR-02,FR-03,FR-04,FR-05,FR-06,CM-01,CM-02,CM-03,TR-01,TR-02,DM-01,DM-02,DM-03,DM-04,DM-05,DM-06,DM-07,DM-08,DM-09,ML-01,ML-02,ML-03,ML-04,MV-01,MV-02,MV-03,MV-04,MV-05,MV-06,MV-07,SV-01,SY-01,DP-01,DP-02,DP-03,DP-04,DP-05,DP-06,DP-07,DP-08,SA-01,SA-02,SA-03,SA-04,IV-01,IV-02,IV-03,IV-04,IV-05,IV-06,Overall 1,Overall 2,Overall 3
+V1,Software Product Assurance,3-5 years,0-2 years,B,B,B,B,B,B,B,B,B,B,B,B,A,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,4,4,4
+V2,Software Product Assurance,3-5 years,0-2 years,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,4,4,4
+V3,Software Product Assurance,6-10 years,0-2 years,A,A,A,A,A,X,X,A,X,A,A,B,A,X,B,X,X,A,A,A,A,A,A,X,B,A,X,B,A,A,A,A,A,A,X,X,X,X,A,A,X,A,A,A,A,A,A,A,A,A,A,A,5,5,5
+V4,"AI/ML, Data Engineering, or Statistics",3-5 years,3-5 years,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,X,B,A,A,A,B,A,A,A,B,B,A,A,A,B,A,A,A,A,A,A,B,A,A,B,B,B,X,X,X,X,X,X,5,5,4
+V5,"V&V, IV&V, or IMVV",11-15 years,0-2 years,A,A,A,A,A,A,A,A,A,A,A,A,A,A,B,A,A,A,A,A,X,A,A,B,X,A,A,A,X,X,B,A,A,A,X,A,B,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,4,5,4
