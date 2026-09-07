@@ -164,6 +164,7 @@
 <p class="eyebrow">Checklist catalogue</p>
 <h2>Nine named groups covering all 52 controls</h2>
 <p>The overview is for scoping and navigation. Select a group, then switch between the planner-oriented construction view and the reviewer-oriented execution view. Internal storage table numbers are intentionally hidden.</p>
+<div class="validation-download-inline"><a class="button secondary" download="" href="downloads/aerosafe-complete-control-catalogue.csv">Download complete catalogue CSV</a> <a class="button secondary" download="" href="downloads/aerosafe-complete-control-catalogue.json">Download complete catalogue JSON</a></div>
 </div>
 <div aria-label="Named checklist groups" class="group-catalogue" id="group-catalogue"></div>
 <div class="catalogue-workbench">
@@ -185,7 +186,7 @@
 <div class="section-heading">
 <p class="eyebrow">Paper-aligned IMVV vertical</p>
 <h2>Independent Model Verification and Validation (IV-01–IV-06)</h2>
-<p>The site now reproduces the two complementary records used in the paper: Table 4 configures the generic IMVV challenge before evidence review; Table 5 shows the same six controls completed for the spacecraft-FDIR literature case. A blank reusable execution form remains available through the checklist catalogue and guided project mode.</p>
+<p>The site reproduces the complementary records used in the paper: Table 4 configures the generic IMVV challenge before evidence review; the generic Table 5 execution view is available through the checklist catalogue and guided project mode; and Table 6 applies the same controls to the bounded spacecraft-FDIR literature case.</p>
 </div>
 <aside class="imvv-orientation">
 <div><strong>Planning audience</strong><span>Assurance planner / configurator</span></div>
@@ -194,7 +195,7 @@
 </aside>
 <div aria-label="Paper IMVV records" class="flow-switcher" role="tablist">
 <button aria-selected="true" class="flow-tab active" id="tab-imvv-construction" role="tab" type="button">Table 4 · Generic construction</button>
-<button aria-selected="false" class="flow-tab" id="tab-imvv-execution" role="tab" type="button">Table 5 · Spacecraft-FDIR execution</button>
+<button aria-selected="false" class="flow-tab" id="tab-imvv-execution" role="tab" type="button">Table 6 · Spacecraft-FDIR application</button>
 </div>
 <section class="flow-panel active" id="imvv-paper-construction" role="tabpanel">
 <div class="panel-heading"><div><p class="eyebrow">Paper Table 4</p><h3>Configure the independent challenge before evidence review</h3></div><p>Each IV control fixes scope, inputs, planned evidence and acceptance, responsibility, gates, closure authority, traceability, and residual handling.</p></div>
@@ -203,7 +204,7 @@
 <p class="paper-table-caption" id="imvv-construction-caption"></p>
 </section>
 <section class="flow-panel" hidden="" id="imvv-paper-execution" role="tabpanel">
-<div class="panel-heading"><div><p class="eyebrow">Paper Table 5 · Populated case</p><h3>Execute IV-01–IV-06 on the spacecraft-FDIR literature case</h3></div><p>This is not an empty template: it preserves the evidence status, pass/fail/blocked decisions, findings, open closure, traceability, and residual limitations reported in the paper.</p></div>
+<div class="panel-heading"><div><p class="eyebrow">Paper Table 6 · Populated application</p><h3>Apply IV-01–IV-06 to the spacecraft-FDIR literature case</h3></div><p>This is not an empty template: it preserves the evidence status, pass/fail/blocked decisions, findings, open closure, traceability, and residual limitations reported in the paper.</p></div>
 <div aria-label="Spacecraft-FDIR IMVV case summary" class="imvv-case-summary" id="imvv-case-summary"></div>
 <div id="imvv-execution-view"></div>
 <p class="paper-table-caption" id="imvv-execution-caption"></p>
@@ -217,7 +218,7 @@
 <p>The bounded spacecraft-FDIR application keeps published detector evidence separate from an author-defined autonomous-reconfiguration extension. It tests structural instantiability and transparency, not qualification success.</p>
 </div>
 <div class="boundary-grid evaluation-boundary" id="case-boundary"></div>
-<article class="vq-answer"><p class="mini-label">Paper-aligned case record</p><h3>The populated execution checklist is available as Table 5 above</h3><p>The six spacecraft-FDIR rows reproduce the paper's evidence states, decisions, findings F-IMVV-01–05, traceability, and open closure. The boundary cards here explain which parts come from published sources and which parts are analytical extensions.</p><button class="button primary" id="open-imvv-paper-case" type="button">Open populated Table 5</button></article>
+<article class="vq-answer"><p class="mini-label">Paper-aligned case record</p><h3>The populated analytical application is available as Table 6 above</h3><p>The six spacecraft-FDIR rows reproduce the paper's evidence states, decisions, findings F-IMVV-01–05, traceability, and open closure. The boundary cards here explain which parts come from published sources and which parts are analytical extensions.</p><button class="button primary" id="open-imvv-paper-case" type="button">Open populated Table 6</button></article>
 <aside class="case-answer"><strong>VQ1 answer.</strong><span>The structure can be instantiated while preserving provenance, findings, and closure authority. The public evidence is insufficient for a positive qualification conclusion, so open gaps remain visible.</span></aside>
 </section>
 <section class="section validation-section" id="validation">
@@ -396,6 +397,8 @@
 <a class="button secondary" download="" href="downloads/second-validation-group-statistics.csv">Group statistics CSV</a>
 <a class="button secondary" download="" href="downloads/second-validation-item-statistics.csv">Item statistics CSV</a>
 <a class="button secondary" download="" href="downloads/second-validation-anonymised-response-matrix.csv">Anonymised response matrix CSV</a>
+<a class="button secondary" download="" href="downloads/second-validation-instrument.json">Exact instrument JSON</a>
+<a class="button secondary" download="" href="downloads/release-manifest.json">Release manifest</a>
 </div>
 </div>
 </div>
@@ -406,7 +409,7 @@
 <div class="use-grid">
 <article><span>01</span><h3>Navigate the framework</h3><p>Follow Figure 2 decisions or Figure 3 lifecycle gates, inspect each step, and jump to the relevant checklist group or guided stage.</p><a href="#framework-map">Open interactive map</a></article>
 <article><span>02</span><h3>Understand a control</h3><p>Browse by clear group name and compare construction information with the execution record expected at a gate.</p><a href="#catalogue">Browse catalogue</a></article>
-<article><span>03</span><h3>Compare plan and execution</h3><p>Read Table 4 as the reusable configuration record, then inspect Table 5 to see exactly how the spacecraft-FDIR case exposes evidence gaps and open findings.</p><a href="#imvv-vertical">Open IMVV vertical</a></article>
+<article><span>03</span><h3>Compare plan and execution</h3><p>Read Table 4 as the reusable configuration record, use Table 5 as the blank execution view, and inspect Table 6 to see how the spacecraft-FDIR case exposes evidence gaps and open findings.</p><a href="#imvv-vertical">Open IMVV vertical</a></article>
 <article><span>04</span><h3>Inspect evaluation evidence</h3><p>Review the analytical VQ1 boundary, the earlier VQ2 formative questionnaire, and the VQ3 control-level validation without conflating their claims.</p><a href="#second-validation">Open second validation</a></article>
 </div>
 </section>
