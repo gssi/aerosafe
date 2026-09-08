@@ -1,0 +1,51 @@
+{
+  "release": "v1.0.0",
+  "generated_on": "2026-09-07",
+  "files": [
+    {
+      "filename": "data.js",
+      "bytes": 161038,
+      "sha256": "164ee74667bd459687dd0e385774a27c6d900ff2c79f11dc0cc377d92aa7b458"
+    },
+    {
+      "filename": "second-validation-data.js",
+      "bytes": 77646,
+      "sha256": "a43ef007c4a73775488bfaa55607b6dcab533314ac1c6e41fee712981123c465"
+    },
+    {
+      "filename": "downloads/aerosafe-complete-control-catalogue.csv",
+      "bytes": 45811,
+      "sha256": "dfbcf1600ccc4e0585da609d7cbbcb5bf7362b6e3a0e6ef5828b6a684eb1fa71"
+    },
+    {
+      "filename": "downloads/aerosafe-complete-control-catalogue.json",
+      "bytes": 62889,
+      "sha256": "68fd3eaa74d786dc2d1c6b33c4d1cc34bf6c636242c25da102103ceff4f006c1"
+    },
+    {
+      "filename": "downloads/second-validation-instrument.json",
+      "bytes": 4018,
+      "sha256": "f9285ce589beaba94e7ea00d4afbdcc6d1de440778697233f19ea9193782c7c9"
+    },
+    {
+      "filename": "downloads/second-validation-anonymised-response-matrix.csv",
+      "bytes": 1215,
+      "sha256": "ecccdf3ba2bcf8ff71d76a9874aef3f4d7a56ec0461baefe000bea6caea00845"
+    },
+    {
+      "filename": "downloads/second-validation-participant-profile.csv",
+      "bytes": 377,
+      "sha256": "26cde8f816343b11141b2eced1af36d2115ac3dae705de82ac15ce8d5790a00a"
+    },
+    {
+      "filename": "downloads/second-validation-item-statistics.csv",
+      "bytes": 24386,
+      "sha256": "82eda55a20374f8d7a05f9c37d0751b398a3d568efaf9bd02937470b90869633"
+    },
+    {
+      "filename": "downloads/second-validation-group-statistics.csv",
+      "bytes": 754,
+      "sha256": "db260a18da56aca4aa098389c77c70980f41937998db4872bd977ba00cb7d3ab"
+    }
+  ]
+}

@@ -2762,9 +2762,9 @@ window.AEROSAFE_DATA = {
     }
   },
   "imvv_paper_tables": {
-    "source_note": "Paper-aligned transcription of Table 4 and Table 5 supplied as LaTeX for the companion-site update.",
+    "source_note": "Paper-aligned transcription of the generic Table 4 construction record and the bounded Table 6 analytical application. The generic Table 5 execution view is available through the catalogue and guided project mode.",
     "construction_caption": "Generic construction and traceability view for the IMVV group (IV-01–IV-06), configured by the assurance planner before evidence review. Internal traceability links denote assurance-traceability relations among hazards, requirements, configurations, tests, claims, findings, waivers, and decisions.",
-    "execution_caption": "Populated user-completed execution checklist for the IMVV group (IV-01–IV-06), instantiated with the spacecraft-FDIR literature case study. The records expose findings F-IMVV-01–05 and blocked closure for the autonomous claim.",
+    "execution_caption": "Bounded analytical application of the IMVV group (IV-01–IV-06) to the spacecraft-FDIR literature case. The records expose findings F-IMVV-01–05 and blocked closure for the autonomous claim, as reported in paper Table 6.",
     "construction": [
       {
         "item": "IV-01",

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use the Aerosafe companion, please cite the associated paper and this archived release."
+title: "Aerosafe static companion and replication artefacts"
+type: software
+version: 1.0.0
+date-released: 2026-09-07
+authors:
+  - family-names: Basciani
+    given-names: Francesco
+    affiliation: Gran Sasso Science Institute
+  - family-names: Petrucci
+    given-names: Alberto
+    affiliation: Gran Sasso Science Institute and Thales Alenia Space
+  - family-names: Pelliccione
+    given-names: Patrizio
+    affiliation: Gran Sasso Science Institute
+repository-code: "https://github.com/gssi/aerosafe"
+url: "https://gssi.github.io/aerosafe/"
+keywords:
+  - software assurance
+  - machine learning
+  - aerospace
+  - ECSS
+  - AMLAS

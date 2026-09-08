@@ -1,0 +1,29 @@
+{
+  "title": "Aerosafe static companion and replication artefacts",
+  "upload_type": "software",
+  "description": "Versioned companion artefacts for Aerosafe, including the complete 52-control catalogue, AMLAS-ECSS-Aerosafe source/status records, construction and execution fields, the guided project workflow, the bounded IMVV application, and anonymised descriptive data for two practitioner evaluations.",
+  "creators": [
+    {
+      "name": "Basciani, Francesco",
+      "affiliation": "Gran Sasso Science Institute"
+    },
+    {
+      "name": "Petrucci, Alberto",
+      "affiliation": "Gran Sasso Science Institute and Thales Alenia Space"
+    },
+    {
+      "name": "Pelliccione, Patrizio",
+      "affiliation": "Gran Sasso Science Institute"
+    }
+  ],
+  "keywords": [
+    "software assurance",
+    "machine learning",
+    "aerospace",
+    "ECSS",
+    "AMLAS"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "1.0.0"
+}

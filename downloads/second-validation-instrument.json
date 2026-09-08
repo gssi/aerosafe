@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "title": "Second checklist-focused practitioner validation",
+    "validation_question": "To what extent are the final 52 Aerosafe controls understandable without author assistance, perceived to cover expected ECSS-oriented AI/ML software-assurance obligations, and acceptable in effort, and where is clarification or project tailoring still required?",
+    "instrument_version": "AREV-52-self-contained-2026-08-31",
+    "collection_period": "31 August-2 September 2026",
+    "respondent_count": 5,
+    "control_count": 52,
+    "control_rating_count": 260,
+    "complete_control_ratings": 260,
+    "group_count": 9,
+    "source_sha256": "ae171bee9c45795018ef4ab31d9003dab32010a95a68fa5f6fb6f4e2c9da1ab3",
+    "form_source_sha256": "687d09b09d89fa04c98dc829c47b4cae1926ac5c5e35591eab50a57e83bde87f",
+    "clarification_source_sha256": "3e9e240130e2a8b5c022656fa8acf7a8133d6b60a5188e3b188bd8fb460b0166"
+  },
+  "instrument": {
+    "purpose": "A self-contained rapid review of the final nine-group, 52-control catalogue. Participants did not need to read the paper or companion website.",
+    "profile_questions": [
+      "Primary professional background",
+      "ECSS experience",
+      "AI/ML experience"
+    ],
+    "control_prompt": "For each control, judge whether it is clear, justified, and usable on the basis of the self-contained group objective, scope, lifecycle position, and tailoring note.",
+    "rating_choices": [
+      {
+        "code": "A",
+        "label": "Clear and usable as written"
+      },
+      {
+        "code": "B",
+        "label": "Useful, but needs clarification/tailoring"
+      },
+      {
+        "code": "C",
+        "label": "Unclear, impractical, or not justified"
+      },
+      {
+        "code": "X",
+        "label": "Outside my expertise / cannot assess"
+      }
+    ],
+    "group_comment_prompt": "Optional comments after each checklist group.",
+    "overall_questions": [
+      "The 52 controls are understandable enough to be applied without author assistance.",
+      "The 52 controls cover the main AI/ML software-assurance obligations I would expect in an ECSS-oriented project.",
+      "The effort required to use this checklist is acceptable for project assurance/review activities."
+    ],
+    "overall_scale": {
+      "minimum": 1,
+      "minimum_label": "Strongly disagree",
+      "maximum": 5,
+      "maximum_label": "Strongly agree"
+    },
+    "open_question": "Are any important assurance controls missing, redundant, or misplaced?",
+    "completion_time_question": "Approximate completion time (minutes)"
+  },
+  "clarification_policy": "All observed responses are retained. Because option B did not require an item-specific explanation and one participant selected B for 51 of 52 controls, a single B triggers a concise group-level interpretation note rather than an inferred item defect. Controls receiving B from at least two participants receive an additional item-specific clarification. These notes are author-added wording clarifications; they are not quotations or reconstructed rationales from respondents.",
+  "limitations": [
+    "The sample contains five practitioners and is not representative of all aerospace assurance roles or organisations.",
+    "The exercise evaluates perceived clarity, coverage, and acceptable effort, not task performance, inter-rater agreement on a common case, defect detection, or operational effectiveness.",
+    "Option B indicates that clarification or tailoring is needed but does not identify why; no item-specific rationale may be inferred without a written comment.",
+    "One participant selected B for 51 of 52 controls, accounting for most B responses; all data are retained and the concentration is reported transparently.",
+    "No group-level comments and only one final open comment were supplied.",
+    "The optional completion-time question received no answers.",
+    "No inferential statistics are appropriate for this small purposive sample; all numerical results are descriptive."
+  ]
+}

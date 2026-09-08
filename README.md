@@ -2,6 +2,10 @@
 
 Open `index.html` directly. The companion uses HTML, CSS, SVG, and JavaScript only; no server or external runtime asset is required.
 
+## Versioned research artefacts
+
+Release `v1.0.0` accompanies the JSS major revision. The `downloads/` directory contains the complete 52-control catalogue in CSV and JSON, the exact VQ3 instrument definition, the anonymised VQ3 response matrix, derived participant/item/group statistics, and a SHA-256 release manifest. Run `node tools/export-release-data.mjs` to regenerate the catalogue, instrument export, and manifest from the website's canonical data files.
+
 ## Information architecture
 
 The public interface is organised by research and user tasks rather than paper table numbers:
@@ -9,9 +13,10 @@ The public interface is organised by research and user tasks rather than paper t
 - **Interactive map** - a navigable visual entry point combining the assurance decision flow of Figure 2 with the lifecycle phases and review gates of Figure 3;
 - **Guided recommender** - project-context questions, explained group suggestions, authorised tailoring, item-level configuration and execution, and the final conformity record;
 - **Checklist catalogue** - nine named groups covering all 52 controls;
-- **IMVV plan + case** - paper Table 4 as the reusable IV-01–IV-06 construction/traceability record and paper Table 5 as the populated spacecraft-FDIR execution checklist;
+- **IMVV plan + case** - paper Table 4 as the reusable IV-01–IV-06 construction/traceability record, Table 5 as the generic execution view available through the catalogue and guided mode, and Table 6 as the populated spacecraft-FDIR application;
 - **VQ1 application** - the analytical boundary that explains which case elements are source-derived and which are author-defined extensions;
-- **First evaluation** - the descriptive dashboard derived from the questionnaire workbooks; and
+- **First evaluation** - the descriptive dashboard derived from the questionnaire workbooks;
+- **Second validation** - the exact final-catalogue instrument, anonymised response matrix, descriptive results, and clarification register; and
 - **How to use** - role-based routes through the companion.
 
 ## Paper-aligned IMVV plan and case
@@ -19,7 +24,8 @@ The public interface is organised by research and user tasks rather than paper t
 The IMVV section distinguishes two records:
 
 1. **Table 4 - generic construction and traceability.** Six expandable records reproduce the planning information for IV-01 through IV-06: what is configured, inputs and traceability, planned evidence and acceptance, responsibility/gate/closure, and the residual rule.
-2. **Table 5 - populated spacecraft-FDIR execution.** Six case records reproduce the evidence status, result, finding or decision, closure, traceability, and residual information supplied in the paper. The visible summary reports three available and three missing evidence records, one pass, three fails, two blocked decisions, five distinct findings (F-IMVV-01 through F-IMVV-05), and open closure for every row.
+2. **Table 5 - generic execution.** The blank reviewer-oriented execution view remains available from the checklist catalogue and guided project mode.
+3. **Table 6 - populated spacecraft-FDIR application.** Six case records reproduce the evidence status, result, finding or decision, closure, traceability, and residual information supplied in the paper. The visible summary reports three available and three missing evidence records, one pass, three fails, two blocked decisions, five distinct findings (F-IMVV-01 through F-IMVV-05), and open closure for every row.
 
 The populated case is not presented as a reusable blank form. A blank execution template for IV-01 through IV-06 remains available from the **Checklist catalogue** and through **Guided project mode**. The structured web representation is stored under `imvv_paper_tables` in `../data/framework_data.json`. The LaTeX source remains in the technical source tree but is not exposed as a public website download.
 
