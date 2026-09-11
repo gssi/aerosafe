@@ -60,7 +60,7 @@ window.AEROSAFE_VALIDATION = {
   "participants": [
     {
       "id": "E1",
-      "affiliation": "Antwerp Space",
+      "affiliation": "Space Agency",
       "professional_background": "Product Assurance/Quality",
       "field_experience": "3–5 years (Intermediate)",
       "ecss_experience": "3–5 years (Intermediate)",
@@ -68,7 +68,7 @@ window.AEROSAFE_VALIDATION = {
     },
     {
       "id": "E2",
-      "affiliation": "Thales Alenia Space",
+      "affiliation": "Space Company",
       "professional_background": "Software Product Assurance/Quality",
       "field_experience": "16+ years (Expert)",
       "ecss_experience": "16+ years (Expert)",
@@ -76,7 +76,7 @@ window.AEROSAFE_VALIDATION = {
     },
     {
       "id": "E3",
-      "affiliation": "Thales Alenia Space",
+      "affiliation": "Space Company",
       "professional_background": "Software Product Assurance/Quality",
       "field_experience": "16+ years (Expert)",
       "ecss_experience": "16+ years (Expert)",
@@ -84,7 +84,7 @@ window.AEROSAFE_VALIDATION = {
     },
     {
       "id": "E4",
-      "affiliation": "Thales Alenia Space",
+      "affiliation": "Space Company",
       "professional_background": "Software Product Assurance/Quality",
       "field_experience": "3–5 years (Intermediate)",
       "ecss_experience": "3–5 years (Intermediate)",
@@ -92,7 +92,7 @@ window.AEROSAFE_VALIDATION = {
     },
     {
       "id": "E5",
-      "affiliation": "Thales Alenia Space",
+      "affiliation": "Space Company",
       "professional_background": "Software Product Assurance/Quality",
       "field_experience": "3–5 years (Intermediate)",
       "ecss_experience": "0–2 years (Junior / Early career)",
@@ -100,7 +100,7 @@ window.AEROSAFE_VALIDATION = {
     },
     {
       "id": "E6",
-      "affiliation": "Thales Alenia Space",
+      "affiliation": "Space Company",
       "professional_background": "Software/AI Embedded Developer",
       "field_experience": "0–2 years (Junior / Early career)",
       "ecss_experience": "0–2 years (Junior / Early career)",
@@ -109,8 +109,8 @@ window.AEROSAFE_VALIDATION = {
   ],
   "profile_counts": {
     "affiliation": {
-      "Antwerp Space": 1,
-      "Thales Alenia Space": 5
+      "Space Agency": 1,
+      "Space Company": 5
     },
     "professional_background_group": {
       "Product / Software Product Assurance and Quality": 5,

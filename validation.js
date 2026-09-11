@@ -98,7 +98,7 @@
     const counts = data.profile_counts;
     $('#validation-period').textContent = formatDateRange(data.metadata.collection_start, data.metadata.collection_end);
     $('#validation-profile').innerHTML = [
-      renderProfileMeasure('Affiliation', counts.affiliation, ['Thales Alenia Space', 'Antwerp Space']),
+      renderProfileMeasure('Affiliation', counts.affiliation, ['Space Company', 'Space Agency']),
       renderProfileMeasure('Primary role group', counts.professional_background_group, [
         'Product / Software Product Assurance and Quality',
         'Software development / AI engineering'
